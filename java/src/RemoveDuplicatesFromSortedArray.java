@@ -14,20 +14,20 @@
 public class RemoveDuplicatesFromSortedArray {
 
   public static void main(String[] args) {
-    int nums[] = new int[] {1, 2, 3, 4, 5 };
+    int nums[] = new int[] {1, 2, 3, 3, 4, 5 };
 
     int length = removeDuplicates(nums);
 
-    System.out.println("length=>" + length);
-    printArray(nums);
+    //System.out.println("length=>" + length);
+    //printArray(nums);
 
   }
 
-  public static void printArray(int[] array) {
-    for (int anArray : array) {
-      System.out.println(anArray);
-    }
-  }
+  //public static void printArray(int[] array) {
+  //  for (int anArray : array) {
+  //    System.out.println(anArray);
+  //  }
+  //}
 
   public static int removeDuplicates(int[] nums) {
     int len = nums.length;
@@ -38,9 +38,17 @@ public class RemoveDuplicatesFromSortedArray {
       if (nums[i -1] != nums[i]) {
         nums[tail++] = nums[i];
       }
+      printArray(nums);
     }
 
     return tail;
 
+  }
+
+  public static void printArray(int[] array) {
+    for (int anArray : array) {
+      System.out.print(anArray + " ");
+    }
+    System.out.println();
   }
 }
