@@ -19,6 +19,7 @@ import java.util.Map;
  * 题意让你从给定的数组中找到两个元素的和为指定的值得两个索引，最容易的当然是循环两次，复杂度为O(n^2)
  *
  * 思路1
+ * 利用HashMap作为存储，键为数组的值，值为索引
  *
  */
 public class TwoSum {
@@ -27,9 +28,12 @@ public class TwoSum {
         int target = 9;
 
         int[] ideas0 = ideas0(nums, target);
-        printArray(ideas0);
-        //int[] ints = onePassHashTable(nums, target);
-        //System.out.println("---");
+        //printArray(ideas0);
+        int[] ints = onePassHashTable(nums, target);
+
+        for (int i = 0; i < ints.length; i++) {
+            System.out.println(ints[i]);
+        }
     }
 
     public static void printArray(int[] array) {
