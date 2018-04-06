@@ -44,6 +44,10 @@
 - [图书馆排序](https://zh.wikipedia.org/wiki/%E5%9B%BE%E4%B9%A6%E9%A6%86%E6%8E%92%E5%BA%8F)（library sort）— O(*n* log *n*)期望时间；O(*n*2)最坏时间；需要(1+ε)*n*额外空间
 - [块排序](https://zh.wikipedia.org/w/index.php?title=%E5%A1%8A%E6%8E%92%E5%BA%8F&action=edit&redlink=1)（block sort）— O(*n* log *n*)
 
+# 原地算法
+一个原地算法(in-place algorithm)是一种使用小的，固定数量的额外之空间来转换资料的算法。
+当算法执行时，输入的资料通常会别要输出的部分覆盖掉。不是原地算法称为非原地(not-in-place)
+
 # 1.插入排序
 |      |      |
 | ---- | ---- |
