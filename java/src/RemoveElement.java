@@ -24,20 +24,13 @@ public class RemoveElement {
 
   }
 
-  public static void printArray(int[] array) {
-    for (int anArray : array) {
-      System.out.print(anArray + " ");
-    }
-    System.out.println();
-  }
-
   public static int removeElement(int[] nums, int val) {
     int tail = 0;
     for (int i = 0, len = nums.length; i < len;  i++) {
       if (nums[i] != val) {
         nums[tail++] = nums[i];
       }
-      printArray(nums);
+      Utils.printArray(nums);
     }
     return tail;
   }

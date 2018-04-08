@@ -38,17 +38,11 @@ public class RemoveDuplicatesFromSortedArray {
       if (nums[i -1] != nums[i]) {
         nums[tail++] = nums[i];
       }
-      printArray(nums);
+      Utils.printArray(nums);
     }
 
     return tail;
 
   }
 
-  public static void printArray(int[] array) {
-    for (int anArray : array) {
-      System.out.print(anArray + " ");
-    }
-    System.out.println();
-  }
 }

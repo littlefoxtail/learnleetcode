@@ -28,7 +28,7 @@ public class TwoSum {
         int target = 9;
 
         int[] ideas0 = ideas0(nums, target);
-        //printArray(ideas0);
+        //Utils.printArray(ideas0);
         int[] ints = onePassHashTable(nums, target);
 
         for (int i = 0; i < ints.length; i++) {
@@ -36,11 +36,6 @@ public class TwoSum {
         }
     }
 
-    public static void printArray(int[] array) {
-        for (int anArray : array) {
-            System.out.println(anArray);
-        }
-    }
 
     /**
      * 思路0

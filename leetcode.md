@@ -67,4 +67,36 @@ class Solution {
     }
 }
 ```
+## 两个数组的交集
+给定两个数组，写一个方法来计算它们的交集
+例如：
+给定nums1 = [1, 2, 2, 1], nums2 = [2, 2]，返回[2, 2]
+注意：
+- 输出结果中每个元素出现的次数，应与元素在两个数组中出现的次数一致
+- 可以不考虑输出结果的顺序
+```java
+class Solution {
+    public int[] intersect(int[] nums1, int[] nums2) {
+       HashMap<Integer, Integer> hash = new HashMap<>();
+
+       for(int i = 0; i < nums1.lenght; i++) {
+           hash.put(nums1[i], hash.getOrDefault(num, 0) + 1);
+       }
+
+       ArrayList<Integer> array = new ArrayList<>();
+       for(int num: nums2) {
+           if (hash.containKey(num) && hash.get(num) != 0) {
+               array.add(num);
+               hash.put(num, hash.get(num) - 1);
+           }
+       }
+       int [] resultArray = new int[result.size()];
+       int index = 0;
+       for (int item : result) {
+           resultArray[index++] = item;
+       }
+       return resultArray;
+    }
+}
+```
 
