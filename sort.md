@@ -119,21 +119,34 @@
     在这个分区结束之后，该基准就处于数列的中间位置。这个称为分区(partition)操作。
     3. 递归地(recursive)把小于基准值元素的子数列和大于基准值元素的子数列排序。
 
-伪代码
-表示为：
-```
-function quicksort(q)
-     var list less, pivotList, greater
-     if length(q) ≤ 1 {
-         return q
-     } else {
-         select a pivot value pivot from q
-         for each x in q except the pivot element
-             if x < pivot then add x to less
-             if x ≥ pivot then add x to greater
-         add pivot to pivotList
-         return concatenate(quicksort(less), pivotList, quicksort(greater))
-     }
+```java
+public void QS(int[] array, int start, int end) {
+    if (start < end) {
+        int PIndex = partition(array, start, end);
+        QS(array, start, PIndex -1);
+        QS(array, PIndex+1, end);
+    }
+}
+public int dividerAndChange(int[] array, int start, int end) {
+    //标准值
+    int pivot = args[end];
+
+    int PIndex = start;
+    for (int i = start; i < end; i++) {
+        if (array[i].compareTo(pivot) < =0) {
+            swap(array, i, PIndex);
+            PIndex++;
+        }
+    }
+    swap(array, PIndex, end);
+    return PIndex;
+}
+
+private void swap(int[] array, int fromIndex, int toIndex) {
+    int temp = array[fromIndex];
+    array[fromIndex] = array[toIndex];
+    array[toIndex] = temp;
+}
 ```
 
 # 堆排序
