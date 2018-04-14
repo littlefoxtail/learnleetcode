@@ -145,3 +145,20 @@ class Solution {
     }
 }
 ```
+
+# 字符串
+## 反转字符串
+编写一个函数，其功能是将输入的字符串反转过来
+```kotlin
+class Solution {
+    fun reverseString(s: String): String {
+        val byteArray = s.toCharArray()
+        var result = ""
+        for (i in byteArray.size-1 downTo 0) {
+        result += byteArray[i]
+
+        }
+        return result
+    }
+}
+```
