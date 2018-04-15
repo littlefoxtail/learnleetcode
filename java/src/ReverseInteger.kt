@@ -13,18 +13,21 @@
  * 题意
  * 给一个整型数，求它的逆序整形数，注意，当它的逆序整形溢出的话，那么就返回0，
  */
-public class ReverseInteger {
-  public static void main(String[] args) {
-    System.out.println(reverse(123));
+object ReverseInteger {
+  @JvmStatic
+  fun main(args: Array<String>) {
+    println(reverse(123))
   }
 
-  public static int reverse(int x) {
-    long res = 0;
+  private fun reverse(x: Int): Int {
+    var x = x
+    var res = 0
 
-    for (; x != 0; x /= 10) {
-      res = res * 10 + x % 10;
+    while (x != 0) {
+      res = res * 10 + x % 10
+      x /= 10
     }
 
-    return res > Integer.MAX_VALUE || res < Integer.MIN_VALUE ? 0 : (int) res;
+    return if (res > Integer.MAX_VALUE || res < Integer.MIN_VALUE) 0 else res
   }
 }
