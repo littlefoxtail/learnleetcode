@@ -16,18 +16,18 @@
 object ReverseInteger {
   @JvmStatic
   fun main(args: Array<String>) {
-    println(reverse(123))
+    println(reverse(1534236469))
   }
 
   private fun reverse(x: Int): Int {
-    var x = x
-    var res = 0
+    var x1: Long = x.toLong()
+    var res = 0L
 
-    while (x != 0) {
-      res = res * 10 + x % 10
-      x /= 10
+    while (x1 != 0L) {
+      res = res * 10L + x1 % 10L
+      x1 /= 10
     }
 
-    return if (res > Integer.MAX_VALUE || res < Integer.MIN_VALUE) 0 else res
+    return if (res > Integer.MAX_VALUE || res < Integer.MIN_VALUE) 0 else res.toInt()
   }
 }
