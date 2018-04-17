@@ -183,17 +183,54 @@ class Solution {
 ```kotlin
 class Solution {
     fun reverse(x: Int): Int {
-        var x = x
-        var res = 0
+        var x1: Long = x.toLong()
+        var res = 0L
 
-        while (x != 0) {
-            res = res * 10 + x % 10
-            x /= 10
+        while (x1 != 0L) {
+        res = res * 10L + x1 % 10L
+        x1 /= 10
         }
-        return if (res > Integer.MAX_VALUE || res < Integer.MIN_VALUE) 0 else res
+
+        return if (res > Integer.MAX_VALUE || res < Integer.MIN_VALUE) 0 else res.toInt()
     }
 }
 ```
 
+## 字符串中的第一个唯一字符
+给定一个字符串，找到它的第一个不重复字符，并返回它的索引。如果不存在则返回-1
+案例：
+```
+s = "leetcode"
+返回 0.
+
+s = "loveleetcode",
+返回 2.
+```
+注意事项：您可以假定该字符串只包含小写字母。
+
+```kotlin
+class Solution {
+    fun firstUniqChar(s: String): Int {
+        val map = HashMap<Char, Int>()
+        val list = ArrayList<Int>()
+
+        for (i in 0 until s.length) {
+        if (map.containsKey(s[i]))
+            map[s[i]] = Int.MAX_VALUE
+        else
+            map[s[i]] = i
+            list.add(i)
+
+        }
+
+        for (i in 0 until list.size) {
+            if (map[s[list[i]]] != Int.MAX_VALUE) {
+                return list[i]
+            }
+        }
+        return -1
+    }
+}
+```
 
 
