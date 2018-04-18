@@ -232,5 +232,31 @@ class Solution {
     }
 }
 ```
+## 最长公共前缀
+编写一个函数来查找字符串数组中的最长公共前缀
+如果不存在最长公共前缀，返回空字符串""
 
+```koltin
+class Solution {
+    fun longestCommonPrefix(strs: Array<String>) {
+        val len = strs.size
+        if (len == 0) {
+            return ""
+        }
+        val minLen = 0x7fffffff
+        for (str in strs) {
+            minLen = Math.min(minLen, str.length)
+        }
+
+        for(j in 0 until minLen) {
+            for(i in 0 until minlen) {
+               if (strs[0][j] != strs[i][j]) {
+                   return strs[0].subString(0, j)
+               }
+            }
+        }
+        return strs[0].subString(0, minLen)
+    }
+}
+```
 
