@@ -260,3 +260,43 @@ class Solution {
 }
 ```
 
+## 有效的字母异味词
+给定两个字符串s和t，编写一个函数来判断t是否是s的一个字母异位词
+s = "anagram"，t = "nagaram"，返回 true
+s = "rat"，t = "car"，返回 false
+
+注意:
+假定字符串只包含小写字母。
+
+提升难度:
+输入的字符串包含 unicode 字符怎么办？你能能否调整你的解法来适应这种情况？
+```kotlin
+class Solution {
+    fun isAnagram(s: String, t: String): Boolean {
+        if (s.length != t.length) {
+            return false
+        }
+        val t1 = StringBuilder(t)
+        for (i in 0 until s.length) {
+        var found = false
+        for (j in 0 until t1.length) {
+            if (s[i] == t1[j]) {
+                t1[j] = '0'
+                found = true
+                break
+            } else {
+                found = false
+            }
+        }
+
+        if (!found) {
+            return false
+        }
+
+
+        }
+        return true
+
+    }
+}
+```
