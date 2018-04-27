@@ -342,3 +342,26 @@ class Solution {
     }
 }
 ```
+
+### 反转链表
+反转一个单链表
+进阶：
+链表可以迭代或递归地反转。你能够两个都实现一遍
+```kotlin
+class Solution {
+    fun reverseList(head: ListNode?): ListNode? {
+        if (head == null) return head
+        if (head.next == null) return head
+
+        val newHead: ListNode? = reverseList2(head.next)
+
+        head.next?.next = head
+
+
+        head.next = null
+
+        return newHead
+    }
+}
+```
+
