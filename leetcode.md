@@ -300,3 +300,45 @@ class Solution {
     }
 }
 ```
+
+## 链表
+### 删除链表的倒数第N个节点
+给定一个链表，删除链表的倒数第n个节点，并且返回链表的头结点
+示例：
+```
+给定一个链表： 1->2->3->4->5，和n = 2
+当删除了倒数第二个节点后，链表变为1->2->3->5
+```
+说明：
+给定的n保证是有效的
+进阶：
+你能尝试使用一趟扫描实现吗？
+```kotlin
+/**
+ *Definition for singly-linked list.
+ * class ListNode(var `val`: Int = 0) {
+ *     var next: ListNode? = null
+ * }
+ */
+class Solution {
+    fun removeNthFromEnd(head: ListNode?, n: Int): ListNode? {
+        var localN = n
+        var pre = head
+        var afterPreN: ListNode? = head
+
+        while (localN-- != 0) {
+        afterPreN = afterPreN!!.next
+        }
+        if (afterPreN != null) {
+        while (afterPreN!!.next != null) {
+            pre = pre?.next
+            afterPreN = afterPreN.next
+        }
+        pre?.next = pre?.next?.next
+        } else {
+        return head?.next
+        }
+        return head
+    }
+}
+```
