@@ -365,3 +365,31 @@ class Solution {
 }
 ```
 
+### 合并两个有序链表
+将两个有序链表合并为一个新的有序链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的
+输入：1->2->4, 1->3->4
+输出：1->1->2->3->4->4
+
+```kotlin
+class Solution {
+    fun mergeTwoLists(l1: ListNode?, l2: ListNode?): ListNode? {
+        var localL1 = l1
+        var localL2 = l2
+        val head = ListNode(0)
+        var tmp: ListNode? = head
+        while (localL1 != null && localL2 != null) {
+        if (localL1.`val` < localL2.`val`) {
+            tmp!!.next = localL1
+            localL1 = localL1.next
+        } else {
+            tmp!!.next = localL2
+            localL2 = localL2.next
+        }
+        tmp = tmp.next
+        }
+        tmp!!.next = if (localL1 == null) localL2 else localL1
+        return head.next
+    }
+}
+```
+
