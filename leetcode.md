@@ -302,6 +302,26 @@ class Solution {
 ```
 
 ## 链表
+### 删除链表的结点
+编写一个函数，使其可以删除某个链表中给定的（非末尾的）节点，只被给予要求被删的节点
+比如：假设该链表为`1 -> 2 -> 3 -> 4`，给定你的该链表值为`3`的第三个节点，那么在调用了您的函数之后，该链表则应变成`1 -> 2 ->4`
+```java
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public void deleteNode(ListNode node) {
+        node.val = node.next.val;
+        node.next = node.next.next;
+    }
+}
+```
+
 ### 删除链表的倒数第N个节点
 给定一个链表，删除链表的倒数第n个节点，并且返回链表的头结点
 示例：
@@ -392,4 +412,6 @@ class Solution {
     }
 }
 ```
+
+
 
