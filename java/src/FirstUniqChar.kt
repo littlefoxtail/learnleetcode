@@ -1,5 +1,3 @@
-import kotlin.Int.Companion
-
 object FirstUniqChar {
 
   @JvmStatic
