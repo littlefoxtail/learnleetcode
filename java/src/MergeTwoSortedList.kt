@@ -116,6 +116,21 @@ class MergeTwoSortedList {
         println(link.`val`)
         link = link.next
       }
+      tableSizeFor(2)
+
+    }
+
+
+    fun tableSizeFor(cap: Int): Int {
+      var n = cap - 1
+      n = n or n.ushr(1)
+      n = n or n.ushr(2)
+      n = n or n.ushr(4)
+      n = n or n.ushr(8)
+      n = n or n.ushr(16)
+      return if (n < 0) 1 else if (n >= 100) 16 else n + 1
     }
   }
+
+
 }
