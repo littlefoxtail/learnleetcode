@@ -25,16 +25,10 @@ object MaxDepth {
 
     val head = TreeNode(3)
 
-    val treeNode1_left = TreeNode(9)
-    val treeNode1_right = TreeNode(20)
-    head.left = treeNode1_left
-    head.right = treeNode1_right
-
-    val treeNode2_left = TreeNode(15)
-    val treeNode2_right = TreeNode(7)
-
-    treeNode1_right.left = treeNode2_left
-    treeNode1_right.right = treeNode2_right
+    head.left = TreeNode(9)
+    head.right = TreeNode(20)
+    head.right?.left = TreeNode(15)
+    head.right?.right = TreeNode(7)
 
     print(maxDepth(head))
 
