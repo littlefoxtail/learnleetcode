@@ -2,3 +2,6 @@
 java/.idea
 java/output
 /.idea/
+.gradle/
+local.properties
+out/

@@ -1,7 +1,6 @@
 package sort
 
 import edu.princeton.cs.introcs.StdRandom
-import kotlin.test.assertTrue
 
 object QuickSort {
     @JvmStatic
@@ -26,7 +25,7 @@ object QuickSort {
         val j = partition(a, lo, hi)
         quickSort(a, lo, j-1)
         quickSort(a, j+1, hi)
-        assertTrue { isSorted(a, lo, hi) }
+        assert(isSorted(a, lo, hi))
     }
 
     /**
