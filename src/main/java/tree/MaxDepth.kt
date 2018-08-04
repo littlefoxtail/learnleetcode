@@ -27,10 +27,14 @@ object MaxDepth {
 
     head.left = TreeNode(9)
     head.right = TreeNode(20)
+    head.left?.left = null
+    head.left?.right = null
+
+
     head.right?.left = TreeNode(15)
     head.right?.right = TreeNode(7)
 
-    print(maxDepth(head))
+    print(maxDepth2(head))
 
   }
 
@@ -41,6 +45,28 @@ object MaxDepth {
     val left = maxDepth(root.left)
     val right = maxDepth(root.right)
     return Math.max(left, right) + 1
+
+  }
+
+  private var depth: Int = 0
+
+  private fun maxDepth2(root: TreeNode?): Int {
+    depth = 0
+    helper(root, 1)
+    return depth
+  }
+
+  private fun helper(node: TreeNode?, curtDepth: Int) {
+    if (node == null) {
+      return
+    }
+
+    if (curtDepth > depth) {
+      depth = curtDepth
+    }
+
+    helper(node.left, curtDepth + 1)
+    helper(node.right, curtDepth + 1)
 
   }
 }

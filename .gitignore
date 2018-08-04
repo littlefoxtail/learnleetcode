@@ -5,3 +5,8 @@ java/output
 .gradle/
 local.properties
 out/
+.classpath
+.settings
+.project
+bin
+learnleetcode.iml
