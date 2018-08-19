@@ -1,3 +1,14 @@
+import javax.swing.tree.TreeNode
+
+
+
+fun main(args: Array<String>) {
+  isPalindrome(123321)
+  println("字符串回文")
+  println(isPalindrome2("A man, a plan, a canal: Panama"))
+  println(isPalindrome2("race a car"))
+}
+
 /**
  * 判断一个整数是否是回文，不要使用额外的空间
  *
@@ -19,11 +30,6 @@
  * 可以先获取到余数  获取到一个新的值为 余数 + 余数*10
  * 每次商代表一次余数*10
  */
-
-fun main(args: Array<String>) {
-  isPalindrome(123321)
-}
-
 fun isPalindrome(s: Int): Boolean {
   if (s < 0) return false
   var copyX = s
@@ -34,4 +40,44 @@ fun isPalindrome(s: Int): Boolean {
   }
   return s == reverse
 
+}
+
+/**
+ * 验证回文字符串是比较常见的问题，所谓回文，就是一个正读和反读都一样的字符串，
+ * 比如“level”或者“noon”等等就是回文串。
+ * 但是这里，加入了空格和非字母数字的字符，增加了些难度，
+ * 但其实原理还是很简单：只需要建立两个指针，left和right,
+ * 分别从字符的开头和结尾处开始遍历整个字符串，如果遇到非字母数字的字符就跳过，
+ * 继续往下找，直到找到下一个字母数字或者结束遍历，如果遇到大写字母，就将其转为小写。
+ * 等左右指针都找到字母数字时，比较这两个字符，若相等，则继续比较下面两个分别找到的字母数字，若不相等，直接返回false.
+ */
+fun isPalindrome2(s: String): Boolean {
+
+  var left = 0
+  var right = s.length -1
+
+  while (left < right) {
+    var leftSide = s[left].toLowerCase()
+    var rightSide = s[right].toLowerCase()
+    while (leftSide !in 'a'..'z') {
+      left++
+      leftSide = s[left].toLowerCase()
+    }
+    while (rightSide !in 'a'..'z') {
+      right--
+      rightSide = s[right].toLowerCase()
+    }
+
+    if (leftSide == rightSide) {
+      left++
+      right--
+    } else{
+      return false
+    }
+  }
+  return true
+}
+
+fun isPalindrome3(head: TreeNode): Boolean {
+  return false
 }
