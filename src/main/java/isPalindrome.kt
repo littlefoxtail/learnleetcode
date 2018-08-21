@@ -7,6 +7,7 @@ fun main(args: Array<String>) {
   println("字符串回文")
   println(isPalindrome2("A man, a plan, a canal: Panama"))
   println(isPalindrome2("race a car"))
+  println(isPalindrome2("........."))
 }
 
 /**
@@ -57,25 +58,28 @@ fun isPalindrome2(s: String): Boolean {
   var right = s.length -1
 
   while (left < right) {
-    var leftSide = s[left].toLowerCase()
-    var rightSide = s[right].toLowerCase()
-    while (leftSide !in 'a'..'z') {
+    while (left < s.length && !isvalid(s[left])) {
       left++
-      leftSide = s[left].toLowerCase()
     }
-    while (rightSide !in 'a'..'z') {
+    if (left == s.length) {
+      return true
+    }
+    while (!isvalid(s[right]) && right >= 0) {
       right--
-      rightSide = s[right].toLowerCase()
     }
 
-    if (leftSide == rightSide) {
+    if (s[left].toLowerCase() != s[right].toLowerCase()) {
+      break
+    } else{
       left++
       right--
-    } else{
-      return false
     }
   }
-  return true
+  return right <= left
+}
+
+private fun isvalid(c: Char): Boolean {
+  return Character.isLetter(c) || Character.isDigit(c)
 }
 
 fun isPalindrome3(head: TreeNode): Boolean {
