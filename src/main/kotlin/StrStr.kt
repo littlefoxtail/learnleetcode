@@ -1,3 +1,6 @@
+/**
+ * 是从主串中找到子串的索引，如果找不到则返回-1，当字符串长度大于主串，直接返回-1
+ */
 fun main(args: Array<String>) {
   val haystack = "hello"
   val needle = "lo"
@@ -41,4 +44,26 @@ fun strStr(haystack: String, needle: String): Int {
       return i
   }
   return -1
+}
+
+fun strStr2(haystack: String, needle: String): Int {
+  val l1 = haystack.length
+  val l2 = needle.length
+  if (l1 < l2) return -1
+  var i = 0
+  while (true) {
+    var j = 0
+    while (true) {
+      if (j == l2) return i
+      if (i + j == l1) return -1
+      if (haystack[i + j] != needle[j]) {
+        break
+
+      }
+      j++
+
+    }
+    i++
+
+  }
 }

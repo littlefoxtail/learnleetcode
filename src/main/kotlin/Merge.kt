@@ -15,20 +15,24 @@ nums2 = [2,5,6],       n = 3
 输出: [1,2,2,3,5,6]
  */
 object Merge {
+
   @JvmStatic
   fun main(args: Array<String>) {
-    val num1 = intArrayOf(1, 2, 3, 4, 5, 100, 0, 0, 0)
-    val num2 = intArrayOf(2, 5, 6)
+//    val num1 = intArrayOf(1, 2, 3, 4, 5, 100, 0, 0, 0)
+//    val num2 = intArrayOf(2, 5, 6)
+//    merge(num1, 6, num2, 3)
+//    show(num1)
 
-    merge(num1, 6, num2, 3)
-
-    show(num1)
+    val num3 = intArrayOf(0)
+    val num4 = intArrayOf(1)
+    merge(num3, 0, num4, 1)
+    show(num3)
 
 
   }
 
   private fun merge(nums1: IntArray, m: Int, nums2: IntArray, n: Int) {
-    val array = Array(m + n) {0}
+//    val array = Array(m + n) {0}
     var i = m - 1
     var j = n - 1
     while (i >= 0 && j >= 0) {
@@ -41,11 +45,11 @@ object Merge {
     }
 
     while (i >= 0) {
-      array[i + j + 1] = nums1[i--]
+      nums1[i + j + 1] = nums1[i--]
     }
 
-    while (i >= 0) {
-      array[i + j + 1] = nums2[j--]
+    while (j >= 0) {
+      nums1[i + j + 1] = nums2[j--]
     }
   }
 

@@ -1,7 +1,7 @@
-class ListNode(var value: Int = 0 ) {
+class ListNode(var `val`: Int = 0 ) {
   var next: ListNode? = null
 
   override fun toString(): String {
-    return "ListNode(value=$value, next=$next)"
+    return "ListNode(value=$`val`', next=$next)"
   }
 }
