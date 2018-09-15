@@ -1,13 +1,26 @@
-import javax.swing.tree.TreeNode
-
-
-
 fun main(args: Array<String>) {
   isPalindrome(123321)
   println("字符串回文")
   println(isPalindrome2("A man, a plan, a canal: Panama"))
   println(isPalindrome2("race a car"))
   println(isPalindrome2("........."))
+
+  println("回文链表")
+
+
+  val listNode1 = ListNode(1)
+  val listNode2 = ListNode(2)
+  val listNode3 = ListNode(3)
+  val listNode4 = ListNode(4)
+  val listNode5 = ListNode(2)
+  val listNode6 = ListNode(1)
+
+  listNode1.next = listNode2
+  listNode2.next = listNode3
+  listNode3.next = listNode4
+  listNode4.next = listNode5
+  listNode5.next = listNode6
+  isPalindrome3(listNode1)
 }
 
 /**
@@ -82,6 +95,90 @@ private fun isvalid(c: Char): Boolean {
   return Character.isLetter(c) || Character.isDigit(c)
 }
 
-fun isPalindrome3(head: TreeNode): Boolean {
-  return false
+fun isPalindrome3(head: ListNode?): Boolean {
+
+  if((head == null) or (head?.next == null)) {
+    return true
+  }
+
+  val middle = findMiddle(head)
+  middle?.next = reverseList(middle?.next)
+
+  var p = head
+  var q = middle?.next
+  while (p != null && q != null && p.`val` == q.`val`) {
+    p = p.next
+    q = q.next
+  }
+  return q == null
+}
+
+///**
+// * 原地反转链表
+// */
+//fun reverseList(head: ListNode?): ListNode? {
+//  var localHead = head
+//  var prev: ListNode? = null
+//  while (localHead != null) {
+//    var temp = localHead.next
+//    localHead.next = prev
+//    prev = localHead
+//    localHead = temp
+//  }
+//
+//  return prev
+//}
+fun isPalindrome4(head: ListNode?): Boolean {
+  var head = head
+  if (head?.next == null)
+    return true
+  var fast = head
+  var slow = head
+  while (fast!!.next != null && fast.next!!.next != null) {
+    slow = slow!!.next
+    fast = fast.next!!.next
+  }
+  var reverseHead = reverseList(slow!!.next)
+
+  while (head != null && reverseHead != null) {
+    if (head.`val` != reverseHead.`val`)
+      return false
+    head = head.next
+    reverseHead = reverseHead.next
+  }
+  return true
+}
+
+fun reverseList(head: ListNode?): ListNode? {
+  var head = head
+  if (head?.next == null)
+    return head
+  var p: ListNode? = null
+  var q: ListNode?
+  while (head != null) {
+    q = head.next
+    head.next = p
+
+    p = head
+    head = q
+  }
+  return p
+}
+
+fun findMiddle(head: ListNode?): ListNode? {
+
+  if ((head == null) or  ((head?.next) == null)) {
+    return head
+  }
+
+  var slow = head
+  var fast = head
+
+  while(fast?.next != null && fast.next?.next != null){
+    slow = slow?.next
+    fast = fast.next?.next
+  }
+
+  return slow
+
 }
