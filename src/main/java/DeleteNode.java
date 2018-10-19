@@ -15,7 +15,7 @@ public class DeleteNode {
   }
 
   public static void deleteNode(ListNode node) {
-    node.setValue(node.getNext().getValue());
+    node.setVal(node.getNext().getVal());
     node.setNext(node.getNext().getNext());
   }
 
