@@ -1,5 +1,5 @@
 
-from list_node import ListNode
+from common import ListNode
 class Solution:
     def deleteNode(self, node):
         if node and node.next:

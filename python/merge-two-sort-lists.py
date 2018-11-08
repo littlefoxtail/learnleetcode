@@ -1,12 +1,5 @@
 # 已知两个单链表均已递增有序，试将它们合并成一个链表，保持其有序性
-class ListNode():
-    def __init__(self, x):
-        self.val = x
-        self.next = None
-
-    def __repr__(self):
-        if self:
-            return "{} - {}".format(self.val, self.next)
+from common import ListNode
 
 class Solution(object):
     def mergeTwoLists(self, l1, l2):
