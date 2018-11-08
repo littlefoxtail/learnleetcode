@@ -1,13 +1,5 @@
-class ListNode:
-    def __init__(self, x):
-        self.val = x
-        self.next = None
 
-
-    def __repr__(self):
-        if self:
-            return "{} - {}".format(self.val, self.next)
-
+from list_node import ListNode
 class Solution:
     def deleteNode(self, node):
         if node and node.next:
