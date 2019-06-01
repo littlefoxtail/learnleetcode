@@ -22,7 +22,7 @@
 3.  2 阶 + 1 阶
  */
 fun climbStairs(n: Int): Int {
-  var re = 0
+  val re: Int
   if (n == 0 || n == 1) {
     return 1
   } else{

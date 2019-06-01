@@ -180,5 +180,17 @@ fun findMiddle(head: ListNode?): ListNode? {
     }
 
     return slow
+}
+
+fun isPalindrome4(x: Int): Boolean {
+    var localX = x
+    if (x < 0 || ((x != 0) && (x % 10 == 0)))
+        return false
+    var halfReverseX = 0
+    while (localX > halfReverseX) {
+        halfReverseX = halfReverseX * 10 + localX % 10;
+        localX /= 10
+    }
+    return halfReverseX == localX || halfReverseX / 10 == localX;
 
 }
