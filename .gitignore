@@ -10,3 +10,6 @@ out
 node_modules
 public
 themes
+.classpath
+.project
+.settings
