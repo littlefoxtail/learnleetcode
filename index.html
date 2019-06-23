@@ -389,7 +389,7 @@
                 
               
 
-              <time title="创建于：2019-06-24 12:28:23 / 更新于：00:37:42" itemprop="dateCreated datePublished" datetime="2019-06-24T12:28:23+08:00">2019-06-24</time>
+              <time title="创建于：2019-06-24 12:28:23 / 更新于：00:39:25" itemprop="dateCreated datePublished" datetime="2019-06-24T12:28:23+08:00">2019-06-24</time>
             
 
             
@@ -429,8 +429,7 @@
 
       
         
-          
-            <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+          <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
 
 <!-- code_chunk_output -->
 
@@ -484,21 +483,15 @@
 <li>动态规划法：当问题的整体最优解就是局部最优解组成的时候，经常采用的一种方法</li>
 <li>贪心算法：场景的近似求解思路。当问题的整体最优解不是由局部最优解组成，且对解的最优性没有要求的时候，可以采用的一种方法</li>
 </ul>
-<p>&lt; !–more–&gt;</p>
-<ul>
-<li><strong><a href="binarytree.md">二叉树</a></strong></li>
-<li><strong><a href="sort.md">排序算法</a></strong></li>
-<li><strong><a href="leetcode.md">LeetCode</a></strong></li>
-</ul>
-<h2 id="渐近分析"><a href="#渐近分析" class="headerlink" title="渐近分析"></a>渐近分析</h2><p>在数学分析中一种在极限附近的行为的方法。<br>最简单的例子如下：考虑一个函数f(n)，需要了解当n变得非常大的时候f(n)的性质。<br>令<img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/5a01c613dc3f32ede732d43f7aa1f941efac127a" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:15.428ex; height:3.176ex;" alt="f(n) = n^{2}+3n">，在n特别大的时候，第二项3n比起第一项<img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/ac9810bbdafe4a6a8061338db0f74e25b7952620" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.338ex; width:2.449ex; height:2.676ex;" alt="n^{2}">要小的很多。<br>于是对于这个函数，有如下断言：”<img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/c1c49fad1eccc4e9af1e4f23f32efdc3ac4da973" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:4.483ex; height:2.843ex;" alt="f(n)">在<img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/9702f04f2d0e5b887b99faeeffb0c4cfd8263eee" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.338ex; width:7.333ex; height:1.843ex;" alt="n\rightarrow \infty">无穷的情况下与<img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/ac9810bbdafe4a6a8061338db0f74e25b7952620" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.338ex; width:2.449ex; height:2.676ex;" alt="n^{2}">渐近等价”，记作：<img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/acf586a9dfd9d7f43343f3ca49b65a19707baeda" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:10.03ex; height:3.176ex;" alt="f(n)\sim n^2">。</p>
-<h2 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h2><p>在计算机科学中，算法的时间复杂度是一个函数，它定量描述了该算法的运行时间。这是一个代表算法输入值的字符串长度的函数。<br>时间复杂度常用大O符号表示，不包括这个函数的低阶项和首项系数。使用这种方式时，时间复杂度可称为渐近的，亦即考察输入大小趋近无穷时的情况。<br>为了计算时间复杂度，通常会估计算法的操作单元数量，每个单元运行的时间都是相同的，因此，总运行时间和算法的操作单元数量最多相差一个常量系数<br>相同大小的不同输入值仍可能造成算法的运行时间不同，因此通常使用算法的最坏时间复杂度，记为<b><i>T</i>(<i>n</i>)</b>，定义为任何大小的输入n所需的最大运行时间。另一种较少使用的方法是平均情况复杂度，通常有特别指定才会使用。时间复杂度可以用函数<i>T</i>(<i>n</i>)的自然特性加以分类。</p>
-<blockquote>
-<p>首项系数：<img src="https://latex.codecogs.com/gif.latex?f(x)%20=%20a_nx%5En%20+%20a_%7Bn-1%7Dx%5E%7Bn-1%7D%20+...+a_1x%20+%20a_0" alt="fx">的 <img src="https://latex.codecogs.com/gif.latex?a_n" alt="a_n">称为f(x)的首项系数<br>低阶项：除了最高项。</p>
-</blockquote>
-<p>使用这种方式时，时间复杂度可被称为是渐近的，亦即考察输入值大小趋近无穷时的情况。<br>为了计算时间复杂度，通常会估计算法的操作单元数量，每个单元运行的时间都是相同的。因此，总运行时间和算法的操作单元数量最多相差一个常量系数。<br>相同大小的不同输入值仍可能造成算法的运行时间不同，通常使用算法的最坏情况复杂度，T(n)，定义为任何大小的输入n所需的最大运行时间。另一种较少使用方法是平均算法复杂度</p>
-<h2 id="空间复杂度"><a href="#空间复杂度" class="headerlink" title="空间复杂度"></a>空间复杂度</h2><p>算法的空间复杂度是指算法需要消耗的空间资源。其计算和表示方法与时间复杂度类似，一般用复杂度的渐进性来表示。同时间复杂度相比，空间复杂度的分析要简单得多</p>
-
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/learnleetcode/2019/06/24/算法/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
