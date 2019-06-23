@@ -591,12 +591,24 @@
                 
               
 
-              <time title="创建于：2019-06-23 14:22:23 / 更新于：14:46:07" itemprop="dateCreated datePublished" datetime="2019-06-23T14:22:23+08:00">2019-06-23</time>
+              <time title="创建于：2019-06-23 14:22:23" itemprop="dateCreated datePublished" datetime="2019-06-23T14:22:23+08:00">2019-06-23</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="更新于：2019-06-24 00:42:16" itemprop="dateModified" datetime="2019-06-24T00:42:16+08:00">2019-06-24</time>
               
             
           </span>
@@ -631,38 +643,16 @@
 
       
         
+          <h1 id="动态规划（Dynamic-programming，简称DP）"><a href="#动态规划（Dynamic-programming，简称DP）" class="headerlink" title="动态规划（Dynamic programming，简称DP）"></a>动态规划（Dynamic programming，简称DP）</h1><p>动态规划算法的基本思想与分治法类似，也是将求解的问题分解为若干字问题，按顺序求解子阶段，前一子问题的解，为后一子问题提供了有用的信息。在求解任意子问题，列出各种可能的局部解，通过决策保留那些有可能达到最优的局部解，丢弃其他局部解。依次解决各子问题，最后一个子问题就是初始问题的解决。</p>
+          <!--noindex-->
           
-            <h1 id="动态规划（Dynamic-programming，简称DP）"><a href="#动态规划（Dynamic-programming，简称DP）" class="headerlink" title="动态规划（Dynamic programming，简称DP）"></a>动态规划（Dynamic programming，简称DP）</h1><p>动态规划算法的基本思想与分治法类似，也是将求解的问题分解为若干字问题，按顺序求解子阶段，前一子问题的解，为后一子问题提供了有用的信息。在求解任意子问题，列出各种可能的局部解，通过决策保留那些有可能达到最优的局部解，丢弃其他局部解。依次解决各子问题，最后一个子问题就是初始问题的解决。</p>
-<h2 id="适用情况"><a href="#适用情况" class="headerlink" title="适用情况"></a>适用情况</h2><ol>
-<li>最优子结构性质。如果问题的最优解所包含的子问题的解也是最优的，就称该问题具有最优子结构性质（即满足最优原理）。最优子结构性质为动态规划算法解决问题提供了重要线索。</li>
-<li>无后效性。即子问题的解一旦确定，就不再改变，不受在这之后、包含它的最大的问题的求解决策影响。</li>
-<li>子问题重叠性质。子问题重叠性质是指在用递归算法自顶向下对问题进行求解时，每次产生的子问题并不总是新问题。有些子问题会被重复计算多次。动态规划算法正是利用了这种子问题的重叠性质，对每一个子问题只计算一次，然后将其计算结果保存在一个表格中，当再次需要计算依据计算过的子问题时，只是在表格中简单地查看一下结果，从而获得较高的效率。</li>
-</ol>
-<h2 id="求解的基本步骤"><a href="#求解的基本步骤" class="headerlink" title="求解的基本步骤"></a>求解的基本步骤</h2><ol>
-<li>分析最优解的性质，并刻画其结构特征。</li>
-<li>递归的定义最优解。</li>
-<li>以自底向上或自顶向下的记忆方式（备忘录）计算出最优值。</li>
-<li>根据计算最优值时得到的信息，构造问题的最优解。</li>
-</ol>
-<h2 id="算法实现"><a href="#算法实现" class="headerlink" title="算法实现"></a>算法实现</h2><p>动态规划的主要难点在于理论上的设计，也即是上面4个步骤的确定，一旦设计完成，实现部分就会非常简单。使用动态规划求解问题，最重要的就是确定动态规划三要素：</p>
-<ol>
-<li>问题阶段</li>
-<li>每个阶段的状态</li>
-<li>从前一个阶段转化到后一个阶段之间的速推关系</li>
-</ol>
-<h2 id="斐波那契数列"><a href="#斐波那契数列" class="headerlink" title="斐波那契数列"></a>斐波那契数列</h2><h3 id="70-爬楼梯"><a href="#70-爬楼梯" class="headerlink" title="70.爬楼梯"></a>70.爬楼梯</h3><p>定义一个数组 dp 存储上楼梯的方法数（为了方便讨论，数组下标从 1 开始），dp[i] 表示走到第 i 个楼梯的方法数目。<br>第 i 个楼梯可以从第 i-1 和 i-2 个楼梯再走一步到达，走到第 i 个楼梯的方法数为走到第 i-1 和第 i-2 个楼梯的方法数之和。</p>
-<h3 id="198-Hourse-Robber"><a href="#198-Hourse-Robber" class="headerlink" title="198.Hourse Robber"></a>198.Hourse Robber</h3><p>定义 dp 数组用来存储最大的抢劫量，其中 dp[i] 表示抢到第 i 个住户时的最大抢劫量。<br>由于不能抢劫邻近住户，如果抢劫了第 i -1 个住户，那么就不能再抢劫第 i 个住户。dp[i] = max(dp[i - 2] + nums[i], dp[i - 1])</p>
-<h3 id="213-强盗在环形街区抢劫"><a href="#213-强盗在环形街区抢劫" class="headerlink" title="213.强盗在环形街区抢劫"></a>213.强盗在环形街区抢劫</h3><p>偷了0以后，第n-1间房子不能偷。<br>分情况，偷不偷第1栋房，偷就算1到n - 1栋的最大值，不偷就算2到n栋的最大值，求这两个的最大值即可</p>
-<h2 id="矩阵路径"><a href="#矩阵路径" class="headerlink" title="矩阵路径"></a>矩阵路径</h2><h3 id="矩阵的最小路径和"><a href="#矩阵的最小路径和" class="headerlink" title="矩阵的最小路径和"></a>矩阵的最小路径和</h3><p><code>64. Minimum Path Sum (Medium)</code><br>运用动态规划，我们在递归的时候了解到，（i,j）位置的值依赖它左边或者上边的值，所以我们就先把它依赖的求出来，然后从左上开始向（i,j）求，相当于把递归的过程反过来。申请一个新的二维数组空间，分别求出第一行和第一列的累计和的值，然后再求（i,j）位置的值时就可以根据已经求出的第一行和第一列的累计和来算（把每个i,j位置的路径和都算出来），先找出不被依赖的，再求出依赖的。</p>
-<p>步骤：<br>假设矩阵m的大小为M×N，行数为M，列数为N。</p>
-<p>dp[i][j]：<br>生成大小和m一样的矩阵dp，dp[i][j]的值表示从左上角（即(0，0)）位置走到(i ，j)位置的最小路径和。</p>
-<p>含义是比较从(0，0)位置开始，经过(i-1，j)位置最终到达(i，j)的最小路径和经过(i ，j-1)位置最终到达(i ，j)的最小路径之间，哪条路径的路径和更小。<br>更小的路径和就是dp[i][j]的值。</p>
-<h3 id="矩阵的总路径数"><a href="#矩阵的总路径数" class="headerlink" title="矩阵的总路径数"></a>矩阵的总路径数</h3><p><code>62. Unique Paths (Medium)</code></p>
-<h2 id="数组区间"><a href="#数组区间" class="headerlink" title="数组区间"></a>数组区间</h2><h3 id="数据区间和"><a href="#数据区间和" class="headerlink" title="数据区间和"></a>数据区间和</h3><p><code>303. Range Sum Query - Immutable (Easy)</code></p>
-<p>求区间 i ~ j 的和，可以转换为 sum[j + 1] - sum[i]，其中 sum[i] 为 0 ~ i - 1 的和。</p>
-<h3 id="数组中等差递增子区间的个数"><a href="#数组中等差递增子区间的个数" class="headerlink" title="数组中等差递增子区间的个数"></a>数组中等差递增子区间的个数</h3><p><code>413. Arithmetic Slices (Medium)</code></p>
-
+            <div class="post-button text-center">
+              <a class="btn" href="/learnleetcode/2019/06/23/动态规划/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
           
+          <!--/noindex-->
         
       
     </div>
@@ -717,7 +707,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://littlefoxtail.github.io/learnleetcode/2019/06/12/链表/">
+    <link itemprop="mainEntityOfPage" href="https://littlefoxtail.github.io/learnleetcode/2019/06/22/分治/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="博主">
@@ -737,7 +727,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/learnleetcode/2019/06/12/链表/" class="post-title-link" itemprop="url">未命名</a>
+                <a href="/learnleetcode/2019/06/22/分治/" class="post-title-link" itemprop="url">分治算法</a>
               
             
           </h1>
@@ -762,7 +752,7 @@
                 
               
 
-              <time title="创建于：2019-06-12 19:06:02" itemprop="dateCreated datePublished" datetime="2019-06-12T19:06:02+08:00">2019-06-12</time>
+              <time title="创建于：2019-06-22 14:22:23" itemprop="dateCreated datePublished" datetime="2019-06-22T14:22:23+08:00">2019-06-22</time>
             
 
             
@@ -779,161 +769,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="更新于：2019-06-23 14:06:27" itemprop="dateModified" datetime="2019-06-23T14:06:27+08:00">2019-06-23</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h1><h2 id="160-找出两个链表的交点"><a href="#160-找出两个链表的交点" class="headerlink" title="160.找出两个链表的交点"></a>160.找出两个链表的交点</h2>
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://littlefoxtail.github.io/learnleetcode/2019/06/11/分治/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="博主">
-      <meta itemprop="description" content="特别欢喜你">
-      <meta itemprop="image" content="/learnleetcode/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="阿拉蕾的笔记本">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/learnleetcode/2019/06/11/分治/" class="post-title-link" itemprop="url">未命名</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建于：2019-06-11 16:49:24" itemprop="dateCreated datePublished" datetime="2019-06-11T16:49:24+08:00">2019-06-11</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="更新于：2019-06-23 14:06:27" itemprop="dateModified" datetime="2019-06-23T14:06:27+08:00">2019-06-23</time>
+                <time title="更新于：2019-06-24 00:43:59" itemprop="dateModified" datetime="2019-06-24T00:43:59+08:00">2019-06-24</time>
               
             
           </span>
@@ -979,6 +815,160 @@
 <li>合并：将各子问题的解合并为原问题的解。</li>
 </ol>
 <h2 id="241-给表达式加括号"><a href="#241-给表达式加括号" class="headerlink" title="241.给表达式加括号"></a>241.给表达式加括号</h2><h2 id="不同的二叉搜索树"><a href="#不同的二叉搜索树" class="headerlink" title="不同的二叉搜索树"></a>不同的二叉搜索树</h2>
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://littlefoxtail.github.io/learnleetcode/2019/06/18/链表/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="博主">
+      <meta itemprop="description" content="特别欢喜你">
+      <meta itemprop="image" content="/learnleetcode/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="阿拉蕾的笔记本">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/learnleetcode/2019/06/18/链表/" class="post-title-link" itemprop="url">链表</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建于：2019-06-18 12:28:23" itemprop="dateCreated datePublished" datetime="2019-06-18T12:28:23+08:00">2019-06-18</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="更新于：2019-06-24 00:44:34" itemprop="dateModified" datetime="2019-06-24T00:44:34+08:00">2019-06-24</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h1><h2 id="160-找出两个链表的交点"><a href="#160-找出两个链表的交点" class="headerlink" title="160.找出两个链表的交点"></a>160.找出两个链表的交点</h2>
           
         
       

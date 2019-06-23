@@ -97,15 +97,16 @@
 
 
   <meta name="description" content="分治分治法是建基于多项分支递归的一种算法范式，字面意思”分而治之“，把一个复杂的问题分为两个或者更多的相同或者相似的子问题，直到最后子问题可以简单的直接求解，原问题的解即子问题的解的合并。 分治算法通常以数学归纳法来验证。而它的计算成本则多数以解递归关系式来判定。 优势解决困难问题分治算法是一个解决复杂问题的好工具，它可以把问题分解成若干个子问题，把子问题逐个解决，再组合到一起形成大问题的答案。比">
+<meta name="keywords" content="algorithm">
 <meta property="og:type" content="article">
-<meta property="og:title" content="阿拉蕾的笔记本">
-<meta property="og:url" content="https://littlefoxtail.github.io/2019/06/11/分治/index.html">
+<meta property="og:title" content="分治算法">
+<meta property="og:url" content="https://littlefoxtail.github.io/2019/06/22/分治/index.html">
 <meta property="og:site_name" content="阿拉蕾的笔记本">
 <meta property="og:description" content="分治分治法是建基于多项分支递归的一种算法范式，字面意思”分而治之“，把一个复杂的问题分为两个或者更多的相同或者相似的子问题，直到最后子问题可以简单的直接求解，原问题的解即子问题的解的合并。 分治算法通常以数学归纳法来验证。而它的计算成本则多数以解递归关系式来判定。 优势解决困难问题分治算法是一个解决复杂问题的好工具，它可以把问题分解成若干个子问题，把子问题逐个解决，再组合到一起形成大问题的答案。比">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-23T06:06:27.888Z">
+<meta property="og:updated_time" content="2019-06-23T16:43:59.360Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="阿拉蕾的笔记本">
+<meta name="twitter:title" content="分治算法">
 <meta name="twitter:description" content="分治分治法是建基于多项分支递归的一种算法范式，字面意思”分而治之“，把一个复杂的问题分为两个或者更多的相同或者相似的子问题，直到最后子问题可以简单的直接求解，原问题的解即子问题的解的合并。 分治算法通常以数学归纳法来验证。而它的计算成本则多数以解递归关系式来判定。 优势解决困难问题分治算法是一个解决复杂问题的好工具，它可以把问题分解成若干个子问题，把子问题逐个解决，再组合到一起形成大问题的答案。比">
 
 
@@ -114,7 +115,7 @@
 
   
   
-  <link rel="canonical" href="https://littlefoxtail.github.io/2019/06/11/分治/">
+  <link rel="canonical" href="https://littlefoxtail.github.io/2019/06/22/分治/">
 
 
 
@@ -124,7 +125,7 @@
   };
 </script>
 
-  <title> | 阿拉蕾的笔记本</title>
+  <title>分治算法 | 阿拉蕾的笔记本</title>
   
 
 
@@ -344,7 +345,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://littlefoxtail.github.io/learnleetcode/2019/06/11/分治/">
+    <link itemprop="mainEntityOfPage" href="https://littlefoxtail.github.io/learnleetcode/2019/06/22/分治/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="博主">
@@ -361,7 +362,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
+          <h1 class="post-title" itemprop="name headline">分治算法
 
               
             
@@ -387,7 +388,7 @@
                 
               
 
-              <time title="创建于：2019-06-11 16:49:24" itemprop="dateCreated datePublished" datetime="2019-06-11T16:49:24+08:00">2019-06-11</time>
+              <time title="创建于：2019-06-22 14:22:23" itemprop="dateCreated datePublished" datetime="2019-06-22T14:22:23+08:00">2019-06-22</time>
             
 
             
@@ -404,7 +405,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="更新于：2019-06-23 14:06:27" itemprop="dateModified" datetime="2019-06-23T14:06:27+08:00">2019-06-23</time>
+                <time title="更新于：2019-06-24 00:43:59" itemprop="dateModified" datetime="2019-06-24T00:43:59+08:00">2019-06-24</time>
               
             
           </span>
@@ -468,6 +469,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/learnleetcode/tags/algorithm/" rel="tag"># algorithm</a>
+          
+        </div>
+      
 
       
       
@@ -477,14 +484,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/learnleetcode/2019/06/18/链表/" rel="next" title="链表">
+                <i class="fa fa-chevron-left"></i> 链表
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/learnleetcode/2019/06/12/链表/" rel="prev" title>
-                 <i class="fa fa-chevron-right"></i>
+              <a href="/learnleetcode/2019/06/23/动态规划/" rel="prev" title="动态规划算法">
+                动态规划算法 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
