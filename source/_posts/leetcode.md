@@ -1,3 +1,10 @@
+---
+title: LeetCode题解
+date: 2018-04-06 19:01:00
+tags: algorithm
+categories: 算法
+---
+
 # 数组
 
 ## 只出现一次的数字

@@ -1,4 +1,12 @@
+---
+title: 二叉树
+date: 2018-04-05 23:57:00
+tags: algorithm
+categories: 算法
+---
+
 # 二叉树
+
 在计算机科学中，二叉树是每个节点最多有两个树的树结构。通常子树被称作“左子树(left subtree)”和“右子树(right subtree)”。  
 
 ## 五种形态：

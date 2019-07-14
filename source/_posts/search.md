@@ -1,3 +1,10 @@
+---
+title: 二分查找
+date: 2018-04-05 23:57:00
+tags: algorithm
+categories: 算法
+---
+
 # Search
 
 ## 二分查找
