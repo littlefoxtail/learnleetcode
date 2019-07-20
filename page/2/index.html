@@ -361,6 +361,169 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://littlefoxtail.github.io/learnleetcode/2019/06/22/分治/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="博主">
+      <meta itemprop="description" content="特别欢喜你">
+      <meta itemprop="image" content="/learnleetcode/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="阿拉蕾的笔记本">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/learnleetcode/2019/06/22/分治/" class="post-title-link" itemprop="url">分治算法</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建于：2019-06-22 14:22:23" itemprop="dateCreated datePublished" datetime="2019-06-22T14:22:23+08:00">2019-06-22</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="更新于：2019-06-24 00:43:59" itemprop="dateModified" datetime="2019-06-24T00:43:59+08:00">2019-06-24</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="分治"><a href="#分治" class="headerlink" title="分治"></a>分治</h1><p>分治法是建基于多项分支递归的一种算法范式，字面意思”分而治之“，把一个复杂的问题分为两个或者更多的相同或者相似的子问题，直到最后子问题可以简单的直接求解，原问题的解即子问题的解的合并。</p>
+<p>分治算法通常以数学归纳法来验证。而它的计算成本则多数以解递归关系式来判定。</p>
+<h2 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h2><h3 id="解决困难问题"><a href="#解决困难问题" class="headerlink" title="解决困难问题"></a>解决困难问题</h3><p>分治算法是一个解决复杂问题的好工具，它可以把问题分解成若干个子问题，把子问题逐个解决，再组合到一起形成大问题的答案。比如，汉诺塔问题如果采用分治算法，可以把高度为n的塔的问题转换成高度为n-1的塔来解决，如此重复，直至问题化简到可以很容易的处理为止。</p>
+<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><h3 id="循环递归"><a href="#循环递归" class="headerlink" title="循环递归"></a>循环递归</h3><p>在每一层递归上都有三个步骤：</p>
+<ol>
+<li>分解：将原问题分解为若干个规模较小，相对独立，与原问题形式相同的子问题。</li>
+<li>解决：若子问题规模较小且易于解决时，则直接解。否则，递归地解决各子问题。</li>
+<li>合并：将各子问题的解合并为原问题的解。</li>
+</ol>
+<h2 id="241-给表达式加括号"><a href="#241-给表达式加括号" class="headerlink" title="241.给表达式加括号"></a>241.给表达式加括号</h2><h2 id="不同的二叉搜索树"><a href="#不同的二叉搜索树" class="headerlink" title="不同的二叉搜索树"></a>不同的二叉搜索树</h2>
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://littlefoxtail.github.io/learnleetcode/2019/06/18/链表/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1103,445 +1266,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://littlefoxtail.github.io/learnleetcode/2018/04/05/sort/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="博主">
-      <meta itemprop="description" content="特别欢喜你">
-      <meta itemprop="image" content="/learnleetcode/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="阿拉蕾的笔记本">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/learnleetcode/2018/04/05/sort/" class="post-title-link" itemprop="url">算法基础知识</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建于：2018-04-05 23:57:00" itemprop="dateCreated datePublished" datetime="2018-04-05T23:57:00+08:00">2018-04-05</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="更新于：2019-06-28 10:42:42" itemprop="dateModified" datetime="2019-06-28T10:42:42+08:00">2019-06-28</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/learnleetcode/categories/算法/" itemprop="url" rel="index"><span itemprop="name">算法</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>时间复杂度：分析关键字的比较次数和记录的移动次数。<br>它定量描述了该算法的运行时间。这是一个代表算法输入值的字符串的长度的函数。时间复杂度用大O符号表述，不包括这个函数的低阶项<br>和首项系数。使用这种方式时，时间复杂度可被称为是渐近的，亦即考察输入值大小趋近无穷时的情况。  </p>
-<p>为了计算时间复杂度，我们通常会估计算法的操作单元数量，每个单元运行的时间都是相同的。因此，总运行时间和算法的操作单元数量最多<br>相差一个常量系数。</p>
-<p>相同大小的不同输入值仍可能造成算法的运行时间不同，因此我们通常使用算法最坏情况复杂度，记为<img src="https://latex.codecogs.com/gif.latex?T(n)" title="T(n)">，定义为任何大小的输入n所需的<br>最大运行时间。另一种较少使用的方法是平均情况复杂度，通常有特别指定才会使用。时间复杂度可以用函数<code>T(n)</code>的自然特性加以分类。<br>例如：T(n) = O(n)的算法被称作<em>线性时间算法</em>；而 <img src="https://latex.codecogs.com/gif.latex?T(n)&space;=&space;O(Mn)" title="T(n) = O(Mn)"> 和 <img src="https://latex.codecogs.com/gif.latex?Mn=&space;O(T(n))" title="Mn= O(T(n))"> ，其中 M ≥ n &gt; 1 的算法被称作指数时间算法。</p>
-<p><a href="https://zh.wikipedia.org/wiki/时间复杂度" target="_blank" rel="noopener">时间复杂度</a></p>
-<table>
-<thead>
-<tr>
-<th>名称</th>
-<th>复杂度类</th>
-<th>运行时间(T(n))</th>
-<th>运行时间举例</th>
-<th>算法举例</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>常数时间</td>
-<td></td>
-<td><img src="https://latex.codecogs.com/gif.latex?O(1)" title="O(1)"></td>
-<td>10</td>
-<td>判断一个二进制数的奇偶</td>
-</tr>
-<tr>
-<td>迭代对数时间</td>
-<td></td>
-<td><img src="https://latex.codecogs.com/gif.latex?O(log^*n)" title="O(log^*n)"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>对数时间</td>
-<td>DLOGTIME</td>
-<td><img src="https://latex.codecogs.com/gif.latex?O(logn)" title="O(logn)"></td>
-<td><img src="https://latex.codecogs.com/gif.latex?logn" title="logn">,<img src="https://latex.codecogs.com/gif.latex?logn^2" title="logn^2"></td>
-<td>二分搜索</td>
-</tr>
-<tr>
-<td>线性时间</td>
-<td></td>
-<td><img src="https://latex.codecogs.com/gif.latex?O(n)" title="O(n)"></td>
-<td>n</td>
-<td>无序数组的搜索</td>
-</tr>
-<tr>
-<td>线性对数时间</td>
-<td></td>
-<td><img src="https://latex.codecogs.com/gif.latex?O(nlogn)" title="O(nlogn)"></td>
-<td><img src="https://latex.codecogs.com/gif.latex?nlogn" title="nlogn">,<img src="https://latex.codecogs.com/gif.latex?logn!" title="logn!"></td>
-<td>最快的比较排序</td>
-</tr>
-<tr>
-<td>二次时间</td>
-<td></td>
-<td><img src="https://latex.codecogs.com/gif.latex?O(n^2)" title="O(n^2)"></td>
-<td><img src="https://latex.codecogs.com/gif.latex?n^2" title="n^2"></td>
-<td>冒泡排序、插入排序</td>
-</tr>
-<tr>
-<td>三次时间</td>
-<td></td>
-<td><img src="https://latex.codecogs.com/gif.latex?O(n^3)" title="O(n^3)"></td>
-<td><img src="https://latex.codecogs.com/gif.latex?n^3" title="n^3"></td>
-<td>矩阵乘法的基本实现，计算部分相关性</td>
-</tr>
-<tr>
-<td>阶乘时间</td>
-<td></td>
-<td><img src="https://latex.codecogs.com/gif.latex?O(n!)" title="O(n!)"></td>
-<td><img src="https://latex.codecogs.com/gif.latex?n!" title="n!"></td>
-<td>通过暴力搜索解决旅行推销员问题</td>
-</tr>
-<tr>
-<td>——-</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>空间复杂度：分析排序算法中需要多少辅助内存</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>记做<img src="https://latex.codecogs.com/gif.latex?S(n)=O(f(n))" title="S(n)=O(f(n))">。比如直接插入排序空间复杂度<img src="https://latex.codecogs.com/gif.latex?O(1)" title="O(1)">。而一般递归算法就要有<img src="https://latex.codecogs.com/gif.latex?O(n)" title="O(n)">的空间复杂度，</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>因为每次递归都要存储返回信息。</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-<hr>
-<p>稳定性：若两个记录A和B的关键字相等，但是排序后AB的先后次序保持不变（稳定）</p>
-<ul>
-<li><a href="https://zh.wikipedia.org/wiki/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F" target="_blank" rel="noopener">冒泡排序</a>（bubble sort）— O(<em>n</em>2)</li>
-<li><a href="https://zh.wikipedia.org/wiki/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F" target="_blank" rel="noopener">插入排序</a>（insertion sort）—O(<em>n</em>2)</li>
-<li><a href="https://zh.wikipedia.org/wiki/%E9%B8%A1%E5%B0%BE%E9%85%92%E6%8E%92%E5%BA%8F" target="_blank" rel="noopener">鸡尾酒排序</a>（cocktail sort）—O(<em>n</em>2)</li>
-<li><a href="https://zh.wikipedia.org/wiki/%E6%A1%B6%E6%8E%92%E5%BA%8F" target="_blank" rel="noopener">桶排序</a>（bucket sort）—O(<em>n</em>)；需要O(<em>k</em>)额外空间</li>
-<li><a href="https://zh.wikipedia.org/wiki/%E8%AE%A1%E6%95%B0%E6%8E%92%E5%BA%8F" target="_blank" rel="noopener">计数排序</a>（counting sort）—O(<em>n</em>+<em>k</em>)；需要O(<em>n</em>+<em>k</em>)额外空间</li>
-<li><a href="https://zh.wikipedia.org/wiki/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F" target="_blank" rel="noopener">归并排序</a>（merge sort）—O(<em>n</em> log <em>n</em>)；需要O(<em>n</em>)额外空间</li>
-<li>原地<a href="https://zh.wikipedia.org/wiki/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F" target="_blank" rel="noopener">归并排序</a>— O(<em>n</em> log2 <em>n</em>)如果使用最佳的现在版本</li>
-<li><a href="https://zh.wikipedia.org/wiki/%E4%BA%8C%E5%8F%89%E6%8E%92%E5%BA%8F%E6%A0%91" target="_blank" rel="noopener">二叉排序树</a>排序（binary tree sort）— O(<em>n</em> log <em>n</em>)期望时间；O(<em>n</em>2)最坏时间；需要O(<em>n</em>)额外空间</li>
-<li><a href="https://zh.wikipedia.org/wiki/%E9%B8%BD%E5%B7%A2%E6%8E%92%E5%BA%8F" target="_blank" rel="noopener">鸽巢排序</a>（pigeonhole sort）—O(<em>n</em>+<em>k</em>)；需要O(<em>k</em>)额外空间</li>
-<li><a href="https://zh.wikipedia.org/wiki/%E5%9F%BA%E6%95%B0%E6%8E%92%E5%BA%8F" target="_blank" rel="noopener">基数排序</a>（radix sort）—O(<em>n</em>·<em>k</em>)；需要O(<em>n</em>)额外空间</li>
-<li><a href="https://zh.wikipedia.org/w/index.php?title=%E4%BE%8F%E5%84%92%E6%8E%92%E5%BA%8F&action=edit&redlink=1" target="_blank" rel="noopener">侏儒排序</a>（gnome sort）— O(<em>n</em>2)</li>
-<li><a href="https://zh.wikipedia.org/wiki/%E5%9B%BE%E4%B9%A6%E9%A6%86%E6%8E%92%E5%BA%8F" target="_blank" rel="noopener">图书馆排序</a>（library sort）— O(<em>n</em> log <em>n</em>)期望时间；O(<em>n</em>2)最坏时间；需要(1+ε)<em>n</em>额外空间</li>
-<li><a href="https://zh.wikipedia.org/w/index.php?title=%E5%A1%8A%E6%8E%92%E5%BA%8F&action=edit&redlink=1" target="_blank" rel="noopener">块排序</a>（block sort）— O(<em>n</em> log <em>n</em>)</li>
-</ul>
-<h1 id="原地算法"><a href="#原地算法" class="headerlink" title="原地算法"></a>原地算法</h1><p>一个原地算法(in-place algorithm)是一种使用小的，固定数量的额外之空间来转换资料的算法。<br>当算法执行时，输入的资料通常会别要输出的部分覆盖掉。不是原地算法称为非原地(not-in-place)</p>
-<h1 id="1-插入排序"><a href="#1-插入排序" class="headerlink" title="1.插入排序"></a>1.插入排序</h1><table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody><tr>
-<td>数据结构</td>
-<td>数组</td>
-</tr>
-<tr>
-<td>时间复杂度</td>
-<td><img src="https://latex.codecogs.com/gif.latex?O(n^2)" title="O(n^2)"></td>
-</tr>
-<tr>
-<td>最优时间复杂度</td>
-<td><img src="https://latex.codecogs.com/gif.latex?O(n)" title="O(n)"></td>
-</tr>
-<tr>
-<td>平均时间复杂度</td>
-<td><img src="https://latex.codecogs.com/gif.latex?O(n^2)" title="O(n^2)"></td>
-</tr>
-<tr>
-<td>空间复杂度</td>
-<td>总<img src="https://latex.codecogs.com/gif.latex?O(n)" title="O(n)">，需要辅助空间<img src="https://latex.codecogs.com/gif.latex?O(1)" title="O(1)"></td>
-</tr>
-</tbody></table>
-<h2 id="1-1-性能分析"><a href="#1-1-性能分析" class="headerlink" title="1.1 性能分析"></a>1.1 性能分析</h2><p>时间复杂度<img src="https://latex.codecogs.com/gif.latex?O(n^2)" title="O(n^2)">,空间复杂度<img src="https://latex.codecogs.com/gif.latex?O(1)" title="O(1)"><br>排序时间与输入相关：输入的元素个数；元素已排序的程度。<br>最佳情况，输入数组是已经排好序的数组，运行时间是<code>n</code>的线性函数；最坏情况，输入数组是逆序，运行时间是<code>n</code>的二次函数</p>
-<p>插入排序是一种简单直观的排序算法。它的工作原理是通过构建有序序列，<br>对于未排序数据，在已排序序列中从后向前扫描，找到相应位置并插入。</p>
-<h2 id="1-2-算法描述"><a href="#1-2-算法描述" class="headerlink" title="1.2 算法描述"></a>1.2 算法描述</h2><p>一般来说，插入排序都采用in-place在数组上实现。具体算法描述如下：</p>
-<ol>
-<li>从第一个元素开始，该元素可以认为已经被排序</li>
-<li>取出下一个元素，在已经排序的元素序列中从后向前扫描</li>
-<li>如果该元素（已排序）大于新元素，将该元素移到下一位置</li>
-<li>重复步骤3，直到找到已排序的元素小于或者等于新元素的位置</li>
-<li>将新元素插入到该位置后</li>
-<li>重复步骤2~5</li>
-</ol>
-<h1 id="2-冒泡排序"><a href="#2-冒泡排序" class="headerlink" title="2.冒泡排序"></a>2.冒泡排序</h1><table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody><tr>
-<td>数据结构</td>
-<td>数组</td>
-</tr>
-<tr>
-<td>最坏时间复杂度</td>
-<td><img src="https://latex.codecogs.com/gif.latex?O(n^2)" title="O(n^2)"></td>
-</tr>
-<tr>
-<td>最优时间复杂度</td>
-<td><img src="https://latex.codecogs.com/gif.latex?O(n)" title="O(n)"></td>
-</tr>
-<tr>
-<td>平均时间复杂度</td>
-<td><img src="https://latex.codecogs.com/gif.latex?O(n^2)" title="O(n^2)"></td>
-</tr>
-<tr>
-<td>空间复杂度</td>
-<td>总共<img src="https://latex.codecogs.com/gif.latex?O(n)" title="O(n)">，需要辅助空间<img src="https://latex.codecogs.com/gif.latex?O(1)" title="O(1)"></td>
-</tr>
-</tbody></table>
-<p>冒泡排序是一种简单的排序算法。它重复地走访过要排序的数列，一次比较两个元素，如果他们的顺序错误就把他们交换过来。<br>走访数列的工作是重复地进行直到没有再需要交换，也就是说该数列已经排序完成。</p>
-<p>冒泡排序对n个项目需要<img src="https://latex.codecogs.com/gif.latex?O(n^2)" title="O(n^2)">的比较次数，且可以原地排序。尽管这个算法是最简单了解和实现的排序算法之一，但它对于少数<br>元素之外的数列排序是很没有效率的。</p>
-<p>冒泡排序与插入排序拥有相等的运行时间，但是两种算法在需要交换的次数却很大地不同。在最好的情况下，冒泡排序需要<img src="https://latex.codecogs.com/gif.latex?O(n^2)" title="O(n^2)"><br>次交换，而插入排序只要最多<img src="https://latex.codecogs.com/gif.latex?O(n)" title="O(n)">交换。</p>
-<p>冒泡排序算法的运作如下：<br>    1. 比较相邻的元素。如果第一个比第二个大，就交换他们两个。<br>    2. 对每一对相邻元素作同样的工作，从开始到第一队到结尾的最后一对。这布做完后，最后的元素会是最大的数。<br>    3. 针对所有的元素重复以上的步骤，除了最后一个<br>    4. 持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。</p>
-<h1 id="3-快速排序"><a href="#3-快速排序" class="headerlink" title="3.快速排序"></a>3.快速排序</h1><table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody><tr>
-<td>数据结构</td>
-<td>不定</td>
-</tr>
-<tr>
-<td>最坏时间复杂度</td>
-<td><img src="https://latex.codecogs.com/gif.latex?O(n^2)" title="O(n^2)"></td>
-</tr>
-<tr>
-<td>最优时间复杂度</td>
-<td><img src="https://latex.codecogs.com/gif.latex?O(nlogn)" title="O(nlogn)"></td>
-</tr>
-<tr>
-<td>平均时间复杂度</td>
-<td><img src="https://latex.codecogs.com/gif.latex?O(nlogn)" title="O(nlogn)"></td>
-</tr>
-<tr>
-<td>空间复杂度</td>
-<td>根据实现方式不同而不同</td>
-</tr>
-</tbody></table>
-<p>在平均状况下，排序n个项目要<img src="https://latex.codecogs.com/gif.latex?O(nlogn)" title="O(nlogn)">次比较。在最坏状况下则需要<img src="https://latex.codecogs.com/gif.latex?O(n^2)" title="O(n^2)">,但这种状况并不常见。事实上，快速排序通常<br>明显比其他<img src="https://latex.codecogs.com/gif.latex?O(nlogn)" title="O(nlogn)">算法更快，因为它的内部循环可以在大部分的架构上很有效率地被实现出来。</p>
-<h2 id="算法描述"><a href="#算法描述" class="headerlink" title="算法描述"></a>算法描述</h2><p>快速排序使用分治法策略把一个序列(list)分为两个子序列(sub-lists)。<br>步骤：<br>    1. 从数列中挑出一个元素，称为“基准”(pivot)<br>    2. 重新排序数列，所有元素比基准值小的摆放在基准前面，所有元素比基准大的摆在基准的后面。<br>    在这个分区结束之后，该基准就处于数列的中间位置。这个称为分区(partition)操作。<br>    3. 递归地(recursive)把小于基准值元素的子数列和大于基准值元素的子数列排序。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">QS</span><span class="params">(<span class="keyword">int</span>[] array, <span class="keyword">int</span> start, <span class="keyword">int</span> end)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (start &lt; end) &#123;</span><br><span class="line">        <span class="keyword">int</span> PIndex = partition(array, start, end);</span><br><span class="line">        QS(array, start, PIndex -<span class="number">1</span>);</span><br><span class="line">        QS(array, PIndex+<span class="number">1</span>, end);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">dividerAndChange</span><span class="params">(<span class="keyword">int</span>[] array, <span class="keyword">int</span> start, <span class="keyword">int</span> end)</span> </span>&#123;</span><br><span class="line">    <span class="comment">//标准值</span></span><br><span class="line">    <span class="keyword">int</span> pivot = args[end];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> PIndex = start;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = start; i &lt; end; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (array[i].compareTo(pivot) &lt; =<span class="number">0</span>) &#123;</span><br><span class="line">            swap(array, i, PIndex);</span><br><span class="line">            PIndex++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    swap(array, PIndex, end);</span><br><span class="line">    <span class="keyword">return</span> PIndex;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span>[] array, <span class="keyword">int</span> fromIndex, <span class="keyword">int</span> toIndex)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> temp = array[fromIndex];</span><br><span class="line">    array[fromIndex] = array[toIndex];</span><br><span class="line">    array[toIndex] = temp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h1><table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody><tr>
-<td>数据结构</td>
-<td>数组</td>
-</tr>
-<tr>
-<td>时间复杂度</td>
-<td><img src="https://latex.codecogs.com/gif.latex?O(nlogn)" title="O(nlogn)"></td>
-</tr>
-<tr>
-<td>最优时间复杂度</td>
-<td><img src="https://latex.codecogs.com/gif.latex?O(nlogn)" title="O(nlogn)"></td>
-</tr>
-<tr>
-<td>平均时间复杂度</td>
-<td><img src="https://latex.codecogs.com/gif.latex?O(nlogn)" title="O(nlogn)"></td>
-</tr>
-<tr>
-<td>空间复杂度</td>
-<td>总的<img src="https://latex.codecogs.com/gif.latex?O(n)" title="O(n)">,辅助<img src="https://latex.codecogs.com/gif.latex?O(1)" title="O(1)"></td>
-</tr>
-</tbody></table>
-<p>堆排序(Heapsort)是指利用堆这种数据结构所设计的一种排序算法。堆积是一个近似完全二叉树的结构，<br>并同时满足堆积的性质，即子结点的键值或索引总是小于（或者大于）它的父节点。</p>
-<h2 id="堆节点的访问"><a href="#堆节点的访问" class="headerlink" title="堆节点的访问"></a>堆节点的访问</h2><p>通常堆是通过一维数组来实现的。在数组起始位置为0的情形中：</p>
-<ul>
-<li>父节点i的左子节点在位置(1*i+1);</li>
-<li>父节点i的右子节点在位置(2*i+2);</li>
-<li>子节点i的父节点在位置floor((i-1)/2); # floor功能，即取不大于x的最大整数</li>
-</ul>
-<h2 id="堆的操作"><a href="#堆的操作" class="headerlink" title="堆的操作"></a>堆的操作</h2><p>在堆得数据结构中，堆中的最大值总是位于根节点(在优先队列中使用堆的话堆中的最小值位于根节点)。堆中定义以下几种操作：</p>
-<ul>
-<li>最大堆调整(Max_Heaplfy)：将堆得末端子节点作调整，使得子节点永远小于父节点。</li>
-<li>创建最大堆(Build_Max_Heap):将堆所有数据重新排序。</li>
-<li>堆排序(HeapSort)：移除位在第一个数据的根节点，并做最大堆调整的递归运算。</li>
-</ul>
-<h1 id="归并操作"><a href="#归并操作" class="headerlink" title="归并操作"></a>归并操作</h1><p>归并操作(merge)，也叫归并算法，指的是将两个已经排序的序列合并成一个序列的操作。归并排序算法依赖归并操作。</p>
-<h2 id="迭代法"><a href="#迭代法" class="headerlink" title="迭代法"></a>迭代法</h2><pre><code>1. 申请空间，使其大小为两个已经排序序列之和，该空间用来存放合并后的序列
-2. 设定两个指针，最初位置分别为两个已经排序序列的起始位置
-3. 比较两个指针所指向的元素，选择相对小的元素放入到合并空间，并移动指针到下一位置
-4. 重复步骤3直到某一指针到达序列尾
-5. 将另一序列所剩下的所有元素直接复制到合并序列尾</code></pre><h2 id="递归法"><a href="#递归法" class="headerlink" title="递归法"></a>递归法</h2><p>原来如下(假设序列共有n个元素)：<br>    1. 将序列每相邻两个数字进行归并操作，形成floor(n/2)个序列，排序后每个序列包含两个元素<br>    2. 将上述序列再次归并，形成floor(n/4)个序列，每个序列包含四个元素<br>    3. 重复步骤2，直到所有元素排序完毕</p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1588,7 +1312,7 @@
                 
                   <a href="/learnleetcode/archives/">
                 
-                    <span class="site-state-item-count">11</span>
+                    <span class="site-state-item-count">12</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>

@@ -361,6 +361,215 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://littlefoxtail.github.io/learnleetcode/2019/07/18/Navigation/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="博主">
+      <meta itemprop="description" content="特别欢喜你">
+      <meta itemprop="image" content="/learnleetcode/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="阿拉蕾的笔记本">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/learnleetcode/2019/07/18/Navigation/" class="post-title-link" itemprop="url">未命名</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建于：2019-07-18 11:02:14" itemprop="dateCreated datePublished" datetime="2019-07-18T11:02:14+08:00">2019-07-18</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="更新于：2019-07-19 11:10:02" itemprop="dateModified" datetime="2019-07-19T11:10:02+08:00">2019-07-19</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Navigation"><a href="#Navigation" class="headerlink" title="Navigation"></a>Navigation</h1><p><code>Navigation</code>是一个可简化Android导航的库和插件。</p>
+<p>Navigation是用来管理<code>Fragment</code>的切换，并且可以通过可视化的方式，看见App的交互流程。</p>
+<h2 id="实战"><a href="#实战" class="headerlink" title="实战"></a>实战</h2><table>
+<thead>
+<tr>
+<th align="center">名称</th>
+<th align="center">用途</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">Navigation graph</td>
+<td align="center">XML资源文件，包含所有的navigation关联信息，用户在可视化界面可以看出他能够到达的<code>destination</code>，以及流程关系</td>
+</tr>
+<tr>
+<td align="center">NavHost</td>
+<td align="center">在navigation graph展示<code>destination</code>的空容器，NavHostFragment为展示fragment destination的具体实现</td>
+</tr>
+<tr>
+<td align="center">NavController</td>
+<td align="center">导航控制者</td>
+</tr>
+</tbody></table>
+<h3 id="创建Navigation-graph"><a href="#创建Navigation-graph" class="headerlink" title="创建Navigation graph"></a>创建Navigation graph</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">navigation</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xmlns:app</span>=<span class="string">"http://schemas.android.com/apk/res-auto"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:id</span>=<span class="string">"@+id/nav_graph"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">app:startDestination</span>=<span class="string">"@id/tasks_fragment_dest"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">navigation</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="新建NavHostFragment"><a href="#新建NavHostFragment" class="headerlink" title="新建NavHostFragment"></a>新建<code>NavHostFragment</code></h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">fragment</span></span></span><br><span class="line"><span class="tag">           <span class="attr">android:id</span>=<span class="string">"@+id/nav_host_fragment"</span></span></span><br><span class="line"><span class="tag">           <span class="attr">android:name</span>=<span class="string">"androidx.navigation.fragment.NavHostFragment"</span> //值是固定的，声明这是一个<span class="attr">NavHostFragment</span></span></span><br><span class="line"><span class="tag">           <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag">           <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag"></span></span><br><span class="line"><span class="tag">           <span class="attr">app:defaultNavHost</span>=<span class="string">"true"</span> //与系统的返回按钮相关联</span></span><br><span class="line"><span class="tag">           <span class="attr">app:navGraph</span>=<span class="string">"@navigation/nav_graph"</span>//存放<span class="attr">Navigation</span> <span class="attr">graph</span></span></span><br><span class="line"><span class="tag">            /&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="界面跳转、参数传递和动画"><a href="#界面跳转、参数传递和动画" class="headerlink" title="界面跳转、参数传递和动画"></a>界面跳转、参数传递和动画</h3><h4 id="利用id导航"><a href="#利用id导航" class="headerlink" title="利用id导航"></a>利用id导航</h4><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">fun</span> Fragment.<span class="title">findNavController</span><span class="params">()</span></span>: NavController =</span><br><span class="line">        NavHostFragment.findNavController(<span class="keyword">this</span>)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">btnLogin.setOnClickListener &#123;</span><br><span class="line">            <span class="comment">// 设置动画参数</span></span><br><span class="line">            <span class="keyword">val</span> navOption = navOptions &#123;</span><br><span class="line">                anim &#123;</span><br><span class="line">                    enter = R.anim.slide_in_right</span><br><span class="line">                    exit = R.anim.slide_out_left</span><br><span class="line">                    popEnter = R.anim.slide_in_left</span><br><span class="line">                    popExit = R.anim.slide_out_right</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// 参数设置</span></span><br><span class="line">            <span class="keyword">val</span> bundle = Bundle()</span><br><span class="line">            bundle.putString(<span class="string">"name"</span>,<span class="string">"TeaOf"</span>)</span><br><span class="line">            findNavController().navigate(R.id.login, bundle,navOption)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="利用Safe-Args"><a href="#利用Safe-Args" class="headerlink" title="利用Safe Args"></a>利用<code>Safe Args</code></h4><p>action标签：</p>
+<table>
+<thead>
+<tr>
+<th align="center">属性</th>
+<th align="center">作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">app:destination</td>
+<td align="center">跳转完成到达的<code>fragment</code>的id</td>
+</tr>
+<tr>
+<td align="center">app:popUpTo</td>
+<td align="center">将fragment从栈中弹出，直到某个Id的fragment</td>
+</tr>
+</tbody></table>
+<p>argument标签：</p>
+<p>|属性|作用|<br>|android:name|标签名字|<br>|app:argType|标签的类型|<br>|android:defaultValue|默认值|</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">fragment</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:id</span>=<span class="string">"@+id/tasks_fragment_dest"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:name</span>=<span class="string">"com.example.android.architecture.blueprints.todoapp.tasks.TasksFragment"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:label</span>=<span class="string">"@string/app_name"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">action</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:id</span>=<span class="string">"@+id/action_tasksFragment_to_statisticsFragment"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">app:destination</span>=<span class="string">"@id/statistics_fragment_dest"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">action</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:id</span>=<span class="string">"@+id/action_tasksFragment_to_taskDetailFragment"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">app:destination</span>=<span class="string">"@id/task_detail_fragment_dest"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">action</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:id</span>=<span class="string">"@+id/action_tasksFragment_to_addEditTaskFragment"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">app:destination</span>=<span class="string">"@id/add_edit_task_fragment_dest"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">argument</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:name</span>=<span class="string">"userMessage"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">app:argType</span>=<span class="string">"integer"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:defaultValue</span>=<span class="string">"0"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">fragment</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>自动生成两个文件：</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TasksFragmentDirections</span> <span class="keyword">private</span> <span class="keyword">constructor</span></span>() &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">data</span> <span class="class"><span class="keyword">class</span> <span class="title">ActionTasksFragmentToTaskDetailFragment</span></span>(<span class="keyword">val</span> taskId: String) : NavDirections &#123;</span><br><span class="line">        <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">getActionId</span><span class="params">()</span></span>: <span class="built_in">Int</span> = R.id.action_tasksFragment_to_taskDetailFragment</span><br><span class="line"></span><br><span class="line">        <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">getArguments</span><span class="params">()</span></span>: Bundle &#123;</span><br><span class="line">            <span class="keyword">val</span> result = Bundle()</span><br><span class="line">            result.putString(<span class="string">"taskId"</span>, <span class="keyword">this</span>.taskId)</span><br><span class="line">            <span class="keyword">return</span> result</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">data</span> <span class="class"><span class="keyword">class</span> <span class="title">ActionTasksFragmentToAddEditTaskFragment</span></span>(<span class="keyword">val</span> taskId: String?, <span class="keyword">val</span> title:</span><br><span class="line">            String) : NavDirections &#123;</span><br><span class="line">        <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">getActionId</span><span class="params">()</span></span>: <span class="built_in">Int</span> = R.id.action_tasksFragment_to_addEditTaskFragment</span><br><span class="line"></span><br><span class="line">        <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">getArguments</span><span class="params">()</span></span>: Bundle &#123;</span><br><span class="line">            <span class="keyword">val</span> result = Bundle()</span><br><span class="line">            result.putString(<span class="string">"taskId"</span>, <span class="keyword">this</span>.taskId)</span><br><span class="line">            result.putString(<span class="string">"title"</span>, <span class="keyword">this</span>.title)</span><br><span class="line">            <span class="keyword">return</span> result</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">companion</span> <span class="keyword">object</span> &#123;</span><br><span class="line">        <span class="function"><span class="keyword">fun</span> <span class="title">actionTasksFragmentToStatisticsFragment</span><span class="params">()</span></span>: NavDirections =</span><br><span class="line">                ActionOnlyNavDirections(R.id.action_tasksFragment_to_statisticsFragment)</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">fun</span> <span class="title">actionTasksFragmentToTaskDetailFragment</span><span class="params">(taskId: <span class="type">String</span>)</span></span>: NavDirections =</span><br><span class="line">                ActionTasksFragmentToTaskDetailFragment(taskId)</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">fun</span> <span class="title">actionTasksFragmentToAddEditTaskFragment</span><span class="params">(taskId: <span class="type">String</span>?, title: <span class="type">String</span>)</span></span>: NavDirections</span><br><span class="line">                = ActionTasksFragmentToAddEditTaskFragment(taskId, title)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>你还是得写点击事件来完成导航：</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://littlefoxtail.github.io/learnleetcode/2019/06/25/队列&栈/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -423,7 +632,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="更新于：2019-07-14 19:50:29" itemprop="dateModified" datetime="2019-07-14T19:50:29+08:00">2019-07-14</time>
+                <time title="更新于：2019-07-20 16:16:02" itemprop="dateModified" datetime="2019-07-20T16:16:02+08:00">2019-07-20</time>
               
             
           </span>
@@ -500,14 +709,14 @@
 </ul>
 </li>
 </ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyCircularQueue</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> data[];</span><br><span class="line">    <span class="keyword">int</span> p_start;</span><br><span class="line">    <span class="keyword">int</span> p_end;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** Initialize your data structure here. Set the size of the queue to be k. */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MyCircularQueue</span><span class="params">(<span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        data = <span class="keyword">new</span> <span class="keyword">int</span>[k];</span><br><span class="line">        p_start = -<span class="number">1</span>;</span><br><span class="line">        p_end = -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** Insert an element into the circular queue. Return true if the operation is successful. */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">enQueue</span><span class="params">(<span class="keyword">int</span> value)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (isFull()) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (p_start == -<span class="number">1</span>) &#123;</span><br><span class="line">                p_start = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            p_end = (p_end + <span class="number">1</span>) % (data.length);</span><br><span class="line">            data[p_end] = value;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** Delete an element from the circular queue. Return true if the operation is successful. */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">deQueue</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> y;</span><br><span class="line">        <span class="keyword">if</span> (isEmpty()) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            y = data[p_start];</span><br><span class="line">            <span class="keyword">if</span> (p_start == p_end) &#123;</span><br><span class="line">                p_start = -<span class="number">1</span>;</span><br><span class="line">                p_end = -<span class="number">1</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                p_start = (p_start + <span class="number">1</span>) % data.length;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/** Get the front item from the queue. */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">Front</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (isEmpty()) &#123;</span><br><span class="line">            <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> data[p_start];</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/** Get the last item from the queue. */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">Rear</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (isEmpty()) &#123;</span><br><span class="line">            <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> data[p_end];</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/** Checks whether the circular queue is empty or not. */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isEmpty</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (p_start == -<span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/** Checks whether the circular queue is full or not. */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isFull</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(p_start  == <span class="number">0</span> &amp;&amp; p_end == data.length - <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (p_start == p_end + <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Your MyCircularQueue object will be instantiated and called as such:</span></span><br><span class="line"><span class="comment"> * MyCircularQueue obj = new MyCircularQueue(k);</span></span><br><span class="line"><span class="comment"> * boolean param_1 = obj.enQueue(value);</span></span><br><span class="line"><span class="comment"> * boolean param_2 = obj.deQueue();</span></span><br><span class="line"><span class="comment"> * int param_3 = obj.Front();</span></span><br><span class="line"><span class="comment"> * int param_4 = obj.Rear();</span></span><br><span class="line"><span class="comment"> * boolean param_5 = obj.isEmpty();</span></span><br><span class="line"><span class="comment"> * boolean param_6 = obj.isFull();</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyCircularQueue</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> data[];</span><br><span class="line">    <span class="keyword">int</span> p_start;</span><br><span class="line">    <span class="keyword">int</span> p_end;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** Initialize your data structure here. Set the size of the queue to be k. */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MyCircularQueue</span><span class="params">(<span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        data = <span class="keyword">new</span> <span class="keyword">int</span>[k];</span><br><span class="line">        p_start = -<span class="number">1</span>;</span><br><span class="line">        p_end = -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** Insert an element into the circular queue. Return true if the operation is successful. */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">enQueue</span><span class="params">(<span class="keyword">int</span> value)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (isFull()) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (p_start == -<span class="number">1</span>) &#123;</span><br><span class="line">                p_start = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            p_end = (p_end + <span class="number">1</span>) % (data.length);</span><br><span class="line">            data[p_end] = value;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** Delete an element from the circular queue. Return true if the operation is successful. */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">deQueue</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> y;</span><br><span class="line">        <span class="keyword">if</span> (isEmpty()) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            y = data[p_start];</span><br><span class="line">            <span class="keyword">if</span> (p_start == p_end) &#123;</span><br><span class="line">                p_start = -<span class="number">1</span>;</span><br><span class="line">                p_end = -<span class="number">1</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                p_start = (p_start + <span class="number">1</span>) % data.length;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** Get the front item from the queue. */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">Front</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (isEmpty()) &#123;</span><br><span class="line">            <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> data[p_start];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** Get the last item from the queue. */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">Rear</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (isEmpty()) &#123;</span><br><span class="line">            <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> data[p_end];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** Checks whether the circular queue is empty or not. */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isEmpty</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (p_start == -<span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** Checks whether the circular queue is full or not. */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isFull</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(p_start  == <span class="number">0</span> &amp;&amp; p_end == data.length - <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (p_start == p_end + <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Your MyCircularQueue object will be instantiated and called as such:</span></span><br><span class="line"><span class="comment"> * MyCircularQueue obj = new MyCircularQueue(k);</span></span><br><span class="line"><span class="comment"> * boolean param_1 = obj.enQueue(value);</span></span><br><span class="line"><span class="comment"> * boolean param_2 = obj.deQueue();</span></span><br><span class="line"><span class="comment"> * int param_3 = obj.Front();</span></span><br><span class="line"><span class="comment"> * int param_4 = obj.Rear();</span></span><br><span class="line"><span class="comment"> * boolean param_5 = obj.isEmpty();</span></span><br><span class="line"><span class="comment"> * boolean param_6 = obj.isFull();</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="队列和BFS"><a href="#队列和BFS" class="headerlink" title="队列和BFS"></a>队列和BFS</h2><p>广度优先搜索（BFS）是一个常见应用是找出从根结点到目标结点的最短路径。</p>
+<h2 id="队列和BFS（breadth-first-search）"><a href="#队列和BFS（breadth-first-search）" class="headerlink" title="队列和BFS（breadth-first-search）"></a>队列和BFS（breadth-first-search）</h2><p>广度优先搜索（BFS）是一个常见应用是找出从根结点到目标结点的最短路径。</p>
 <ol>
 <li>结点的处理顺序<br>第一轮中，处理根结点；第二轮中，处理根结点旁边的结点；在第三轮中，处理距根结点两步的结点；等等<br>与树的层序遍历类似，越是接近根结点的结点将越早地遍历。<br>如果在第k轮中将结点<code>X</code>添加到队列中，则根节点与<code>X</code>之间的最短路径的长度恰好是<code>k</code>。也就是说，第一次找到目标结点时，你已经处于最短路径中。</li>
 <li>队列的入队和出队顺序是什么？<br>首先将根节点排入队列。在每一轮中，逐个处理已经在队列中的结点，并将所有邻居添加到队列中。新添加的结点<code>不会</code>立即遍历，而是在下一轮中处理。<br>结点的处理顺序与它们添加到队列的顺序是完全相同的顺序，即先进先出</li>
 </ol>
-<h2 id="广度优先搜索-模板"><a href="#广度优先搜索-模板" class="headerlink" title="广度优先搜索-模板"></a>广度优先搜索-模板</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 返回根结点到目标结点的最短路径</span></span><br><span class="line"><span class="comment"> */</span> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">BFS</span><span class="params">(Node root, Node target)</span> </span>&#123;</span><br><span class="line">    Queue&lt;Node&gt; queue; <span class="comment">//保存所有待处理的所有结点</span></span><br><span class="line">    <span class="keyword">int</span> step = <span class="number">0</span>; <span class="comment">//从根结点到当前结点的步数</span></span><br><span class="line">    <span class="comment">//初始化</span></span><br><span class="line">    add root to queue;</span><br><span class="line">    <span class="keyword">while</span> (queue is not empty) &#123;</span><br><span class="line">        step = step + <span class="number">1</span>;</span><br><span class="line">        <span class="comment">//遍历在队列总的结点</span></span><br><span class="line">        <span class="keyword">int</span> size = queue.size();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; size; ++i) &#123;</span><br><span class="line">            Node cur = <span class="keyword">this</span> first node in queue;</span><br><span class="line">            <span class="keyword">return</span> step <span class="keyword">if</span> cur is target;</span><br><span class="line">            <span class="keyword">for</span> (Node next : the neighbors of cur) &#123;</span><br><span class="line">                add next to queue;</span><br><span class="line">            &#125;</span><br><span class="line">            remove the first node from queue;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="广度优先搜索-模板"><a href="#广度优先搜索-模板" class="headerlink" title="广度优先搜索-模板"></a>广度优先搜索-模板</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 返回根结点到目标结点的最短路径</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">BFS</span><span class="params">(Node root, Node target)</span> </span>&#123;</span><br><span class="line">    Queue&lt;Node&gt; queue; <span class="comment">//保存所有待处理的所有结点</span></span><br><span class="line">    <span class="keyword">int</span> step = <span class="number">0</span>; <span class="comment">//从根结点到当前结点的步数</span></span><br><span class="line">    <span class="comment">//初始化</span></span><br><span class="line">    add root to queue;</span><br><span class="line">    <span class="keyword">while</span> (queue is not empty) &#123;</span><br><span class="line">        step = step + <span class="number">1</span>;</span><br><span class="line">        <span class="comment">//遍历在队列总的结点</span></span><br><span class="line">        <span class="keyword">int</span> size = queue.size();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; size; ++i) &#123;</span><br><span class="line">            Node cur = <span class="keyword">this</span> first node in queue;</span><br><span class="line">            <span class="keyword">return</span> step <span class="keyword">if</span> cur is target;</span><br><span class="line">            <span class="keyword">for</span> (Node next : the neighbors of cur) &#123;</span><br><span class="line">                add next to queue;</span><br><span class="line">            &#125;</span><br><span class="line">            remove the first node from queue;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <ol>
 <li>每一轮中，队列中的节点是<code>等待处理的结点</code>。</li>
@@ -515,6 +724,26 @@
 </ol>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">BFS</span><span class="params">(Node root, Node target)</span> </span>&#123;</span><br><span class="line">    Queue&lt;Node&gt; queue;</span><br><span class="line">    Set&lt;Node&gt; used; <span class="comment">//保存所有已经使用过的结点</span></span><br><span class="line">    <span class="keyword">int</span> step = <span class="number">0</span>;</span><br><span class="line">    <span class="comment">//初始化</span></span><br><span class="line">    add root to queue;</span><br><span class="line">    add root to used;</span><br><span class="line">    <span class="comment">//BFS</span></span><br><span class="line">    <span class="keyword">while</span> (queue is not empty) &#123;</span><br><span class="line">        step = step + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> size = queue.size();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>； i &lt; size; ++i) &#123;</span><br><span class="line">            Node cur = <span class="keyword">this</span> first node in queue;</span><br><span class="line">            <span class="keyword">return</span> step <span class="keyword">if</span> cur is target;</span><br><span class="line">            <span class="keyword">for</span> (Node next : <span class="keyword">this</span> neighbors of cur) &#123;</span><br><span class="line">                <span class="keyword">if</span> (next is not in used) &#123;</span><br><span class="line">                    add next to queue;</span><br><span class="line">                    add next to used;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            remove the first node from queue;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<h3 id="200-岛屿的个数"><a href="#200-岛屿的个数" class="headerlink" title="200.岛屿的个数"></a>200.岛屿的个数</h3><p>算法：广度优先搜索</p>
+<p>线性扫描整个二维网络，如果一个结点包含<code>1</code>，则以其为根节点启动广度优先搜索。将其放入队列中，（上下左右都得设置入队）并将值设为<code>0</code>以标记访问过该结点。迭代地搜索队列中每个结点，直到队列为空。</p>
+<h3 id="752-打开转盘锁"><a href="#752-打开转盘锁" class="headerlink" title="752.打开转盘锁"></a>752.打开转盘锁</h3><h3 id="完全平方数"><a href="#完全平方数" class="headerlink" title="完全平方数"></a>完全平方数</h3><p>对问题建模：将整个问题变成一个图论问题。</p>
+<p>从n到0，每个数字代表一个节点；<br>如果两个数x到y相差一个完全平方数，则连接一条边；<br>就得到了一个无权图；</p>
+<p>原来的问题就转化为，在这个无权图中找出从n到0的最短路径，所以需要BFS来完成</p>
+<h2 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h2><p>后入先出的数据结构</p>
+<p><img src="https://aliyun-lc-upload.oss-cn-hangzhou.aliyuncs.com/aliyun-lc-upload/uploads/2018/06/03/screen-shot-2018-06-02-at-203523.png" alt="栈"></p>
+<p>在LIFO数据结构中，将<code>首先处理添加到队列</code>中的<code>最新元素</code>。</p>
+<p>与队列不同，栈是一个LIFO数据结构。通常，插入操作在栈中被称作入栈<code>push</code>。与队列类似，总是<code>在堆栈的末尾添加一个新元素</code>。但是，删除操作，退栈<code>pop</code>，将始终<code>删除</code>队列中相对于它的<code>最后一个元素</code>。</p>
+<h3 id="实现-栈"><a href="#实现-栈" class="headerlink" title="实现-栈"></a>实现-栈</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyStack</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> List&lt;Integer&gt; data;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MyStack</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        data = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">push</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        data.add(x);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isEmpty</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> data.isEmpty();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">top</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> data.get(data.size() - <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">pop</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        is(isEmpty()) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        data.remove(data.size() - <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="最小栈"><a href="#最小栈" class="headerlink" title="最小栈"></a>最小栈</h3><p>两个栈，一个数据栈，一个辅助栈</p>
+<h3 id="有效的括号"><a href="#有效的括号" class="headerlink" title="有效的括号"></a>有效的括号</h3><p>在表示问题的递归结构时，栈数据结构可以派上用场。我们无法真正地从内到外处理这个问题，因为我们对整体结构一无所知。但是，栈可以帮助我们递归地处理这种情况，即从外部到内部。</p>
+<ol>
+<li>初始化栈</li>
+<li>一次处理表达式的每个括号</li>
+<li>如果遇到开括号，我们只需将其推到栈即可。这意味着我们将稍后处理它。</li>
+<li>如果遇到一个闭括号，那么我们检查栈顶元素。如果栈顶元素是一个<code>相同类型的</code>左括号，那么我们将它从栈中弹出并继续处理。否则，这意味着表达式无效。</li>
+<li>如果到最后我们剩下的栈中仍然有元素，那么这意味着表达式无效。</li>
+</ol>
 
           
         
@@ -1093,169 +1322,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://littlefoxtail.github.io/learnleetcode/2019/06/22/分治/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="博主">
-      <meta itemprop="description" content="特别欢喜你">
-      <meta itemprop="image" content="/learnleetcode/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="阿拉蕾的笔记本">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/learnleetcode/2019/06/22/分治/" class="post-title-link" itemprop="url">分治算法</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建于：2019-06-22 14:22:23" itemprop="dateCreated datePublished" datetime="2019-06-22T14:22:23+08:00">2019-06-22</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="更新于：2019-06-24 00:43:59" itemprop="dateModified" datetime="2019-06-24T00:43:59+08:00">2019-06-24</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="分治"><a href="#分治" class="headerlink" title="分治"></a>分治</h1><p>分治法是建基于多项分支递归的一种算法范式，字面意思”分而治之“，把一个复杂的问题分为两个或者更多的相同或者相似的子问题，直到最后子问题可以简单的直接求解，原问题的解即子问题的解的合并。</p>
-<p>分治算法通常以数学归纳法来验证。而它的计算成本则多数以解递归关系式来判定。</p>
-<h2 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h2><h3 id="解决困难问题"><a href="#解决困难问题" class="headerlink" title="解决困难问题"></a>解决困难问题</h3><p>分治算法是一个解决复杂问题的好工具，它可以把问题分解成若干个子问题，把子问题逐个解决，再组合到一起形成大问题的答案。比如，汉诺塔问题如果采用分治算法，可以把高度为n的塔的问题转换成高度为n-1的塔来解决，如此重复，直至问题化简到可以很容易的处理为止。</p>
-<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><h3 id="循环递归"><a href="#循环递归" class="headerlink" title="循环递归"></a>循环递归</h3><p>在每一层递归上都有三个步骤：</p>
-<ol>
-<li>分解：将原问题分解为若干个规模较小，相对独立，与原问题形式相同的子问题。</li>
-<li>解决：若子问题规模较小且易于解决时，则直接解。否则，递归地解决各子问题。</li>
-<li>合并：将各子问题的解合并为原问题的解。</li>
-</ol>
-<h2 id="241-给表达式加括号"><a href="#241-给表达式加括号" class="headerlink" title="241.给表达式加括号"></a>241.给表达式加括号</h2><h2 id="不同的二叉搜索树"><a href="#不同的二叉搜索树" class="headerlink" title="不同的二叉搜索树"></a>不同的二叉搜索树</h2>
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1302,7 +1368,7 @@
                 
                   <a href="/learnleetcode/archives/">
                 
-                    <span class="site-state-item-count">11</span>
+                    <span class="site-state-item-count">12</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
