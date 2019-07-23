@@ -115,10 +115,12 @@
 <meta property="og:site_name" content="阿拉蕾的笔记本">
 <meta property="og:description" content="NavigationNavigation是一个可简化Android导航的库和插件。 Navigation是用来管理Fragment的切换，并且可以通过可视化的方式，看见App的交互流程。 实战   名称 用途    Navigation graph XML资源文件，包含所有的navigation关联信息，用户在可视化界面可以看出他能够到达的destination，以及流程关系   NavHost">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-20T16:19:09.901Z">
+<meta property="og:image" content="https://littlefoxtail.github.io/learnleetcode/2019/07/18/Navigation/navigation_%E6%80%BB%E7%BB%93.webp">
+<meta property="og:updated_time" content="2019-07-23T04:00:32.067Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Navigation组件">
 <meta name="twitter:description" content="NavigationNavigation是一个可简化Android导航的库和插件。 Navigation是用来管理Fragment的切换，并且可以通过可视化的方式，看见App的交互流程。 实战   名称 用途    Navigation graph XML资源文件，包含所有的navigation关联信息，用户在可视化界面可以看出他能够到达的destination，以及流程关系   NavHost">
+<meta name="twitter:image" content="https://littlefoxtail.github.io/learnleetcode/2019/07/18/Navigation/navigation_%E6%80%BB%E7%BB%93.webp">
 
 
 
@@ -422,7 +424,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="更新于：2019-07-21 00:19:09" itemprop="dateModified" datetime="2019-07-21T00:19:09+08:00">2019-07-21</time>
+                <time title="更新于：2019-07-23 12:00:32" itemprop="dateModified" datetime="2019-07-23T12:00:32+08:00">2019-07-23</time>
               
             
           </span>
@@ -529,6 +531,9 @@
 <figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TasksFragmentDirections</span> <span class="keyword">private</span> <span class="keyword">constructor</span></span>() &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">data</span> <span class="class"><span class="keyword">class</span> <span class="title">ActionTasksFragmentToTaskDetailFragment</span></span>(<span class="keyword">val</span> taskId: String) : NavDirections &#123;</span><br><span class="line">        <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">getActionId</span><span class="params">()</span></span>: <span class="built_in">Int</span> = R.id.action_tasksFragment_to_taskDetailFragment</span><br><span class="line"></span><br><span class="line">        <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">getArguments</span><span class="params">()</span></span>: Bundle &#123;</span><br><span class="line">            <span class="keyword">val</span> result = Bundle()</span><br><span class="line">            result.putString(<span class="string">"taskId"</span>, <span class="keyword">this</span>.taskId)</span><br><span class="line">            <span class="keyword">return</span> result</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">data</span> <span class="class"><span class="keyword">class</span> <span class="title">ActionTasksFragmentToAddEditTaskFragment</span></span>(<span class="keyword">val</span> taskId: String?, <span class="keyword">val</span> title:</span><br><span class="line">            String) : NavDirections &#123;</span><br><span class="line">        <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">getActionId</span><span class="params">()</span></span>: <span class="built_in">Int</span> = R.id.action_tasksFragment_to_addEditTaskFragment</span><br><span class="line"></span><br><span class="line">        <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">getArguments</span><span class="params">()</span></span>: Bundle &#123;</span><br><span class="line">            <span class="keyword">val</span> result = Bundle()</span><br><span class="line">            result.putString(<span class="string">"taskId"</span>, <span class="keyword">this</span>.taskId)</span><br><span class="line">            result.putString(<span class="string">"title"</span>, <span class="keyword">this</span>.title)</span><br><span class="line">            <span class="keyword">return</span> result</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">companion</span> <span class="keyword">object</span> &#123;</span><br><span class="line">        <span class="function"><span class="keyword">fun</span> <span class="title">actionTasksFragmentToStatisticsFragment</span><span class="params">()</span></span>: NavDirections =</span><br><span class="line">                ActionOnlyNavDirections(R.id.action_tasksFragment_to_statisticsFragment)</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">fun</span> <span class="title">actionTasksFragmentToTaskDetailFragment</span><span class="params">(taskId: <span class="type">String</span>)</span></span>: NavDirections =</span><br><span class="line">                ActionTasksFragmentToTaskDetailFragment(taskId)</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">fun</span> <span class="title">actionTasksFragmentToAddEditTaskFragment</span><span class="params">(taskId: <span class="type">String</span>?, title: <span class="type">String</span>)</span></span>: NavDirections</span><br><span class="line">                = ActionTasksFragmentToAddEditTaskFragment(taskId, title)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>你还是得写点击事件来完成导航：</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">clsss TasksFragment : Fragment() &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">val</span> args: TasksFragmentArgs <span class="keyword">by</span> navArgs();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p><img src="/learnleetcode/2019/07/18/Navigation/navigation_%E6%80%BB%E7%BB%93.webp" alt="navigation总结"></p>
 
       
     </div>
@@ -574,6 +579,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/learnleetcode/2019/07/21/数组和字符串/" rel="prev" title="数组和字符串">
+                数组和字符串 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -642,7 +651,7 @@
                 
                   <a href="/learnleetcode/archives/">
                 
-                    <span class="site-state-item-count">12</span>
+                    <span class="site-state-item-count">13</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -722,7 +731,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Navigation"><span class="nav-number">1.</span> <span class="nav-text">Navigation</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#实战"><span class="nav-number">1.1.</span> <span class="nav-text">实战</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建Navigation-graph"><span class="nav-number">1.1.1.</span> <span class="nav-text">创建Navigation graph</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新建NavHostFragment"><span class="nav-number">1.1.2.</span> <span class="nav-text">新建NavHostFragment</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#界面跳转、参数传递和动画"><span class="nav-number">1.1.3.</span> <span class="nav-text">界面跳转、参数传递和动画</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#利用id导航"><span class="nav-number">1.1.3.1.</span> <span class="nav-text">利用id导航</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#利用Safe-Args"><span class="nav-number">1.1.3.2.</span> <span class="nav-text">利用Safe Args</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Navigation"><span class="nav-number">1.</span> <span class="nav-text">Navigation</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#实战"><span class="nav-number">1.1.</span> <span class="nav-text">实战</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建Navigation-graph"><span class="nav-number">1.1.1.</span> <span class="nav-text">创建Navigation graph</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新建NavHostFragment"><span class="nav-number">1.1.2.</span> <span class="nav-text">新建NavHostFragment</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#界面跳转、参数传递和动画"><span class="nav-number">1.1.3.</span> <span class="nav-text">界面跳转、参数传递和动画</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#利用id导航"><span class="nav-number">1.1.3.1.</span> <span class="nav-text">利用id导航</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#利用Safe-Args"><span class="nav-number">1.1.3.2.</span> <span class="nav-text">利用Safe Args</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">1.2.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></div>
             
 
           </div>
