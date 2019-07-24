@@ -14,4 +14,4 @@
 - Re: 从零开始的物理竞赛选手
 - 2016 年第 33 届 CPhO 金牌，国家集训队队员
 - 精通各种编程语言...的Hello World写法，灰常🐂🍺
-![](../images/helloworld.png)
+![helloworld](../images/helloworld.png)
