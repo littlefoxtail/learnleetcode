@@ -17,3 +17,5 @@ node_modules/
 public/
 *.log
 db.json
+local.properties
+package-lock.json
