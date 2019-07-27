@@ -107,28 +107,18 @@
 
 
 
-  <meta name="description" content="二叉树在计算机科学中，二叉树是每个节点最多有两个树的树结构。通常子树被称作“左子树(left subtree)”和“右子树(right subtree)”。   五种形态：二叉树的每个节点至多只有两棵子树（不存在度大于2的节点），二叉树的子树有左右之分，次序不能颠倒。 二叉树的性质 二叉树的第i层至多有“ /&amp;gt;个节点(i&amp;gt;=1)。 深度为k的二叉树至多共有个节点。 对任何一颗二叉树T，">
+  <meta name="description" content="动态规划（Dynamic programming，简称DP）动态规划算法的基本思想与分治法类似，也是将求解的问题分解为若干字问题，按顺序求解子阶段，前一子问题的解，为后一子问题提供了有用的信息。在求解任意子问题，列出各种可能的局部解，通过决策保留那些有可能达到最优的局部解，丢弃其他局部解。依次解决各子问题，最后一个子问题就是初始问题的解决。">
 <meta name="keywords" content="algorithm">
 <meta property="og:type" content="article">
-<meta property="og:title" content="二叉树">
-<meta property="og:url" content="https://littlefoxtail.github.io/2018/04/05/binarytree/index.html">
+<meta property="og:title" content="动态规划算法">
+<meta property="og:url" content="https://littlefoxtail.github.io/2019/06/23/真实算法体系/动态规划/index.html">
 <meta property="og:site_name" content="阿拉蕾的笔记本">
-<meta property="og:description" content="二叉树在计算机科学中，二叉树是每个节点最多有两个树的树结构。通常子树被称作“左子树(left subtree)”和“右子树(right subtree)”。   五种形态：二叉树的每个节点至多只有两棵子树（不存在度大于2的节点），二叉树的子树有左右之分，次序不能颠倒。 二叉树的性质 二叉树的第i层至多有“ /&amp;gt;个节点(i&amp;gt;=1)。 深度为k的二叉树至多共有个节点。 对任何一颗二叉树T，">
+<meta property="og:description" content="动态规划（Dynamic programming，简称DP）动态规划算法的基本思想与分治法类似，也是将求解的问题分解为若干字问题，按顺序求解子阶段，前一子问题的解，为后一子问题提供了有用的信息。在求解任意子问题，列出各种可能的局部解，通过决策保留那些有可能达到最优的局部解，丢弃其他局部解。依次解决各子问题，最后一个子问题就是初始问题的解决。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://littlefoxtail.github.io/learnleetcode/2018/04/05/binarytree/five_forms.jpeg">
-<meta property="og:image" content="https://latex.codecogs.com/gif.latex?2^{i-1}">
-<meta property="og:image" content="https://latex.codecogs.com/gif.latex?2^{i}-1">
-<meta property="og:image" content="https://latex.codecogs.com/gif.latex?n_0">
-<meta property="og:image" content="https://latex.codecogs.com/gif.latex?n_2">
-<meta property="og:image" content="https://latex.codecogs.com/gif.latex?n_0=n_2+1">
-<meta property="og:image" content="https://latex.codecogs.com/gif.latex?log_{2}(n+1)">
-<meta property="og:image" content="https://latex.codecogs.com/gif.latex?[log_{2}(n)]&space;+1">
-<meta property="og:image" content="https://latex.codecogs.com/gif.latex?[log_{2}(n)]&space;+1">
-<meta property="og:updated_time" content="2019-06-28T03:10:09.919Z">
+<meta property="og:updated_time" content="2019-07-24T13:44:17.092Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="二叉树">
-<meta name="twitter:description" content="二叉树在计算机科学中，二叉树是每个节点最多有两个树的树结构。通常子树被称作“左子树(left subtree)”和“右子树(right subtree)”。   五种形态：二叉树的每个节点至多只有两棵子树（不存在度大于2的节点），二叉树的子树有左右之分，次序不能颠倒。 二叉树的性质 二叉树的第i层至多有“ /&amp;gt;个节点(i&amp;gt;=1)。 深度为k的二叉树至多共有个节点。 对任何一颗二叉树T，">
-<meta name="twitter:image" content="https://littlefoxtail.github.io/learnleetcode/2018/04/05/binarytree/five_forms.jpeg">
+<meta name="twitter:title" content="动态规划算法">
+<meta name="twitter:description" content="动态规划（Dynamic programming，简称DP）动态规划算法的基本思想与分治法类似，也是将求解的问题分解为若干字问题，按顺序求解子阶段，前一子问题的解，为后一子问题提供了有用的信息。在求解任意子问题，列出各种可能的局部解，通过决策保留那些有可能达到最优的局部解，丢弃其他局部解。依次解决各子问题，最后一个子问题就是初始问题的解决。">
 
 
 
@@ -136,7 +126,7 @@
 
   
   
-  <link rel="canonical" href="https://littlefoxtail.github.io/2018/04/05/binarytree/">
+  <link rel="canonical" href="https://littlefoxtail.github.io/2019/06/23/真实算法体系/动态规划/">
 
 
 
@@ -146,7 +136,7 @@
   };
 </script>
 
-  <title>二叉树 | 阿拉蕾的笔记本</title>
+  <title>动态规划算法 | 阿拉蕾的笔记本</title>
   
 
 
@@ -372,7 +362,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://littlefoxtail.github.io/learnleetcode/2018/04/05/binarytree/">
+    <link itemprop="mainEntityOfPage" href="https://littlefoxtail.github.io/learnleetcode/2019/06/23/真实算法体系/动态规划/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="博主">
@@ -389,7 +379,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">二叉树
+          <h1 class="post-title" itemprop="name headline">动态规划算法
 
               
             
@@ -415,7 +405,7 @@
                 
               
 
-              <time title="创建于：2018-04-05 23:57:00" itemprop="dateCreated datePublished" datetime="2018-04-05T23:57:00+08:00">2018-04-05</time>
+              <time title="创建于：2019-06-23 14:22:23" itemprop="dateCreated datePublished" datetime="2019-06-23T14:22:23+08:00">2019-06-23</time>
             
 
             
@@ -432,29 +422,11 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="更新于：2019-06-28 11:10:09" itemprop="dateModified" datetime="2019-06-28T11:10:09+08:00">2019-06-28</time>
+                <time title="更新于：2019-07-24 21:44:17" itemprop="dateModified" datetime="2019-07-24T21:44:17+08:00">2019-07-24</time>
               
             
           </span>
 
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/learnleetcode/categories/算法/" itemprop="url" rel="index"><span itemprop="name">算法</span></a></span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -484,19 +456,37 @@
       
 
       
-        <h1 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h1><p>在计算机科学中，二叉树是每个节点最多有两个树的树结构。通常子树被称作“左子树(left subtree)”和“右子树(right subtree)”。  </p>
-<h2 id="五种形态："><a href="#五种形态：" class="headerlink" title="五种形态："></a>五种形态：</h2><p><img src="/learnleetcode/2018/04/05/binarytree/five_forms.jpeg" alt="树"><br>二叉树的每个节点至多只有两棵子树（不存在度大于2的节点），二叉树的子树有左右之分，次序不能颠倒。</p>
-<h2 id="二叉树的性质"><a href="#二叉树的性质" class="headerlink" title="二叉树的性质"></a>二叉树的性质</h2><ol>
-<li>二叉树的第i层至多有<img src="https://latex.codecogs.com/gif.latex?2^{i-1}" title="2^{i-1}">“ /&gt;个节点(i&gt;=1)。</li>
-<li>深度为k的二叉树至多共有<img src="https://latex.codecogs.com/gif.latex?2^{i}-1" title="2^{i}-1">个节点。</li>
-<li>对任何一颗二叉树T，如果其终端结点数为<br>对任何一棵二叉树T，如果其终端节点数为<img src="https://latex.codecogs.com/gif.latex?n_0" title="n_0">,度为2的节点数为<img src="https://latex.codecogs.com/gif.latex?n_2" title="n_2">，则<img src="https://latex.codecogs.com/gif.latex?n_0=n_2&plus;1" title="n_0=n_2+1"></li>
-<li>包含n个结点的二叉树的高度至少为<img src="https://latex.codecogs.com/gif.latex?log_{2}(n&plus;1)" title="log_{2}(n+1)"></li>
-<li>如果对一个n个结点的完全二叉树(其深度为<img src="https://latex.codecogs.com/gif.latex?[log_{2}(n)]&space;&plus;1" title="[log_{2}(n)] +1">)的结点按层序编号（从第1层到第<img src="https://latex.codecogs.com/gif.latex?[log_{2}(n)]&space;&plus;1" title="[log_{2}(n)] +1">）</li>
+        <h1 id="动态规划（Dynamic-programming，简称DP）"><a href="#动态规划（Dynamic-programming，简称DP）" class="headerlink" title="动态规划（Dynamic programming，简称DP）"></a>动态规划（Dynamic programming，简称DP）</h1><p>动态规划算法的基本思想与分治法类似，也是将求解的问题分解为若干字问题，按顺序求解子阶段，前一子问题的解，为后一子问题提供了有用的信息。在求解任意子问题，列出各种可能的局部解，通过决策保留那些有可能达到最优的局部解，丢弃其他局部解。依次解决各子问题，最后一个子问题就是初始问题的解决。</p>
+<a id="more"></a>
+
+<h2 id="适用情况"><a href="#适用情况" class="headerlink" title="适用情况"></a>适用情况</h2><ol>
+<li>最优子结构性质。如果问题的最优解所包含的子问题的解也是最优的，就称该问题具有最优子结构性质（即满足最优原理）。最优子结构性质为动态规划算法解决问题提供了重要线索。</li>
+<li>无后效性。即子问题的解一旦确定，就不再改变，不受在这之后、包含它的最大的问题的求解决策影响。</li>
+<li>子问题重叠性质。子问题重叠性质是指在用递归算法自顶向下对问题进行求解时，每次产生的子问题并不总是新问题。有些子问题会被重复计算多次。动态规划算法正是利用了这种子问题的重叠性质，对每一个子问题只计算一次，然后将其计算结果保存在一个表格中，当再次需要计算依据计算过的子问题时，只是在表格中简单地查看一下结果，从而获得较高的效率。</li>
 </ol>
-<p>一棵深度为k，且有\(2^{k+1}-1\)个节点，称为k，有n个节点的二叉树，当且仅当其每一个节点都与深度为k的<br>满二叉树中，序号为1至n的节点对应时，称之为完全二叉树。</p>
-<p>与树不同，树的节点个数至少为1，而二叉树的节点个数可以为0；树中节点的最大度数没有限制，而二叉树节点最大度数为2；<br>树的节点无左、右之分，而二叉树的节点有左、右之分。</p>
-<h2 id="二叉树的类型"><a href="#二叉树的类型" class="headerlink" title="二叉树的类型"></a>二叉树的类型</h2><p>二叉树是有个有根树，并且每个节点最多有2个子节点。非空的二叉树，若树叶总数为\(n_0\),分支度为2的总数<br>\(n_2\)，则\(n_0=n_2+1\)
-一棵深度为k，且有\(2^k-1\)个节点的二叉树，称为满二叉树。这种树的特点是每一层上的节点数都是最大节点数。<br>而在一棵二叉树中，除最后一层或者是满的，或者在右边缺少连续若干节点，则此二叉树为完全二叉树。</p>
+<h2 id="求解的基本步骤"><a href="#求解的基本步骤" class="headerlink" title="求解的基本步骤"></a>求解的基本步骤</h2><ol>
+<li>分析最优解的性质，并刻画其结构特征。</li>
+<li>递归的定义最优解。</li>
+<li>以自底向上或自顶向下的记忆方式（备忘录）计算出最优值。</li>
+<li>根据计算最优值时得到的信息，构造问题的最优解。</li>
+</ol>
+<h2 id="算法实现"><a href="#算法实现" class="headerlink" title="算法实现"></a>算法实现</h2><p>动态规划的主要难点在于理论上的设计，也即是上面4个步骤的确定，一旦设计完成，实现部分就会非常简单。使用动态规划求解问题，最重要的就是确定动态规划三要素：</p>
+<ol>
+<li>问题阶段</li>
+<li>每个阶段的状态</li>
+<li>从前一个阶段转化到后一个阶段之间的速推关系</li>
+</ol>
+<h2 id="斐波那契数列"><a href="#斐波那契数列" class="headerlink" title="斐波那契数列"></a>斐波那契数列</h2><h3 id="70-爬楼梯"><a href="#70-爬楼梯" class="headerlink" title="70.爬楼梯"></a>70.爬楼梯</h3><p>定义一个数组 dp 存储上楼梯的方法数（为了方便讨论，数组下标从 1 开始），dp[i] 表示走到第 i 个楼梯的方法数目。<br>第 i 个楼梯可以从第 i-1 和 i-2 个楼梯再走一步到达，走到第 i 个楼梯的方法数为走到第 i-1 和第 i-2 个楼梯的方法数之和。</p>
+<h3 id="198-Hourse-Robber"><a href="#198-Hourse-Robber" class="headerlink" title="198.Hourse Robber"></a>198.Hourse Robber</h3><p>定义 dp 数组用来存储最大的抢劫量，其中 dp[i] 表示抢到第 i 个住户时的最大抢劫量。<br>由于不能抢劫邻近住户，如果抢劫了第 i -1 个住户，那么就不能再抢劫第 i 个住户。dp[i] = max(dp[i - 2] + nums[i], dp[i - 1])</p>
+<h3 id="213-强盗在环形街区抢劫"><a href="#213-强盗在环形街区抢劫" class="headerlink" title="213.强盗在环形街区抢劫"></a>213.强盗在环形街区抢劫</h3><p>偷了0以后，第n-1间房子不能偷。<br>分情况，偷不偷第1栋房，偷就算1到n - 1栋的最大值，不偷就算2到n栋的最大值，求这两个的最大值即可</p>
+<h2 id="矩阵路径"><a href="#矩阵路径" class="headerlink" title="矩阵路径"></a>矩阵路径</h2><h3 id="矩阵的最小路径和"><a href="#矩阵的最小路径和" class="headerlink" title="矩阵的最小路径和"></a>矩阵的最小路径和</h3><p><code>64. Minimum Path Sum (Medium)</code><br>运用动态规划，我们在递归的时候了解到，（i,j）位置的值依赖它左边或者上边的值，所以我们就先把它依赖的求出来，然后从左上开始向（i,j）求，相当于把递归的过程反过来。申请一个新的二维数组空间，分别求出第一行和第一列的累计和的值，然后再求（i,j）位置的值时就可以根据已经求出的第一行和第一列的累计和来算（把每个i,j位置的路径和都算出来），先找出不被依赖的，再求出依赖的。</p>
+<p>步骤：<br>假设矩阵m的大小为M×N，行数为M，列数为N。</p>
+<p>dp[i][j]：<br>生成大小和m一样的矩阵dp，dp[i][j]的值表示从左上角（即(0，0)）位置走到(i ，j)位置的最小路径和。</p>
+<p>含义是比较从(0，0)位置开始，经过(i-1，j)位置最终到达(i，j)的最小路径和经过(i ，j-1)位置最终到达(i ，j)的最小路径之间，哪条路径的路径和更小。<br>更小的路径和就是dp[i][j]的值。</p>
+<h3 id="矩阵的总路径数"><a href="#矩阵的总路径数" class="headerlink" title="矩阵的总路径数"></a>矩阵的总路径数</h3><p><code>62. Unique Paths (Medium)</code></p>
+<h2 id="数组区间"><a href="#数组区间" class="headerlink" title="数组区间"></a>数组区间</h2><h3 id="数据区间和"><a href="#数据区间和" class="headerlink" title="数据区间和"></a>数据区间和</h3><p><code>303. Range Sum Query - Immutable (Easy)</code></p>
+<p>求区间 i ~ j 的和，可以转换为 sum[j + 1] - sum[i]，其中 sum[i] 为 0 ~ i - 1 的和。</p>
+<h3 id="数组中等差递增子区间的个数"><a href="#数组中等差递增子区间的个数" class="headerlink" title="数组中等差递增子区间的个数"></a>数组中等差递增子区间的个数</h3><p><code>413. Arithmetic Slices (Medium)</code></p>
 
       
     </div>
@@ -533,8 +523,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/learnleetcode/2018/04/05/search/" rel="next" title="二分查找">
-                <i class="fa fa-chevron-left"></i> 二分查找
+              <a href="/learnleetcode/2019/06/22/真实算法体系/分治/" rel="next" title="分治算法">
+                <i class="fa fa-chevron-left"></i> 分治算法
               </a>
             
           </div>
@@ -543,8 +533,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/learnleetcode/2018/04/06/leetcode/" rel="prev" title="LeetCode题解">
-                LeetCode题解 <i class="fa fa-chevron-right"></i>
+              <a href="/learnleetcode/2019/06/24/真实算法体系/算法/" rel="prev" title="算法">
+                算法 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -614,7 +604,7 @@
                 
                   <a href="/learnleetcode/archives/">
                 
-                    <span class="site-state-item-count">13</span>
+                    <span class="site-state-item-count">14</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -649,16 +639,22 @@
                 <div class="site-state-item site-state-tags">
                   
                     
+                      <a href="/learnleetcode/tags/">
                     
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">3</span>
-                    <span class="site-state-item-name">标签</span>
                   
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
                 </div>
               
             </nav>
@@ -694,7 +690,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#二叉树"><span class="nav-number">1.</span> <span class="nav-text">二叉树</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#五种形态："><span class="nav-number">1.1.</span> <span class="nav-text">五种形态：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二叉树的性质"><span class="nav-number">1.2.</span> <span class="nav-text">二叉树的性质</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二叉树的类型"><span class="nav-number">1.3.</span> <span class="nav-text">二叉树的类型</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#动态规划（Dynamic-programming，简称DP）"><span class="nav-number">1.</span> <span class="nav-text">动态规划（Dynamic programming，简称DP）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#适用情况"><span class="nav-number">1.1.</span> <span class="nav-text">适用情况</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#求解的基本步骤"><span class="nav-number">1.2.</span> <span class="nav-text">求解的基本步骤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算法实现"><span class="nav-number">1.3.</span> <span class="nav-text">算法实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#斐波那契数列"><span class="nav-number">1.4.</span> <span class="nav-text">斐波那契数列</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#70-爬楼梯"><span class="nav-number">1.4.1.</span> <span class="nav-text">70.爬楼梯</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#198-Hourse-Robber"><span class="nav-number">1.4.2.</span> <span class="nav-text">198.Hourse Robber</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#213-强盗在环形街区抢劫"><span class="nav-number">1.4.3.</span> <span class="nav-text">213.强盗在环形街区抢劫</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵路径"><span class="nav-number">1.5.</span> <span class="nav-text">矩阵路径</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#矩阵的最小路径和"><span class="nav-number">1.5.1.</span> <span class="nav-text">矩阵的最小路径和</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#矩阵的总路径数"><span class="nav-number">1.5.2.</span> <span class="nav-text">矩阵的总路径数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组区间"><span class="nav-number">1.6.</span> <span class="nav-text">数组区间</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据区间和"><span class="nav-number">1.6.1.</span> <span class="nav-text">数据区间和</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数组中等差递增子区间的个数"><span class="nav-number">1.6.2.</span> <span class="nav-text">数组中等差递增子区间的个数</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
