@@ -1799,6 +1799,9 @@ pre .javascript .function {
   border: 1px solid #eee;
   opacity: 1;
 }
+.site-author-image {
+  border-radius: 100%;
+}
 .site-author-name {
   margin: 0;
   text-align: center;
@@ -1832,7 +1835,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #9570ed;
+  background: #ff707e;
 }
 .feed-link,
 .chat {
@@ -3037,4 +3040,14 @@ pre {
 code,
 pre {
   border: 1px solid #d6d6d6;
+}
+.post-block,
+#posts > article + article .post-block {
+  margin-top: 5px;
+  margin-bottom: 18px;
+  margin-left: 5px;
+  border-radius: 8px;
+}
+.headband {
+  display: none;
 }
