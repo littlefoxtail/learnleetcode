@@ -107,18 +107,18 @@
 
 
 
-  <meta name="description" content="Paging处理大量数据的处理方法：  借助刷新控件实现用户手动请求数据。 数据到达边界自动请求加载。     名称 作用    PagedList 一个可以以分页形式异步加载数据的容器，可以跟RecyclerView很好的结合">
+  <meta name="description" content="Paging介绍1The Paging Library helps you load and display small chunks of data at a time.Loading partial data on demand reduces usage of network bandwidth and system  处理大量数据的处理方法：  借助刷新控件实现用户手动请求数据。 数据到达">
 <meta name="keywords" content="组件">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Paging">
 <meta property="og:url" content="https://littlefoxtail.github.io/2019/07/23/Paging/index.html">
 <meta property="og:site_name" content="阿拉蕾的笔记本">
-<meta property="og:description" content="Paging处理大量数据的处理方法：  借助刷新控件实现用户手动请求数据。 数据到达边界自动请求加载。     名称 作用    PagedList 一个可以以分页形式异步加载数据的容器，可以跟RecyclerView很好的结合">
+<meta property="og:description" content="Paging介绍1The Paging Library helps you load and display small chunks of data at a time.Loading partial data on demand reduces usage of network bandwidth and system  处理大量数据的处理方法：  借助刷新控件实现用户手动请求数据。 数据到达">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-23T08:51:59.942Z">
+<meta property="og:updated_time" content="2019-07-27T11:25:38.354Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Paging">
-<meta name="twitter:description" content="Paging处理大量数据的处理方法：  借助刷新控件实现用户手动请求数据。 数据到达边界自动请求加载。     名称 作用    PagedList 一个可以以分页形式异步加载数据的容器，可以跟RecyclerView很好的结合">
+<meta name="twitter:description" content="Paging介绍1The Paging Library helps you load and display small chunks of data at a time.Loading partial data on demand reduces usage of network bandwidth and system  处理大量数据的处理方法：  借助刷新控件实现用户手动请求数据。 数据到达">
 
 
 
@@ -405,12 +405,24 @@
                 
               
 
-              <time title="创建于：2019-07-23 12:28:33 / 更新于：16:51:59" itemprop="dateCreated datePublished" datetime="2019-07-23T12:28:33+08:00">2019-07-23</time>
+              <time title="创建于：2019-07-23 12:28:33" itemprop="dateCreated datePublished" datetime="2019-07-23T12:28:33+08:00">2019-07-23</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="更新于：2019-07-27 19:25:38" itemprop="dateModified" datetime="2019-07-27T19:25:38+08:00">2019-07-27</time>
               
             
           </span>
@@ -444,7 +456,9 @@
       
 
       
-        <h1 id="Paging"><a href="#Paging" class="headerlink" title="Paging"></a>Paging</h1><p>处理大量数据的处理方法：</p>
+        <h1 id="Paging"><a href="#Paging" class="headerlink" title="Paging"></a>Paging</h1><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">The Paging Library helps you load and display small chunks of data at a time.Loading partial data on demand reduces usage of network bandwidth and system</span><br></pre></td></tr></table></figure>
+
+<p>处理大量数据的处理方法：</p>
 <ol>
 <li>借助刷新控件实现用户手动请求数据。</li>
 <li>数据到达边界自动请求加载。</li>
@@ -461,11 +475,54 @@
 <td align="center">一个可以以分页形式异步加载数据的容器，可以跟<code>RecyclerView</code>很好的结合</td>
 </tr>
 <tr>
-<td align="center"></td>
-<td align="center"></td>
+<td align="center">DataSource或DataSource.Factory</td>
+<td align="center">数据源，<code>DataSource</code>将数据转换为PagedList，<code>DataSource.Factory</code>则用来创建<code>DataSource</code></td>
+</tr>
+<tr>
+<td align="center"><code>LivePagedListBuilder</code></td>
+<td align="center">用来生成<code>LiveData&lt;PagedList&gt;</code>，需要<code>DataSource.Factory</code>参数</td>
+</tr>
+<tr>
+<td align="center"><code>BoundaryCallback</code></td>
+<td align="center">数据到达边界的回调</td>
+</tr>
+<tr>
+<td align="center"><code>PagedListAdapter</code></td>
+<td align="center">一种RecyclerView的适配器</td>
 </tr>
 </tbody></table>
+<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><ul>
+<li><code>RxJava 2</code>以及<code>Android Jetpack</code>的支持，如<code>LiveData</code>、<code>Room</code>。</li>
+<li>自定义分页策略。</li>
+<li>异步处理数据。</li>
+<li>结合RecyclerView等</li>
+</ul>
+<h2 id="实战"><a href="#实战" class="headerlink" title="实战"></a>实战</h2><h3 id="创建数据源"><a href="#创建数据源" class="headerlink" title="创建数据源"></a>创建数据源</h3><h4 id="1-非Room数据库"><a href="#1-非Room数据库" class="headerlink" title="1.非Room数据库"></a>1.非Room数据库</h4><table>
+<thead>
+<tr>
+<th align="center">名称</th>
+<th align="center">使用场景</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>PageKeyedDataSource&lt;Key, Value&gt;</code></td>
+<td align="center">分页请求数据的场景</td>
+</tr>
+<tr>
+<td align="center"><code>ItemKeyedDataSource&lt;Key, Value&gt;</code></td>
+<td align="center">以表的某个列为key，加载其后的N个数据</td>
+</tr>
+<tr>
+<td align="center"><code>PositionalDataSource&lt;T&gt;</code></td>
+<td align="center">以数据源总数特定，根据指定位置请求数据的场景</td>
+</tr>
+</tbody></table>
+<h4 id="2-Room数据库"><a href="#2-Room数据库" class="headerlink" title="2.Room数据库"></a>2.Room数据库</h4><p>如果是使用<code>Room</code>与Paging结合的方式呢</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Dao</span></span><br><span class="line"><span class="class"><span class="keyword">interface</span>  <span class="title">CheeseDao</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Query</span>(<span class="string">"SELECT * FROM Cheese ORDER BY name COLLATE NOCASE ASC"</span>)</span><br><span class="line">    <span class="function">fun <span class="title">allCheesedByName</span><span class="params">()</span> : DataSource.Factory&lt;Int, Cheese&gt;</span></span><br><span class="line"><span class="function">&#125;</span></span><br></pre></td></tr></table></figure>
 
+<h3 id="构建LiveData-lt-PagedList-gt"><a href="#构建LiveData-lt-PagedList-gt" class="headerlink" title="构建LiveData&lt;PagedList&gt;"></a>构建<code>LiveData&lt;PagedList&gt;</code></h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">val allCheeses = dao.allCheesesByName().toLiveData(Config) (pageSize = <span class="number">30</span>, </span><br><span class="line">            enablePlaceholders = <span class="keyword">true</span>,</span><br><span class="line">                maxSize = <span class="number">200</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="创建PagedListAdapter"><a href="#创建PagedListAdapter" class="headerlink" title="创建PagedListAdapter"></a>创建PagedListAdapter</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">class CheeseAdapter : PagedListAdapter&lt;Cheese, CheeseViewHolder&gt;(diffCallback) &#123;</span><br><span class="line">    <span class="function">override fun <span class="title">onBindViewHolder</span><span class="params">(holder: CheeseViewHolder, position: Int)</span> </span>&#123;</span><br><span class="line">        holder.bindTo(getItem(position))</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function">override fun <span class="title">onCreateViewHolder</span><span class="params">(parent: ViewGroup, viewType: Int)</span>: CheeseViewHolder </span>= CheeseViewHolder(parent)</span><br><span class="line"></span><br><span class="line">    companion object &#123;</span><br><span class="line">        <span class="keyword">private</span> val diffCallback = object : DiffUtil.ItemCallback&lt;Cheese&gt;() &#123;</span><br><span class="line">            <span class="function">override fun <span class="title">areItemsTheSame</span><span class="params">(oldItem: Cheese, newItem: Cheese)</span>: Boolean </span>=</span><br><span class="line">                    oldItem.id == newItem.id</span><br><span class="line"></span><br><span class="line">            <span class="comment">/**</span></span><br><span class="line"><span class="comment">             * Note that in kotlin, == checking on data classes compares all contents, but in Java,</span></span><br><span class="line"><span class="comment">             * typically you'll implement Object#equals, and use it to compare object contents.</span></span><br><span class="line"><span class="comment">             */</span></span><br><span class="line">            <span class="function">override fun <span class="title">areContentsTheSame</span><span class="params">(oldItem: Cheese, newItem: Cheese)</span>: Boolean </span>=</span><br><span class="line">                    oldItem == newItem</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -510,6 +567,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/learnleetcode/2019/08/03/真实算法体系/递归/" rel="prev" title="递归">
+                递归 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -580,7 +641,7 @@
                 
                   <a href="/learnleetcode/archives/">
                 
-                    <span class="site-state-item-count">14</span>
+                    <span class="site-state-item-count">16</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -666,7 +727,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Paging"><span class="nav-number">1.</span> <span class="nav-text">Paging</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Paging"><span class="nav-number">1.</span> <span class="nav-text">Paging</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#介绍"><span class="nav-number">1.1.</span> <span class="nav-text">介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#优点"><span class="nav-number">1.1.1.</span> <span class="nav-text">优点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实战"><span class="nav-number">1.2.</span> <span class="nav-text">实战</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建数据源"><span class="nav-number">1.2.1.</span> <span class="nav-text">创建数据源</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-非Room数据库"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">1.非Room数据库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-Room数据库"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">2.Room数据库</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#构建LiveData-lt-PagedList-gt"><span class="nav-number">1.2.2.</span> <span class="nav-text">构建LiveData&lt;PagedList&gt;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建PagedListAdapter"><span class="nav-number">1.2.3.</span> <span class="nav-text">创建PagedListAdapter</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>

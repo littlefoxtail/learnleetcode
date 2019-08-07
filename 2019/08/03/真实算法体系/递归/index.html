@@ -107,27 +107,18 @@
 
 
 
-  <meta name="description" content="概述算法，在数学和计算机科学之中，为任何良定义的具体步骤的一个序列，常用于计算、数据梳理和自动推理。算法是一个有限长列表的有效方法。算法应包含清晰定义的指令用于计算函数。算法中的指令描述的是一个计算，当其运行时能从一个初始状态和初始输入开始，经过一系列有效而清晰定义的状态最终产生输出并停止于一个终态。 算法的特征：  输入：一个算法必须有零个或以上输入量  输出：一个算法应有一个或者以上输入量，输">
+  <meta name="description" content="递归递归原理 递归是一种解决问题的有效方法，在递归过程中，函数将自身作为子例程调用  每当递归函数调用自身时，它都会将给定的问题拆解为子问题。递归调用继续进行，直到子问题无需进一步递归就可以解决的地步。 为了确保递归函数不会导致无限循环，它应具有以下属性：  一个简单的基本案例（base case）–能够不使用递归来产生答案的终止方案。 一组规则，也称作递推关系（recurrentce relat">
 <meta name="keywords" content="algorithm">
 <meta property="og:type" content="article">
-<meta property="og:title" content="算法">
-<meta property="og:url" content="https://littlefoxtail.github.io/2019/06/24/真实算法体系/算法/index.html">
+<meta property="og:title" content="递归">
+<meta property="og:url" content="https://littlefoxtail.github.io/2019/08/03/真实算法体系/递归/index.html">
 <meta property="og:site_name" content="阿拉蕾的笔记本">
-<meta property="og:description" content="概述算法，在数学和计算机科学之中，为任何良定义的具体步骤的一个序列，常用于计算、数据梳理和自动推理。算法是一个有限长列表的有效方法。算法应包含清晰定义的指令用于计算函数。算法中的指令描述的是一个计算，当其运行时能从一个初始状态和初始输入开始，经过一系列有效而清晰定义的状态最终产生输出并停止于一个终态。 算法的特征：  输入：一个算法必须有零个或以上输入量  输出：一个算法应有一个或者以上输入量，输">
+<meta property="og:description" content="递归递归原理 递归是一种解决问题的有效方法，在递归过程中，函数将自身作为子例程调用  每当递归函数调用自身时，它都会将给定的问题拆解为子问题。递归调用继续进行，直到子问题无需进一步递归就可以解决的地步。 为了确保递归函数不会导致无限循环，它应具有以下属性：  一个简单的基本案例（base case）–能够不使用递归来产生答案的终止方案。 一组规则，也称作递推关系（recurrentce relat">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://wikimedia.org/api/rest_v1/media/math/render/svg/5a01c613dc3f32ede732d43f7aa1f941efac127a">
-<meta property="og:image" content="https://wikimedia.org/api/rest_v1/media/math/render/svg/ac9810bbdafe4a6a8061338db0f74e25b7952620">
-<meta property="og:image" content="https://wikimedia.org/api/rest_v1/media/math/render/svg/c1c49fad1eccc4e9af1e4f23f32efdc3ac4da973">
-<meta property="og:image" content="https://wikimedia.org/api/rest_v1/media/math/render/svg/9702f04f2d0e5b887b99faeeffb0c4cfd8263eee">
-<meta property="og:image" content="https://wikimedia.org/api/rest_v1/media/math/render/svg/ac9810bbdafe4a6a8061338db0f74e25b7952620">
-<meta property="og:image" content="https://wikimedia.org/api/rest_v1/media/math/render/svg/acf586a9dfd9d7f43343f3ca49b65a19707baeda">
-<meta property="og:image" content="https://latex.codecogs.com/gif.latex?f(x)%20=%20a_nx%5En%20+%20a_%7Bn-1%7Dx%5E%7Bn-1%7D%20+...+a_1x%20+%20a_0">
-<meta property="og:image" content="https://latex.codecogs.com/gif.latex?a_n">
-<meta property="og:updated_time" content="2019-07-24T13:44:39.518Z">
+<meta property="og:updated_time" content="2019-08-06T15:43:29.254Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="算法">
-<meta name="twitter:description" content="概述算法，在数学和计算机科学之中，为任何良定义的具体步骤的一个序列，常用于计算、数据梳理和自动推理。算法是一个有限长列表的有效方法。算法应包含清晰定义的指令用于计算函数。算法中的指令描述的是一个计算，当其运行时能从一个初始状态和初始输入开始，经过一系列有效而清晰定义的状态最终产生输出并停止于一个终态。 算法的特征：  输入：一个算法必须有零个或以上输入量  输出：一个算法应有一个或者以上输入量，输">
-<meta name="twitter:image" content="https://wikimedia.org/api/rest_v1/media/math/render/svg/5a01c613dc3f32ede732d43f7aa1f941efac127a">
+<meta name="twitter:title" content="递归">
+<meta name="twitter:description" content="递归递归原理 递归是一种解决问题的有效方法，在递归过程中，函数将自身作为子例程调用  每当递归函数调用自身时，它都会将给定的问题拆解为子问题。递归调用继续进行，直到子问题无需进一步递归就可以解决的地步。 为了确保递归函数不会导致无限循环，它应具有以下属性：  一个简单的基本案例（base case）–能够不使用递归来产生答案的终止方案。 一组规则，也称作递推关系（recurrentce relat">
 
 
 
@@ -135,7 +126,7 @@
 
   
   
-  <link rel="canonical" href="https://littlefoxtail.github.io/2019/06/24/真实算法体系/算法/">
+  <link rel="canonical" href="https://littlefoxtail.github.io/2019/08/03/真实算法体系/递归/">
 
 
 
@@ -145,7 +136,7 @@
   };
 </script>
 
-  <title>算法 | 阿拉蕾的笔记本</title>
+  <title>递归 | 阿拉蕾的笔记本</title>
   
 
 
@@ -371,7 +362,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://littlefoxtail.github.io/learnleetcode/2019/06/24/真实算法体系/算法/">
+    <link itemprop="mainEntityOfPage" href="https://littlefoxtail.github.io/learnleetcode/2019/08/03/真实算法体系/递归/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="博主">
@@ -388,7 +379,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">算法
+          <h1 class="post-title" itemprop="name headline">递归
 
               
             
@@ -414,7 +405,7 @@
                 
               
 
-              <time title="创建于：2019-06-24 12:28:23" itemprop="dateCreated datePublished" datetime="2019-06-24T12:28:23+08:00">2019-06-24</time>
+              <time title="创建于：2019-08-03 20:11:23" itemprop="dateCreated datePublished" datetime="2019-08-03T20:11:23+08:00">2019-08-03</time>
             
 
             
@@ -431,29 +422,11 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="更新于：2019-07-24 21:44:39" itemprop="dateModified" datetime="2019-07-24T21:44:39+08:00">2019-07-24</time>
+                <time title="更新于：2019-08-06 23:43:29" itemprop="dateModified" datetime="2019-08-06T23:43:29+08:00">2019-08-06</time>
               
             
           </span>
 
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/learnleetcode/categories/算法/" itemprop="url" rel="index"><span itemprop="name">算法</span></a></span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -483,37 +456,53 @@
       
 
       
-        <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>算法，在数学和计算机科学之中，为任何良定义的具体步骤的一个序列，常用于计算、数据梳理和自动推理。算法是一个有限长列表的有效方法。算法应包含清晰定义的指令用于计算函数。<br>算法中的指令描述的是一个计算，当其运行时能从一个初始状态和初始输入开始，经过一系列有效而清晰定义的状态最终产生输出并停止于一个终态。</p>
-<p>算法的特征：</p>
-<ul>
-<li>输入：一个算法必须有零个或以上输入量 </li>
-<li>输出：一个算法应有一个或者以上输入量，输出量是算法计算的结果</li>
-<li>明确性：算法的描述必须无歧义，以保证算法的实际执行结果是精确匹配要求或者期望，通常要求实际结果是确定的</li>
-<li>有限性：依据图灵的定义，一个算法是能够被任何图灵完全系统模拟的一串运算，而图灵机只有有限个状态、有限个输入符号和有限个转移函数（指令）。而一些定义更规定算法必须在有限个步骤内完成任务</li>
-<li>有效性：又称可行性。能够实现，算法中描述的操作都是可以通过已经实现的基本运算执行有限次来实现。</li>
-</ul>
-<p>常用的设计模式：</p>
-<ul>
-<li>完全遍历和不完全遍历法：最简单的算法就是把解空间的所有元素完全遍历一遍，逐个检测元素是否为我们要的解。这是最直接的算法，实现往往最简单。当解空间特别庞大时，这种算法很可能导致工程上无法承受的计算量。这时候可以利用不完全遍历方法–例如各种搜索法和规划法—来减少计算量</li>
-<li>分治法：把一个问题分割成互相独立的多个部分分别求解的思路，这种求解思路带来的好处之一便于进行并行计算</li>
-<li>动态规划法：当问题的整体最优解就是局部最优解组成的时候，经常采用的一种方法</li>
-<li>贪心算法：场景的近似求解思路。当问题的整体最优解不是由局部最优解组成，且对解的最优性没有要求的时候，可以采用的一种方法</li>
-</ul>
-<a id="more"></a>
-
-<ul>
-<li><strong><a href="binarytree.md">二叉树</a></strong></li>
-<li><strong><a href="sort.md">排序算法</a></strong></li>
-<li><strong><a href="leetcode.md">LeetCode</a></strong></li>
-</ul>
-<h2 id="渐近分析"><a href="#渐近分析" class="headerlink" title="渐近分析"></a>渐近分析</h2><p>在数学分析中一种在极限附近的行为的方法。<br>最简单的例子如下：考虑一个函数f(n)，需要了解当n变得非常大的时候f(n)的性质。<br>令<img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/5a01c613dc3f32ede732d43f7aa1f941efac127a" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:15.428ex; height:3.176ex;" alt="f(n) = n^{2}+3n">，在n特别大的时候，第二项3n比起第一项<img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/ac9810bbdafe4a6a8061338db0f74e25b7952620" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.338ex; width:2.449ex; height:2.676ex;" alt="n^{2}">要小的很多。<br>于是对于这个函数，有如下断言：”<img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/c1c49fad1eccc4e9af1e4f23f32efdc3ac4da973" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:4.483ex; height:2.843ex;" alt="f(n)">在<img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/9702f04f2d0e5b887b99faeeffb0c4cfd8263eee" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.338ex; width:7.333ex; height:1.843ex;" alt="n\rightarrow \infty">无穷的情况下与<img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/ac9810bbdafe4a6a8061338db0f74e25b7952620" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.338ex; width:2.449ex; height:2.676ex;" alt="n^{2}">渐近等价”，记作：<img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/acf586a9dfd9d7f43343f3ca49b65a19707baeda" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:10.03ex; height:3.176ex;" alt="f(n)\sim n^2">。</p>
-<h2 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h2><p>在计算机科学中，算法的时间复杂度是一个函数，它定量描述了该算法的运行时间。这是一个代表算法输入值的字符串长度的函数。<br>时间复杂度常用大O符号表示，不包括这个函数的低阶项和首项系数。使用这种方式时，时间复杂度可称为渐近的，亦即考察输入大小趋近无穷时的情况。<br>为了计算时间复杂度，通常会估计算法的操作单元数量，每个单元运行的时间都是相同的，因此，总运行时间和算法的操作单元数量最多相差一个常量系数<br>相同大小的不同输入值仍可能造成算法的运行时间不同，因此通常使用算法的最坏时间复杂度，记为<b><i>T</i>(<i>n</i>)</b>，定义为任何大小的输入n所需的最大运行时间。另一种较少使用的方法是平均情况复杂度，通常有特别指定才会使用。时间复杂度可以用函数<i>T</i>(<i>n</i>)的自然特性加以分类。</p>
-<blockquote>
-<p>首项系数：<img src="https://latex.codecogs.com/gif.latex?f(x)%20=%20a_nx%5En%20+%20a_%7Bn-1%7Dx%5E%7Bn-1%7D%20+...+a_1x%20+%20a_0" alt="fx">的 <img src="https://latex.codecogs.com/gif.latex?a_n" alt="a_n">称为f(x)的首项系数<br>低阶项：除了最高项。</p>
+        <h1 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h1><h2 id="递归原理"><a href="#递归原理" class="headerlink" title="递归原理"></a>递归原理</h2><blockquote>
+<p>递归是一种解决问题的有效方法，在递归过程中，函数将自身作为子例程调用</p>
 </blockquote>
-<p>使用这种方式时，时间复杂度可被称为是渐近的，亦即考察输入值大小趋近无穷时的情况。<br>为了计算时间复杂度，通常会估计算法的操作单元数量，每个单元运行的时间都是相同的。因此，总运行时间和算法的操作单元数量最多相差一个常量系数。<br>相同大小的不同输入值仍可能造成算法的运行时间不同，通常使用算法的最坏情况复杂度，T(n)，定义为任何大小的输入n所需的最大运行时间。另一种较少使用方法是平均算法复杂度</p>
-<h2 id="空间复杂度"><a href="#空间复杂度" class="headerlink" title="空间复杂度"></a>空间复杂度</h2><p>算法的空间复杂度是指算法需要消耗的空间资源。其计算和表示方法与时间复杂度类似，一般用复杂度的渐进性来表示。同时间复杂度相比，空间复杂度的分析要简单得多</p>
+<p>每当递归函数调用自身时，它都会将给定的问题拆解为子问题。递归调用继续进行，直到子问题无需进一步递归就可以解决的地步。</p>
+<p>为了确保递归函数不会导致无限循环，它应具有以下属性：</p>
+<ol>
+<li>一个简单的<code>基本案例（base case）</code>–能够不使用递归来产生答案的终止方案。</li>
+<li>一组规则，也称作<code>递推关系（recurrentce relation）</code>，可将所有其他情况拆分到基本案例。</li>
+</ol>
+<h3 id="两两交换链表中的节点"><a href="#两两交换链表中的节点" class="headerlink" title="两两交换链表中的节点"></a>两两交换链表中的节点</h3><p>递归写法要观察本级递归的解决过程，形成抽象模型，因为递归本质就是不断重复相同的事情。而不是思考完整的调用栈，一级又一级，无从下手。我们应该关注一级调用小单元的情况，也就是单f(x)。</p>
+<p>关心三点：</p>
+<ol>
+<li>返回值</li>
+<li>调用单元做了什么</li>
+<li>终止条件</li>
+</ol>
+<p>本题中：</p>
+<ol>
+<li>返回值：交换完成的子链表</li>
+<li>调用单元：设需要完成的两个点为head和next，head连接后面交换完成的子链表，next连接head，完成交换</li>
+<li>终止条件：head为空指针或者next未空指针，也就是当前无节点或者只有一个节点，无法进行交换</li>
+</ol>
+<h2 id="递推关系"><a href="#递推关系" class="headerlink" title="递推关系"></a>递推关系</h2><p>在实现递归函数之前，两件重要的事情要弄清楚：</p>
+<ul>
+<li>递推关系：一个问题的结果与其子问题的结果之间的关系。</li>
+<li>基本情况：不需要进一步的递归调用就可以计算答案的情况。有时，基本案例也被称为bottom cases，因为它们往往是问题被减少到最小规模的情况，也就是如果我们认为将问题划分为子问题是一种自上而下的方式的最下层。</li>
+</ul>
+<h3 id="杨辉三角"><a href="#杨辉三角" class="headerlink" title="杨辉三角"></a>杨辉三角</h3><p>二次项展开式</p>
+<h3 id="反转链表"><a href="#反转链表" class="headerlink" title="反转链表"></a>反转链表</h3><ul>
+<li><p>递归</p>
+</li>
+<li><p>迭代<br>  遍历列表时，将当前节点的<code>next</code>指针改为指向前一个元素。由于节点没有引用上一个节点，因此必须事先存储其前一个元素。在更改引用之前，还需要另一个指针来存储下一个节点</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> ListNode <span class="title">reverseList</span><span class="params">(ListNode head)</span> </span>&#123;</span><br><span class="line">    ListNode prev = <span class="keyword">null</span>;</span><br><span class="line">    ListNode curr = head;</span><br><span class="line">    <span class="keyword">while</span>(curr != <span class="keyword">null</span>) &#123;</span><br><span class="line">        ListNode nextTemp = curr.next;</span><br><span class="line">        curr.next = prev;</span><br><span class="line">        prev = curr;</span><br><span class="line">        curr = nextTemp;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> prev;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+</li>
+</ul>
+<h2 id="递归中的重复问题"><a href="#递归中的重复问题" class="headerlink" title="递归中的重复问题"></a>递归中的重复问题</h2><h3 id="记忆化"><a href="#记忆化" class="headerlink" title="记忆化"></a>记忆化</h3><blockquote>
+<p>记忆化是一种优化技术，主要用于加快计算机程序的速度，方法是存储昂贵的函数调用的结果，并在相同的输入再次出现时返回缓存的结果</p>
+</blockquote>
+<h3 id="斐波那契数"><a href="#斐波那契数" class="headerlink" title="斐波那契数"></a>斐波那契数</h3><p>耗时的原因是重复计算，可以造一个备忘录，每次算出某个字问题的答案后别急着返回，先记到备忘录里再返回；每次遇到一个子问题先去备忘录里查一查，如果发现之前已经解决过这个问题了，直接把答案拿出来用，不要在耗时计算了。</p>
+<h3 id="爬楼梯"><a href="#爬楼梯" class="headerlink" title="爬楼梯"></a>爬楼梯</h3><h4 id="暴力"><a href="#暴力" class="headerlink" title="暴力"></a>暴力</h4><p>把所有的可能爬的阶数进行组合，也就是1和2.而在每一步中会继续调用函数，并返回函数的和。</p>
+<h4 id="记忆化递归"><a href="#记忆化递归" class="headerlink" title="记忆化递归"></a>记忆化递归</h4><h4 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h4><p>分解为包含最优子结构的子问题，即它对的最优解可以从其子问题的最优解来有效地构建</p>
+<h2 id="递归–时间复杂度"><a href="#递归–时间复杂度" class="headerlink" title="递归–时间复杂度"></a>递归–时间复杂度</h2><blockquote>
+<p>给出一个递归算法，其时间复杂度通常是递归调用的数量和计算时间复杂度的乘积</p>
+</blockquote>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><h3 id="合并两个有序链表"><a href="#合并两个有序链表" class="headerlink" title="合并两个有序链表"></a>合并两个有序链表</h3><p>两个链表头部较小的一个域剩下的元素<code>merge</code>操作结果合并。</p>
+<h3 id="第K个语法符号"><a href="#第K个语法符号" class="headerlink" title="第K个语法符号"></a>第K个语法符号</h3>
       
     </div>
 
@@ -549,8 +538,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/learnleetcode/2019/06/23/真实算法体系/动态规划/" rel="next" title="动态规划算法">
-                <i class="fa fa-chevron-left"></i> 动态规划算法
+              <a href="/learnleetcode/2019/07/23/Paging/" rel="next" title="Paging">
+                <i class="fa fa-chevron-left"></i> Paging
               </a>
             
           </div>
@@ -559,8 +548,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/learnleetcode/2019/06/24/真实算法体系/贪心算法/" rel="prev" title="贪心算法">
-                贪心算法 <i class="fa fa-chevron-right"></i>
+              <a href="/learnleetcode/2019/08/06/真实算法体系/哈希表/" rel="prev" title="哈希表">
+                哈希表 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -718,7 +707,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#渐近分析"><span class="nav-number">1.1.</span> <span class="nav-text">渐近分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#时间复杂度"><span class="nav-number">1.2.</span> <span class="nav-text">时间复杂度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#空间复杂度"><span class="nav-number">1.3.</span> <span class="nav-text">空间复杂度</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#递归"><span class="nav-number">1.</span> <span class="nav-text">递归</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#递归原理"><span class="nav-number">1.1.</span> <span class="nav-text">递归原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#两两交换链表中的节点"><span class="nav-number">1.1.1.</span> <span class="nav-text">两两交换链表中的节点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#递推关系"><span class="nav-number">1.2.</span> <span class="nav-text">递推关系</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#杨辉三角"><span class="nav-number">1.2.1.</span> <span class="nav-text">杨辉三角</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#反转链表"><span class="nav-number">1.2.2.</span> <span class="nav-text">反转链表</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#递归中的重复问题"><span class="nav-number">1.3.</span> <span class="nav-text">递归中的重复问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#记忆化"><span class="nav-number">1.3.1.</span> <span class="nav-text">记忆化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#斐波那契数"><span class="nav-number">1.3.2.</span> <span class="nav-text">斐波那契数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#爬楼梯"><span class="nav-number">1.3.3.</span> <span class="nav-text">爬楼梯</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#暴力"><span class="nav-number">1.3.3.1.</span> <span class="nav-text">暴力</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#记忆化递归"><span class="nav-number">1.3.3.2.</span> <span class="nav-text">记忆化递归</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#动态规划"><span class="nav-number">1.3.3.3.</span> <span class="nav-text">动态规划</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#递归–时间复杂度"><span class="nav-number">1.4.</span> <span class="nav-text">递归–时间复杂度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">1.5.</span> <span class="nav-text">总结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#合并两个有序链表"><span class="nav-number">1.5.1.</span> <span class="nav-text">合并两个有序链表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第K个语法符号"><span class="nav-number">1.5.2.</span> <span class="nav-text">第K个语法符号</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>

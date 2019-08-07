@@ -361,6 +361,415 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://littlefoxtail.github.io/learnleetcode/2019/08/06/真实算法体系/哈希表/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="博主">
+      <meta itemprop="description" content="特别欢喜你">
+      <meta itemprop="image" content="/learnleetcode/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="阿拉蕾的笔记本">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/learnleetcode/2019/08/06/真实算法体系/哈希表/" class="post-title-link" itemprop="url">哈希表</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建于：2019-08-06 11:57:23" itemprop="dateCreated datePublished" datetime="2019-08-06T11:57:23+08:00">2019-08-06</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="更新于：2019-08-07 16:21:46" itemprop="dateModified" datetime="2019-08-07T16:21:46+08:00">2019-08-07</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/learnleetcode/categories/数据结构/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="哈希表"><a href="#哈希表" class="headerlink" title="哈希表"></a>哈希表</h1><p><code>哈希表</code>是一种使用哈希函数组织数据，以及支持快速插入和搜索的数据结构。</p>
+<p>有两种不同类型的哈希表：哈希集合和哈希映射。</p>
+<ul>
+<li>哈希集合是集合数据结构的实现之一，用于存储非重复值</li>
+<li>哈希映射时映射数据结构的实现之一，用于存储<code>key, value</code>键值对。</li>
+</ul>
+<h2 id="哈希表的原理"><a href="#哈希表的原理" class="headerlink" title="哈希表的原理"></a>哈希表的原理</h2><p>使用哈希函数将键映射到存储桶</p>
+<ol>
+<li>当我们想插入一个新的键时，哈希函数将决定该键应该分配到哪个桶中，并将该键存储在相应的桶中</li>
+<li>当我们想搜索一个键时，哈希表将使用相同的哈希函数来查找对应的桶，并只在特定的桶中进行搜索</li>
+</ol>
+<h2 id="设计哈希表的关键"><a href="#设计哈希表的关键" class="headerlink" title="设计哈希表的关键"></a>设计哈希表的关键</h2><h3 id="哈希函数"><a href="#哈希函数" class="headerlink" title="哈希函数"></a>哈希函数</h3><p>哈希函数是哈希表的最重要的组件，该哈希表用于将映射到特定的桶</p>
+<h3 id="冲突解决"><a href="#冲突解决" class="headerlink" title="冲突解决"></a>冲突解决</h3><p>冲突解决算法应该解决以下几个问题：</p>
+<ol>
+<li>如何组织在同一个桶中的值？</li>
+<li>如果为同一个桶分配了太多的值，该怎么办？</li>
+<li>如何在特定的桶中搜索目标值？</li>
+</ol>
+<h3 id="设计哈希集合"><a href="#设计哈希集合" class="headerlink" title="设计哈希集合"></a>设计哈希集合</h3><p>不使用任何内建哈希表库设计一个哈希集合</p>
+<p>应该包含：</p>
+<ul>
+<li>add(value)：向哈希集合中插入一个值。</li>
+<li>contains(value)：返回哈希集合中是否存在这个值。</li>
+<li>remove(value)：将给定值从哈希集合中删除。如果哈希集合中没有这个值，什么都不做</li>
+</ul>
+<h3 id="设计哈希映射"><a href="#设计哈希映射" class="headerlink" title="设计哈希映射"></a>设计哈希映射</h3><p>不使用任何内建的哈希表设计一个哈希映射</p>
+<ul>
+<li><code>put(key, value)</code>：向哈希映射中插入（键、值）的数值对。如果键对应的值已经存在，更新这个值</li>
+<li><code>get(key)</code>：返回给定的键所对应的值，如果映射中不包含这个键，返回-1</li>
+<li><code>remove(key</code>：如果隐射中存在这个键，删除这个数值对</li>
+</ul>
+<h2 id="实际应用-哈希集合"><a href="#实际应用-哈希集合" class="headerlink" title="实际应用-哈希集合"></a>实际应用-哈希集合</h2><h3 id="使用哈希集查重"><a href="#使用哈希集查重" class="headerlink" title="使用哈希集查重"></a>使用哈希集查重</h3><p>插入新值并检查值是否在哈希集中是简单有效的。</p>
+<h3 id="存在重复元素"><a href="#存在重复元素" class="headerlink" title="存在重复元素"></a>存在重复元素</h3><h3 id="只出现一次的数字"><a href="#只出现一次的数字" class="headerlink" title="只出现一次的数字"></a>只出现一次的数字</h3><h4 id="列表操作"><a href="#列表操作" class="headerlink" title="列表操作"></a>列表操作</h4><ol>
+<li>遍历nums中的每一个元素</li>
+<li>如果某个nums中的数字是新出现的，则将它添加到列表中</li>
+<li>如果某个数字已经在列表中，删除它</li>
+</ol>
+<h3 id="两个数组的交集"><a href="#两个数组的交集" class="headerlink" title="两个数组的交集"></a>两个数组的交集</h3><h3 id="快乐数"><a href="#快乐数" class="headerlink" title="快乐数"></a>快乐数</h3>
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://littlefoxtail.github.io/learnleetcode/2019/08/03/真实算法体系/递归/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="博主">
+      <meta itemprop="description" content="特别欢喜你">
+      <meta itemprop="image" content="/learnleetcode/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="阿拉蕾的笔记本">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/learnleetcode/2019/08/03/真实算法体系/递归/" class="post-title-link" itemprop="url">递归</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建于：2019-08-03 20:11:23" itemprop="dateCreated datePublished" datetime="2019-08-03T20:11:23+08:00">2019-08-03</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="更新于：2019-08-06 23:43:29" itemprop="dateModified" datetime="2019-08-06T23:43:29+08:00">2019-08-06</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h1><h2 id="递归原理"><a href="#递归原理" class="headerlink" title="递归原理"></a>递归原理</h2><blockquote>
+<p>递归是一种解决问题的有效方法，在递归过程中，函数将自身作为子例程调用</p>
+</blockquote>
+<p>每当递归函数调用自身时，它都会将给定的问题拆解为子问题。递归调用继续进行，直到子问题无需进一步递归就可以解决的地步。</p>
+<p>为了确保递归函数不会导致无限循环，它应具有以下属性：</p>
+<ol>
+<li>一个简单的<code>基本案例（base case）</code>–能够不使用递归来产生答案的终止方案。</li>
+<li>一组规则，也称作<code>递推关系（recurrentce relation）</code>，可将所有其他情况拆分到基本案例。</li>
+</ol>
+<h3 id="两两交换链表中的节点"><a href="#两两交换链表中的节点" class="headerlink" title="两两交换链表中的节点"></a>两两交换链表中的节点</h3><p>递归写法要观察本级递归的解决过程，形成抽象模型，因为递归本质就是不断重复相同的事情。而不是思考完整的调用栈，一级又一级，无从下手。我们应该关注一级调用小单元的情况，也就是单f(x)。</p>
+<p>关心三点：</p>
+<ol>
+<li>返回值</li>
+<li>调用单元做了什么</li>
+<li>终止条件</li>
+</ol>
+<p>本题中：</p>
+<ol>
+<li>返回值：交换完成的子链表</li>
+<li>调用单元：设需要完成的两个点为head和next，head连接后面交换完成的子链表，next连接head，完成交换</li>
+<li>终止条件：head为空指针或者next未空指针，也就是当前无节点或者只有一个节点，无法进行交换</li>
+</ol>
+<h2 id="递推关系"><a href="#递推关系" class="headerlink" title="递推关系"></a>递推关系</h2><p>在实现递归函数之前，两件重要的事情要弄清楚：</p>
+<ul>
+<li>递推关系：一个问题的结果与其子问题的结果之间的关系。</li>
+<li>基本情况：不需要进一步的递归调用就可以计算答案的情况。有时，基本案例也被称为bottom cases，因为它们往往是问题被减少到最小规模的情况，也就是如果我们认为将问题划分为子问题是一种自上而下的方式的最下层。</li>
+</ul>
+<h3 id="杨辉三角"><a href="#杨辉三角" class="headerlink" title="杨辉三角"></a>杨辉三角</h3><p>二次项展开式</p>
+<h3 id="反转链表"><a href="#反转链表" class="headerlink" title="反转链表"></a>反转链表</h3><ul>
+<li><p>递归</p>
+</li>
+<li><p>迭代<br>  遍历列表时，将当前节点的<code>next</code>指针改为指向前一个元素。由于节点没有引用上一个节点，因此必须事先存储其前一个元素。在更改引用之前，还需要另一个指针来存储下一个节点</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> ListNode <span class="title">reverseList</span><span class="params">(ListNode head)</span> </span>&#123;</span><br><span class="line">    ListNode prev = <span class="keyword">null</span>;</span><br><span class="line">    ListNode curr = head;</span><br><span class="line">    <span class="keyword">while</span>(curr != <span class="keyword">null</span>) &#123;</span><br><span class="line">        ListNode nextTemp = curr.next;</span><br><span class="line">        curr.next = prev;</span><br><span class="line">        prev = curr;</span><br><span class="line">        curr = nextTemp;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> prev;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="递归中的重复问题"><a href="#递归中的重复问题" class="headerlink" title="递归中的重复问题"></a>递归中的重复问题</h2><h3 id="记忆化"><a href="#记忆化" class="headerlink" title="记忆化"></a>记忆化</h3><blockquote>
+<p>记忆化是一种优化技术，主要用于加快计算机程序的速度，方法是存储昂贵的函数调用的结果，并在相同的输入再次出现时返回缓存的结果</p>
+</blockquote>
+<h3 id="斐波那契数"><a href="#斐波那契数" class="headerlink" title="斐波那契数"></a>斐波那契数</h3><p>耗时的原因是重复计算，可以造一个备忘录，每次算出某个字问题的答案后别急着返回，先记到备忘录里再返回；每次遇到一个子问题先去备忘录里查一查，如果发现之前已经解决过这个问题了，直接把答案拿出来用，不要在耗时计算了。</p>
+<h3 id="爬楼梯"><a href="#爬楼梯" class="headerlink" title="爬楼梯"></a>爬楼梯</h3><h4 id="暴力"><a href="#暴力" class="headerlink" title="暴力"></a>暴力</h4><p>把所有的可能爬的阶数进行组合，也就是1和2.而在每一步中会继续调用函数，并返回函数的和。</p>
+<h4 id="记忆化递归"><a href="#记忆化递归" class="headerlink" title="记忆化递归"></a>记忆化递归</h4><h4 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h4><p>分解为包含最优子结构的子问题，即它对的最优解可以从其子问题的最优解来有效地构建</p>
+<h2 id="递归–时间复杂度"><a href="#递归–时间复杂度" class="headerlink" title="递归–时间复杂度"></a>递归–时间复杂度</h2><blockquote>
+<p>给出一个递归算法，其时间复杂度通常是递归调用的数量和计算时间复杂度的乘积</p>
+</blockquote>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><h3 id="合并两个有序链表"><a href="#合并两个有序链表" class="headerlink" title="合并两个有序链表"></a>合并两个有序链表</h3><p>两个链表头部较小的一个域剩下的元素<code>merge</code>操作结果合并。</p>
+<h3 id="第K个语法符号"><a href="#第K个语法符号" class="headerlink" title="第K个语法符号"></a>第K个语法符号</h3>
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://littlefoxtail.github.io/learnleetcode/2019/07/23/Paging/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -406,12 +815,24 @@
                 
               
 
-              <time title="创建于：2019-07-23 12:28:33 / 更新于：16:51:59" itemprop="dateCreated datePublished" datetime="2019-07-23T12:28:33+08:00">2019-07-23</time>
+              <time title="创建于：2019-07-23 12:28:33" itemprop="dateCreated datePublished" datetime="2019-07-23T12:28:33+08:00">2019-07-23</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="更新于：2019-07-27 19:25:38" itemprop="dateModified" datetime="2019-07-27T19:25:38+08:00">2019-07-27</time>
               
             
           </span>
@@ -447,7 +868,9 @@
       
         
           
-            <h1 id="Paging"><a href="#Paging" class="headerlink" title="Paging"></a>Paging</h1><p>处理大量数据的处理方法：</p>
+            <h1 id="Paging"><a href="#Paging" class="headerlink" title="Paging"></a>Paging</h1><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">The Paging Library helps you load and display small chunks of data at a time.Loading partial data on demand reduces usage of network bandwidth and system</span><br></pre></td></tr></table></figure>
+
+<p>处理大量数据的处理方法：</p>
 <ol>
 <li>借助刷新控件实现用户手动请求数据。</li>
 <li>数据到达边界自动请求加载。</li>
@@ -464,11 +887,54 @@
 <td align="center">一个可以以分页形式异步加载数据的容器，可以跟<code>RecyclerView</code>很好的结合</td>
 </tr>
 <tr>
-<td align="center"></td>
-<td align="center"></td>
+<td align="center">DataSource或DataSource.Factory</td>
+<td align="center">数据源，<code>DataSource</code>将数据转换为PagedList，<code>DataSource.Factory</code>则用来创建<code>DataSource</code></td>
+</tr>
+<tr>
+<td align="center"><code>LivePagedListBuilder</code></td>
+<td align="center">用来生成<code>LiveData&lt;PagedList&gt;</code>，需要<code>DataSource.Factory</code>参数</td>
+</tr>
+<tr>
+<td align="center"><code>BoundaryCallback</code></td>
+<td align="center">数据到达边界的回调</td>
+</tr>
+<tr>
+<td align="center"><code>PagedListAdapter</code></td>
+<td align="center">一种RecyclerView的适配器</td>
 </tr>
 </tbody></table>
+<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><ul>
+<li><code>RxJava 2</code>以及<code>Android Jetpack</code>的支持，如<code>LiveData</code>、<code>Room</code>。</li>
+<li>自定义分页策略。</li>
+<li>异步处理数据。</li>
+<li>结合RecyclerView等</li>
+</ul>
+<h2 id="实战"><a href="#实战" class="headerlink" title="实战"></a>实战</h2><h3 id="创建数据源"><a href="#创建数据源" class="headerlink" title="创建数据源"></a>创建数据源</h3><h4 id="1-非Room数据库"><a href="#1-非Room数据库" class="headerlink" title="1.非Room数据库"></a>1.非Room数据库</h4><table>
+<thead>
+<tr>
+<th align="center">名称</th>
+<th align="center">使用场景</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>PageKeyedDataSource&lt;Key, Value&gt;</code></td>
+<td align="center">分页请求数据的场景</td>
+</tr>
+<tr>
+<td align="center"><code>ItemKeyedDataSource&lt;Key, Value&gt;</code></td>
+<td align="center">以表的某个列为key，加载其后的N个数据</td>
+</tr>
+<tr>
+<td align="center"><code>PositionalDataSource&lt;T&gt;</code></td>
+<td align="center">以数据源总数特定，根据指定位置请求数据的场景</td>
+</tr>
+</tbody></table>
+<h4 id="2-Room数据库"><a href="#2-Room数据库" class="headerlink" title="2.Room数据库"></a>2.Room数据库</h4><p>如果是使用<code>Room</code>与Paging结合的方式呢</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Dao</span></span><br><span class="line"><span class="class"><span class="keyword">interface</span>  <span class="title">CheeseDao</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Query</span>(<span class="string">"SELECT * FROM Cheese ORDER BY name COLLATE NOCASE ASC"</span>)</span><br><span class="line">    <span class="function">fun <span class="title">allCheesedByName</span><span class="params">()</span> : DataSource.Factory&lt;Int, Cheese&gt;</span></span><br><span class="line"><span class="function">&#125;</span></span><br></pre></td></tr></table></figure>
 
+<h3 id="构建LiveData-lt-PagedList-gt"><a href="#构建LiveData-lt-PagedList-gt" class="headerlink" title="构建LiveData&lt;PagedList&gt;"></a>构建<code>LiveData&lt;PagedList&gt;</code></h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">val allCheeses = dao.allCheesesByName().toLiveData(Config) (pageSize = <span class="number">30</span>, </span><br><span class="line">            enablePlaceholders = <span class="keyword">true</span>,</span><br><span class="line">                maxSize = <span class="number">200</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="创建PagedListAdapter"><a href="#创建PagedListAdapter" class="headerlink" title="创建PagedListAdapter"></a>创建PagedListAdapter</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">class CheeseAdapter : PagedListAdapter&lt;Cheese, CheeseViewHolder&gt;(diffCallback) &#123;</span><br><span class="line">    <span class="function">override fun <span class="title">onBindViewHolder</span><span class="params">(holder: CheeseViewHolder, position: Int)</span> </span>&#123;</span><br><span class="line">        holder.bindTo(getItem(position))</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function">override fun <span class="title">onCreateViewHolder</span><span class="params">(parent: ViewGroup, viewType: Int)</span>: CheeseViewHolder </span>= CheeseViewHolder(parent)</span><br><span class="line"></span><br><span class="line">    companion object &#123;</span><br><span class="line">        <span class="keyword">private</span> val diffCallback = object : DiffUtil.ItemCallback&lt;Cheese&gt;() &#123;</span><br><span class="line">            <span class="function">override fun <span class="title">areItemsTheSame</span><span class="params">(oldItem: Cheese, newItem: Cheese)</span>: Boolean </span>=</span><br><span class="line">                    oldItem.id == newItem.id</span><br><span class="line"></span><br><span class="line">            <span class="comment">/**</span></span><br><span class="line"><span class="comment">             * Note that in kotlin, == checking on data classes compares all contents, but in Java,</span></span><br><span class="line"><span class="comment">             * typically you'll implement Object#equals, and use it to compare object contents.</span></span><br><span class="line"><span class="comment">             */</span></span><br><span class="line">            <span class="function">override fun <span class="title">areContentsTheSame</span><span class="params">(oldItem: Cheese, newItem: Cheese)</span>: Boolean </span>=</span><br><span class="line">                    oldItem == newItem</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
           
         
       
@@ -586,7 +1052,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="更新于：2019-07-27 11:43:47" itemprop="dateModified" datetime="2019-07-27T11:43:47+08:00">2019-07-27</time>
+                <time title="更新于：2019-08-01 10:58:00" itemprop="dateModified" datetime="2019-08-01T10:58:00+08:00">2019-08-01</time>
               
             
           </span>
@@ -653,6 +1119,9 @@
 <p>算法</p>
 <p>R行 C列，seen[r][c]表示第r行第c列的单元格之前已经被访问过了。当前所在位置为（r, c）前进方向是di。希望访问所偶的R * C个单元格。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title">spiralOrder</span><span class="params">(<span class="keyword">int</span>[][] matrix)</span> </span>&#123;</span><br><span class="line">        List&lt;Integer&gt; ans = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</span><br><span class="line">        <span class="keyword">if</span> (matrix.length == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> ans;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> R = matrix.length, C = matrix[<span class="number">0</span>].length;</span><br><span class="line">        <span class="keyword">boolean</span>[][] seen = <span class="keyword">new</span> <span class="keyword">boolean</span>[R][C];</span><br><span class="line">        <span class="keyword">int</span>[] dr = &#123;<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, -<span class="number">1</span>&#125;; <span class="comment">//横向如果是顺时针的话坐标，先不变，在加， 在不变，在减去</span></span><br><span class="line">        <span class="keyword">int</span>[] dc = &#123;<span class="number">1</span>, <span class="number">0</span>, -<span class="number">1</span>, <span class="number">0</span>&#125;;</span><br><span class="line">        <span class="keyword">int</span> r = <span class="number">0</span>, c = <span class="number">0</span>, di = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; R * C; i++) &#123;</span><br><span class="line">            ans.add(matrix[r][c]);</span><br><span class="line">            seen[r][c] = <span class="keyword">true</span>;</span><br><span class="line">            <span class="keyword">int</span> cr = r + dr[di];</span><br><span class="line">            <span class="keyword">int</span> cc = c + dc[di];</span><br><span class="line">            <span class="keyword">if</span> (<span class="number">0</span> &lt;= cr &amp;&amp; cr &lt; R &amp;&amp; <span class="number">0</span> &lt;= cc &amp;&amp; cc &lt; C &amp;&amp; !seen[cr][cc]) &#123;</span><br><span class="line">                r = cr;</span><br><span class="line">                c = cc;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="comment">//这说明碰到了墙壁，要折行了</span></span><br><span class="line">                di = (di + <span class="number">1</span>) % <span class="number">4</span>;</span><br><span class="line">                r += dr[di];</span><br><span class="line">                c += dc[di];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="杨辉三角"><a href="#杨辉三角" class="headerlink" title="杨辉三角"></a>杨辉三角</h4><p>动态规划</p>
+
           
         
       
@@ -923,426 +1392,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://littlefoxtail.github.io/learnleetcode/2019/06/25/真实算法体系/队列&栈/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="博主">
-      <meta itemprop="description" content="特别欢喜你">
-      <meta itemprop="image" content="/learnleetcode/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="阿拉蕾的笔记本">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/learnleetcode/2019/06/25/真实算法体系/队列&栈/" class="post-title-link" itemprop="url">队列&栈</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建于：2019-06-25 11:39:49" itemprop="dateCreated datePublished" datetime="2019-06-25T11:39:49+08:00">2019-06-25</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="更新于：2019-07-24 21:44:20" itemprop="dateModified" datetime="2019-07-24T21:44:20+08:00">2019-07-24</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><ol>
-<li>了解FIFO和LIFO处理顺序的原理</li>
-<li>实现这两个数据结构</li>
-<li>熟悉内置的队列和栈结构</li>
-<li>解决基本的队列相关问题，尤其是BFS</li>
-<li>解决基本的栈相关问题</li>
-<li>理解当你使用 DFS 和其他递归算法来解决问题时，系统栈是如何帮助你的。</li>
-</ol>
-<h2 id="队列：先入先出的数据结构"><a href="#队列：先入先出的数据结构" class="headerlink" title="队列：先入先出的数据结构"></a>队列：先入先出的数据结构</h2><ol>
-<li>理解FIFO和队列的定义；</li>
-<li>能够自己实现队列；</li>
-<li>熟悉内置队列结构；</li>
-<li>使用队列来解决简单的问题；</li>
-</ol>
-<p><img src="https://aliyun-lc-upload.oss-cn-hangzhou.aliyuncs.com/aliyun-lc-upload/uploads/2018/08/14/screen-shot-2018-05-03-at-151021.png" alt="队列"></p>
-<p>在FIFO数据结构中，将<code>首先处理添加到队列中的第一个元素</code>。
-插入（insert）操作也称为入队（enqueue），新元素始终被添加在<code>队列的末尾</code>。删除（delete）操作也被称为出队（dequeue）。你只能移除第一个元素。</p>
-<h2 id="队列-实现"><a href="#队列-实现" class="headerlink" title="队列-实现"></a>队列-实现</h2><p>为了实现队列，我们可以使用动态数组和指向队列头部的索引。</p>
-<p>如上所述，队列应支持两种操作：入队和出队。入队会向队列追加一个新元素，而出队会删除第一个元素。 所以我们需要一个索引来指出起点。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MYQueue</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> List&lt;Integer&gt; data;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> p_start;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MyQueue</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        data = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</span><br><span class="line">        p_start = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">enQueue</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        data.add(x);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">deQueue</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (isEmpty() == <span class="keyword">true</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        p_start++;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">Front</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> data.get(p_start);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isEmpty</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> p_start &gt;= data.size();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="循环队列"><a href="#循环队列" class="headerlink" title="循环队列"></a>循环队列</h2><p>此前，简单但是低效的队列实现。<br>更有效的方法是使用循环队列。使用<code>固定大小的数组</code>和<code>两个指针</code>来指示起始位置和结束位置。目的是<code>重用</code>之前<code>被浪费的存储</code>。</p>
-<p>循环队列的实现：</p>
-<ol>
-<li>初始化queue，设置queue的<code>maxSize</code>，<code>head</code>和<code>tail</code>节点</li>
-<li>入队<code>enqueue</code>：检查元素个数是否是maxSize-1；<ul>
-<li>Yes，返回Queue满了</li>
-<li>No，在tail的位置上增加新元素，并增加<code>tail</code>节点</li>
-</ul>
-</li>
-<li>出队<code>dequeu</code>：检查队列中个数是否为0<ul>
-<li>Yes，返回Queue是空</li>
-<li>No，减少<code>head</code>节点</li>
-</ul>
-</li>
-<li>找<code>size</code>：<ul>
-<li>tail &gt;= head， <code>size = (tail - head) + 1</code></li>
-<li>head &gt; tail, <code>size = maxSize - (head - tail) + 1</code></li>
-</ul>
-</li>
-</ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyCircularQueue</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> data[];</span><br><span class="line">    <span class="keyword">int</span> p_start;</span><br><span class="line">    <span class="keyword">int</span> p_end;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** Initialize your data structure here. Set the size of the queue to be k. */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MyCircularQueue</span><span class="params">(<span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        data = <span class="keyword">new</span> <span class="keyword">int</span>[k];</span><br><span class="line">        p_start = -<span class="number">1</span>;</span><br><span class="line">        p_end = -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** Insert an element into the circular queue. Return true if the operation is successful. */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">enQueue</span><span class="params">(<span class="keyword">int</span> value)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (isFull()) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (p_start == -<span class="number">1</span>) &#123;</span><br><span class="line">                p_start = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            p_end = (p_end + <span class="number">1</span>) % (data.length);</span><br><span class="line">            data[p_end] = value;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** Delete an element from the circular queue. Return true if the operation is successful. */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">deQueue</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> y;</span><br><span class="line">        <span class="keyword">if</span> (isEmpty()) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            y = data[p_start];</span><br><span class="line">            <span class="keyword">if</span> (p_start == p_end) &#123;</span><br><span class="line">                p_start = -<span class="number">1</span>;</span><br><span class="line">                p_end = -<span class="number">1</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                p_start = (p_start + <span class="number">1</span>) % data.length;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** Get the front item from the queue. */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">Front</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (isEmpty()) &#123;</span><br><span class="line">            <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> data[p_start];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** Get the last item from the queue. */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">Rear</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (isEmpty()) &#123;</span><br><span class="line">            <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> data[p_end];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** Checks whether the circular queue is empty or not. */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isEmpty</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (p_start == -<span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** Checks whether the circular queue is full or not. */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isFull</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(p_start  == <span class="number">0</span> &amp;&amp; p_end == data.length - <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (p_start == p_end + <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Your MyCircularQueue object will be instantiated and called as such:</span></span><br><span class="line"><span class="comment"> * MyCircularQueue obj = new MyCircularQueue(k);</span></span><br><span class="line"><span class="comment"> * boolean param_1 = obj.enQueue(value);</span></span><br><span class="line"><span class="comment"> * boolean param_2 = obj.deQueue();</span></span><br><span class="line"><span class="comment"> * int param_3 = obj.Front();</span></span><br><span class="line"><span class="comment"> * int param_4 = obj.Rear();</span></span><br><span class="line"><span class="comment"> * boolean param_5 = obj.isEmpty();</span></span><br><span class="line"><span class="comment"> * boolean param_6 = obj.isFull();</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="队列和BFS（breadth-first-search）"><a href="#队列和BFS（breadth-first-search）" class="headerlink" title="队列和BFS（breadth-first-search）"></a>队列和BFS（breadth-first-search）</h2><p>广度优先搜索（BFS）是一个常见应用是找出从根结点到目标结点的最短路径。</p>
-<ol>
-<li>结点的处理顺序<br>第一轮中，处理根结点；第二轮中，处理根结点旁边的结点；在第三轮中，处理距根结点两步的结点；等等<br>与树的层序遍历类似，越是接近根结点的结点将越早地遍历。<br>如果在第k轮中将结点<code>X</code>添加到队列中，则根节点与<code>X</code>之间的最短路径的长度恰好是<code>k</code>。也就是说，第一次找到目标结点时，你已经处于最短路径中。</li>
-<li>队列的入队和出队顺序是什么？<br>首先将根节点排入队列。在每一轮中，逐个处理已经在队列中的结点，并将所有邻居添加到队列中。新添加的结点<code>不会</code>立即遍历，而是在下一轮中处理。<br>结点的处理顺序与它们添加到队列的顺序是完全相同的顺序，即先进先出</li>
-</ol>
-<h2 id="广度优先搜索-模板"><a href="#广度优先搜索-模板" class="headerlink" title="广度优先搜索-模板"></a>广度优先搜索-模板</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 返回根结点到目标结点的最短路径</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">BFS</span><span class="params">(Node root, Node target)</span> </span>&#123;</span><br><span class="line">    Queue&lt;Node&gt; queue; <span class="comment">//保存所有待处理的所有结点</span></span><br><span class="line">    <span class="keyword">int</span> step = <span class="number">0</span>; <span class="comment">//从根结点到当前结点的步数</span></span><br><span class="line">    <span class="comment">//初始化</span></span><br><span class="line">    add root to queue;</span><br><span class="line">    <span class="keyword">while</span> (queue is not empty) &#123;</span><br><span class="line">        step = step + <span class="number">1</span>;</span><br><span class="line">        <span class="comment">//遍历在队列总的结点</span></span><br><span class="line">        <span class="keyword">int</span> size = queue.size();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; size; ++i) &#123;</span><br><span class="line">            Node cur = <span class="keyword">this</span> first node in queue;</span><br><span class="line">            <span class="keyword">return</span> step <span class="keyword">if</span> cur is target;</span><br><span class="line">            <span class="keyword">for</span> (Node next : the neighbors of cur) &#123;</span><br><span class="line">                add next to queue;</span><br><span class="line">            &#125;</span><br><span class="line">            remove the first node from queue;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ol>
-<li>每一轮中，队列中的节点是<code>等待处理的结点</code>。</li>
-<li>在每个更外一层的<code>while</code>循环之后，我们距离根结点更远一步。遍历<code>step</code>指示从根结点到正在访问的当前结点的距离。</li>
-</ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">BFS</span><span class="params">(Node root, Node target)</span> </span>&#123;</span><br><span class="line">    Queue&lt;Node&gt; queue;</span><br><span class="line">    Set&lt;Node&gt; used; <span class="comment">//保存所有已经使用过的结点</span></span><br><span class="line">    <span class="keyword">int</span> step = <span class="number">0</span>;</span><br><span class="line">    <span class="comment">//初始化</span></span><br><span class="line">    add root to queue;</span><br><span class="line">    add root to used;</span><br><span class="line">    <span class="comment">//BFS</span></span><br><span class="line">    <span class="keyword">while</span> (queue is not empty) &#123;</span><br><span class="line">        step = step + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> size = queue.size();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>； i &lt; size; ++i) &#123;</span><br><span class="line">            Node cur = <span class="keyword">this</span> first node in queue;</span><br><span class="line">            <span class="keyword">return</span> step <span class="keyword">if</span> cur is target;</span><br><span class="line">            <span class="keyword">for</span> (Node next : <span class="keyword">this</span> neighbors of cur) &#123;</span><br><span class="line">                <span class="keyword">if</span> (next is not in used) &#123;</span><br><span class="line">                    add next to queue;</span><br><span class="line">                    add next to used;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            remove the first node from queue;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="200-岛屿的个数"><a href="#200-岛屿的个数" class="headerlink" title="200.岛屿的个数"></a>200.岛屿的个数</h3><p>算法：广度优先搜索</p>
-<p>线性扫描整个二维网络，如果一个结点包含<code>1</code>，则以其为根节点启动广度优先搜索。将其放入队列中，（上下左右都得设置入队）并将值设为<code>0</code>以标记访问过该结点。迭代地搜索队列中每个结点，直到队列为空。</p>
-<h3 id="752-打开转盘锁"><a href="#752-打开转盘锁" class="headerlink" title="752.打开转盘锁"></a>752.打开转盘锁</h3><h3 id="完全平方数"><a href="#完全平方数" class="headerlink" title="完全平方数"></a>完全平方数</h3><p>对问题建模：将整个问题变成一个图论问题。</p>
-<p>从n到0，每个数字代表一个节点；<br>如果两个数x到y相差一个完全平方数，则连接一条边；<br>就得到了一个无权图；</p>
-<p>原来的问题就转化为，在这个无权图中找出从n到0的最短路径，所以需要BFS来完成</p>
-<h2 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h2><p>后入先出的数据结构</p>
-<p><img src="https://aliyun-lc-upload.oss-cn-hangzhou.aliyuncs.com/aliyun-lc-upload/uploads/2018/06/03/screen-shot-2018-06-02-at-203523.png" alt="栈"></p>
-<p>在LIFO数据结构中，将<code>首先处理添加到队列</code>中的<code>最新元素</code>。</p>
-<p>与队列不同，栈是一个LIFO数据结构。通常，插入操作在栈中被称作入栈<code>push</code>。与队列类似，总是<code>在堆栈的末尾添加一个新元素</code>。但是，删除操作，退栈<code>pop</code>，将始终<code>删除</code>队列中相对于它的<code>最后一个元素</code>。</p>
-<h3 id="实现-栈"><a href="#实现-栈" class="headerlink" title="实现-栈"></a>实现-栈</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyStack</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> List&lt;Integer&gt; data;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MyStack</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        data = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">push</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        data.add(x);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isEmpty</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> data.isEmpty();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">top</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> data.get(data.size() - <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">pop</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        is(isEmpty()) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        data.remove(data.size() - <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="最小栈"><a href="#最小栈" class="headerlink" title="最小栈"></a>最小栈</h3><p>两个栈，一个数据栈，一个辅助栈</p>
-<h3 id="有效的括号"><a href="#有效的括号" class="headerlink" title="有效的括号"></a>有效的括号</h3><p>在表示问题的递归结构时，栈数据结构可以派上用场。我们无法真正地从内到外处理这个问题，因为我们对整体结构一无所知。但是，栈可以帮助我们递归地处理这种情况，即从外部到内部。</p>
-<ol>
-<li>初始化栈</li>
-<li>一次处理表达式的每个括号</li>
-<li>如果遇到开括号，我们只需将其推到栈即可。这意味着我们将稍后处理它。</li>
-<li>如果遇到一个闭括号，那么我们检查栈顶元素。如果栈顶元素是一个<code>相同类型的</code>左括号，那么我们将它从栈中弹出并继续处理。否则，这意味着表达式无效。</li>
-<li>如果到最后我们剩下的栈中仍然有元素，那么这意味着表达式无效。</li>
-</ol>
-<h3 id="每日温度"><a href="#每日温度" class="headerlink" title="每日温度"></a>每日温度</h3><p>逆序遍历，为什么要使用逆序遍历。因为正常遍历思路，遍历到当前天，你无法知道后面几天的温度情况。<br>逆序遍历，后面几天的温度情况已经知晓，很容易得到经过几天后的温度比今天温度高。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] dailyTemperatures(<span class="keyword">int</span>[] T) &#123;</span><br><span class="line">        <span class="keyword">int</span>[] res = <span class="keyword">new</span> <span class="keyword">int</span>[T.length];</span><br><span class="line">        <span class="comment">// 单调栈 里面的数 非递增排序 </span></span><br><span class="line">        Stack&lt;Integer&gt; stack = <span class="keyword">new</span> Stack();</span><br><span class="line">        <span class="comment">// 从后往前遍历</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = T.length-<span class="number">1</span>; i &gt;= <span class="number">0</span>; i--)&#123;</span><br><span class="line">            <span class="comment">// 当前元素比栈顶元素大 出栈 重新调整栈直至满足要求</span></span><br><span class="line">            <span class="keyword">while</span>(!stack.isEmpty() &amp;&amp; T[i] &gt;= T[stack.peek()])&#123;</span><br><span class="line">                stack.pop();</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// 栈为空 即后面没有比当前天温度高的</span></span><br><span class="line">            <span class="comment">// 不为空 栈顶元素对应的下标减去当前下标即为经过几天后温度比当前天温度高</span></span><br><span class="line">            res[i] = stack.isEmpty()? <span class="number">0</span> :stack.peek()-i;</span><br><span class="line">            <span class="comment">// 当前元素进栈</span></span><br><span class="line">            stack.push(i);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">        T = [73,74,75,71,69,72,76,73]</span><br><span class="line"></span><br><span class="line">第一次遍历: i = 7, T[i] = 73, stack = []</span><br><span class="line">        最后一天，后面没有比今天温度高的 res[7] = 0 ,stack = [7]</span><br><span class="line"></span><br><span class="line">第二次遍历: i = 6, T[i] = 76, stack = [7]</span><br><span class="line">        栈顶对应的温度T[7]=73,76&gt;73,出栈,此时栈为空,加入6,res[6] = 0, stack = [6]</span><br><span class="line"></span><br><span class="line">第三次遍历: i = 5, T[i] = 72, stack = [6]</span><br><span class="line">        栈顶对应的温度T[6]=76,满足要求,计算结果后入栈。res[5] = 6-5, stack = [6,5]</span><br><span class="line"></span><br><span class="line">第四次遍历: i = 4, T[i] = 69, stack = [6,5]</span><br><span class="line">        栈顶对应的温度T[5]=72,满足要求,计算结果后入栈。res[4] = 5-4, stack = [6,5,4]</span><br><span class="line"></span><br><span class="line">第五次遍历: i = 3, T[i] = 71, stack = [6,5,4]</span><br><span class="line">        栈顶对应的温度T[4]=69,71&gt;69,出栈。stack = [6,5]</span><br><span class="line">        栈顶对应的温度T[5]=72,满足要求,计算结果后入栈。res[3] = 5-3, stack = [6,5,3]</span><br><span class="line"></span><br><span class="line">第六次遍历: i = 2, T[i] = 75, stack = [6,5,3]</span><br><span class="line">        栈顶对应的温度T[3]=71,75&gt;71,出栈。stack = [6,5]</span><br><span class="line">        栈顶对应的温度T[5]=72,75&gt;72,出栈。stack = [6]</span><br><span class="line">        栈顶对应的温度T[6]=76,满足要求,计算结果后入栈。res[2] = 6-2, stack = [6,2]</span><br><span class="line"></span><br><span class="line">第七次遍历: i = 1, T[i] = 74, stack = [6,2]</span><br><span class="line">        栈顶对应的温度T[2]=75,满足要求,计算结果后入栈。res[1] = 2-1, stack = [6,2,1]</span><br><span class="line"></span><br><span class="line">第八次遍历: i = 0, T[i] = 73, stack = [6,2,1]</span><br><span class="line">        栈顶对应的温度T[1]=74,满足要求,计算结果后入栈。res[0] = 1-0, stack = [6,2,1,0]</span><br><span class="line"></span><br><span class="line">遍历结束: res = [1,1,4,2,1,1,0,0]</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://littlefoxtail.github.io/learnleetcode/2019/06/24/真实算法体系/贪心算法/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="博主">
-      <meta itemprop="description" content="特别欢喜你">
-      <meta itemprop="image" content="/learnleetcode/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="阿拉蕾的笔记本">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/learnleetcode/2019/06/24/真实算法体系/贪心算法/" class="post-title-link" itemprop="url">贪心算法</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建于：2019-06-24 23:00:08" itemprop="dateCreated datePublished" datetime="2019-06-24T23:00:08+08:00">2019-06-24</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="更新于：2019-07-24 21:44:42" itemprop="dateModified" datetime="2019-07-24T21:44:42+08:00">2019-07-24</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/learnleetcode/categories/算法/" itemprop="url" rel="index"><span itemprop="name">算法</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="贪心算法"><a href="#贪心算法" class="headerlink" title="贪心算法"></a>贪心算法</h1><p>在对问题求解时，总是作出在当前看来是最好的选择。也就是说，不从整体最优加以考虑，他所做出的是在某种意义上的局部最优解。<br>贪心算法不是对所有问题都能得到整体最优解，关心是贪心策略的选择，选择的贪心策略必须具备无后效性，即某个状态以前的过程不会影响以后的状态，只与当前状态有关。</p>
-<h2 id="基本要素"><a href="#基本要素" class="headerlink" title="基本要素"></a>基本要素</h2><h3 id="贪心选择"><a href="#贪心选择" class="headerlink" title="贪心选择"></a>贪心选择</h3><p>贪心选择是指所求问题的整体最优解可以通过一系列局部最优的选择，即贪心选择来达到。这是贪心算法可行的第一个基本要素，也是贪心算法与动态规划算法的主要区别。贪心选择是采用从顶向下、以迭代的方法做出相继选择，每做一次贪心选择就将所求问题简化为一个规模更小的子问题。对于一个具体问题，要确定它是否具有贪心选择的性质，我们必须证明每一步所作的贪心选择最终能得到问题的最优解。通常可以首先证明问题的一个整体最优解，是从贪心选择开始的，而且作了贪心选择后，原问题简化为一个规模更小的类似子问题。然后，用数学归纳法证明，通过每一步贪心选择，最终可得到问题的一个整体最优解。</p>
-<h3 id="最优子结构"><a href="#最优子结构" class="headerlink" title="最优子结构"></a>最优子结构</h3><p>当一个问题的最优解包含其子问题的最优解时，称此问题具有最优子结构性质。运行贪心策略在每一次转化时都取得了最优解。问题的最优子结构性质是该问题可用贪心算法或动态规划算法求解的关键特征。贪心算法的每一次操作都对结果产生直接影响，而动态规划则不是。贪心算法对每个问题的解决方案都作出选择，不能回退；动态规划则会根据以前的选择结果对当前进行选择，有回退功能。动态规划主要运用于二维或三维问题，而贪心一般是一维问题。</p>
-<h2 id="基本思路"><a href="#基本思路" class="headerlink" title="基本思路"></a>基本思路</h2><h3 id="思想"><a href="#思想" class="headerlink" title="思想"></a>思想</h3><p>贪心算法的基本思路是从问题的某一个初始解出发一步一步地进行，根据某个优化测度，每一步都要确保能获得局部最优解。每一步只考虑一个数据，他的选取应该满足局部优化的条件。若下一个数据和部分最优解连在一起不再是可行解时，就不把该数据添加到部分解中，直到把所有数据枚举完，或者不能再添加算法停止。</p>
-<h3 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h3><ol>
-<li>建立数学模型来描述问题</li>
-<li>把求解的问题分成若干字问题</li>
-<li>对每一子问题求解，得到子问题的局部最优解</li>
-<li>把子问题的解局部最优解合成原来解问题的一个解</li>
-</ol>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/learnleetcode/page/2/">2</a><a class="page-number" href="/learnleetcode/page/3/">3</a><a class="extend next" rel="next" href="/learnleetcode/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/learnleetcode/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/learnleetcode/page/4/">4</a><a class="extend next" rel="next" href="/learnleetcode/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -1386,7 +1440,7 @@
                 
                   <a href="/learnleetcode/archives/">
                 
-                    <span class="site-state-item-count">14</span>
+                    <span class="site-state-item-count">16</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
