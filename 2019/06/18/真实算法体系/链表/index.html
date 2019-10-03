@@ -107,18 +107,18 @@
 
 
 
-  <meta name="description" content="链表160.找出两个链表的交点">
+  <meta name="description" content="链表与数组相似，链表也是一种线性数据结构 单链表单链表中的每个结点不仅包含值，还包含链接到下一个结点的引用字段。通过这种方式，单链表将所有结点按顺序组织起来。 操作与数组不同，无法在常量时间内访问单链表中的随机元素。如果想要获得第i个元素，必须从头结点逐个遍历。 添加操作-单链表 使用给定值初始化新结点cur 将cur的”next”字段链接到prev的下一个结点next 将prev中的”next”">
 <meta name="keywords" content="数据结构">
 <meta property="og:type" content="article">
 <meta property="og:title" content="链表">
 <meta property="og:url" content="https://littlefoxtail.github.io/2019/06/18/真实算法体系/链表/index.html">
 <meta property="og:site_name" content="阿拉蕾的笔记本">
-<meta property="og:description" content="链表160.找出两个链表的交点">
+<meta property="og:description" content="链表与数组相似，链表也是一种线性数据结构 单链表单链表中的每个结点不仅包含值，还包含链接到下一个结点的引用字段。通过这种方式，单链表将所有结点按顺序组织起来。 操作与数组不同，无法在常量时间内访问单链表中的随机元素。如果想要获得第i个元素，必须从头结点逐个遍历。 添加操作-单链表 使用给定值初始化新结点cur 将cur的”next”字段链接到prev的下一个结点next 将prev中的”next”">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-06T15:59:22.502Z">
+<meta property="og:updated_time" content="2019-08-25T11:04:22.731Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="链表">
-<meta name="twitter:description" content="链表160.找出两个链表的交点">
+<meta name="twitter:description" content="链表与数组相似，链表也是一种线性数据结构 单链表单链表中的每个结点不仅包含值，还包含链接到下一个结点的引用字段。通过这种方式，单链表将所有结点按顺序组织起来。 操作与数组不同，无法在常量时间内访问单链表中的随机元素。如果想要获得第i个元素，必须从头结点逐个遍历。 添加操作-单链表 使用给定值初始化新结点cur 将cur的”next”字段链接到prev的下一个结点next 将prev中的”next”">
 
 
 
@@ -422,7 +422,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="更新于：2019-08-06 23:59:22" itemprop="dateModified" datetime="2019-08-06T23:59:22+08:00">2019-08-06</time>
+                <time title="更新于：2019-08-25 19:04:22" itemprop="dateModified" datetime="2019-08-25T19:04:22+08:00">2019-08-25</time>
               
             
           </span>
@@ -474,7 +474,64 @@
       
 
       
-        <h1 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h1><h2 id="160-找出两个链表的交点"><a href="#160-找出两个链表的交点" class="headerlink" title="160.找出两个链表的交点"></a>160.找出两个链表的交点</h2>
+        <h1 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h1><p>与数组相似，链表也是一种线性数据结构</p>
+<h2 id="单链表"><a href="#单链表" class="headerlink" title="单链表"></a>单链表</h2><p>单链表中的每个结点不仅包含值，还包含链接到下一个结点的引用字段。通过这种方式，单链表将所有结点按顺序组织起来。</p>
+<h3 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h3><p>与数组不同，无法在常量时间内访问单链表中的随机元素。如果想要获得第i个元素，必须从头结点逐个遍历。</p>
+<h3 id="添加操作-单链表"><a href="#添加操作-单链表" class="headerlink" title="添加操作-单链表"></a>添加操作-单链表</h3><ol>
+<li>使用给定值初始化新结点<code>cur</code></li>
+<li>将<code>cur</code>的”next”字段链接到prev的下一个结点<code>next</code></li>
+<li>将<code>prev</code>中的”next”字段链到<code>cur</code></li>
+</ol>
+<p>与数组不同，不需要将所有元素移动到插入元素之后。因此，非常高效。</p>
+<h3 id="删除操作-单链表"><a href="#删除操作-单链表" class="headerlink" title="删除操作-单链表"></a>删除操作-单链表</h3><p>想从单链表中删除现有结点<code>cur</code>，可以分两步完成：</p>
+<ol>
+<li>找到cur的上一个结点<code>prev</code>及其下一结点<code>next</code>；</li>
+<li>接下来链接<code>prev</code>到cur的下一个结点<code>next</code></li>
+</ol>
+<h3 id="删除第一个结点"><a href="#删除第一个结点" class="headerlink" title="删除第一个结点"></a>删除第一个结点</h3><p>如果想要删除第一个结点，可以简单地<code>将下一个结点分配给head</code>。</p>
+<h2 id="双指针技巧"><a href="#双指针技巧" class="headerlink" title="双指针技巧"></a>双指针技巧</h2><h3 id="链表中的双指针"><a href="#链表中的双指针" class="headerlink" title="链表中的双指针"></a>链表中的双指针</h3><ol>
+<li>如果没有环，快指针将停在链表的末尾。</li>
+<li>如果有环，快指针最终将与慢指针相遇。</li>
+</ol>
+<h3 id="环形链表"><a href="#环形链表" class="headerlink" title="环形链表"></a>环形链表</h3><p>给定一个链表，判断链表中是否有环</p>
+<p>通过使用具有<code>不同速度</code>的快、慢两个指针遍历链表，空间复杂度可以降低至1。慢指针每次移动一步，而快指针每次移动两步。<br>如果列表中不存在环，最终快指针将会最先到达尾部，此时我们可以返回<code>false</code>。</p>
+<h3 id="环形链表II"><a href="#环形链表II" class="headerlink" title="环形链表II"></a>环形链表II</h3><p>不允许修改给定的链表</p>
+<p>用一个<code>Set</code>保存已经访问过的节点，可以遍历整个列表并返回第一个出现重复的节点。</p>
+<p>算法：</p>
+<p>首先，我们分配一个<code>Set</code>去保存所有的列表节点。我们逐一遍历列表，检查当前节点是否出现过，如果节点已经出现过，那么一定形成了环且它是环的入口。否则如果有其他点是环的入口，我们应该先访问到其他节点而不是这个节点。其他情况，没有成环则直接返回 null 。</p>
+<p>算法会在遍历有限个节点后终止，这是因为输入列表会被分成两类：成环的和不成环的。一个不成欢的列表在遍历完所有节点后会到达 null - 即链表的最后一个元素后停止。一个成环列表可以想象成是一个不成环列表将最后一个<code>null</code>元素换成环的入口。</p>
+<p>如果 while 循环终止，我们返回 null 因为我们已经将所有的节点遍历了一遍且没有遇到重复的节点，这种情况下，列表是不成环的。对于循环列表， while 循环永远不会停止，但在某个节点上， if 条件会被满足并导致函数的退出。</p>
+<h3 id="找出两个链表的交点"><a href="#找出两个链表的交点" class="headerlink" title="找出两个链表的交点"></a>找出两个链表的交点</h3><h3 id="删除链表的倒数第N个节点"><a href="#删除链表的倒数第N个节点" class="headerlink" title="删除链表的倒数第N个节点"></a>删除链表的倒数第N个节点</h3><h2 id="经典问题"><a href="#经典问题" class="headerlink" title="经典问题"></a>经典问题</h2><h3 id="反转链表"><a href="#反转链表" class="headerlink" title="反转链表"></a>反转链表</h3><p>一种解决方案时<code>按原始顺序迭代结点</code>，并将它们<code>逐个移动到列表的头部</code></p>
+<h3 id="移除链表元素"><a href="#移除链表元素" class="headerlink" title="移除链表元素"></a>移除链表元素</h3><p>删除结点的步骤</p>
+<ol>
+<li>找到该结点的前一个结点</li>
+<li>进行删除操作</li>
+</ol>
+<p>三种方式：</p>
+<ol>
+<li>删除头结点时另作考虑（由于头结点没有前一个结点）</li>
+<li>添加一个虚拟头结点，删除头结点就不用另做考虑</li>
+<li>递归</li>
+</ol>
+<h3 id="奇偶链表"><a href="#奇偶链表" class="headerlink" title="奇偶链表"></a>奇偶链表</h3><p>想法</p>
+<p>将奇节点放在一个链表里，偶链表放到另一个链表里。然后把偶链表接在奇链表的尾部</p>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><ul>
+<li>可以同时使用多个指针<br>  有时，当你为链表问题设计算法时，可能需要同时跟踪多个结点。应该记住需要跟踪哪些结点，并且可以自由地使用几个不同的结点指针来同时跟踪这些结点。如果你使用多个指针，最好为它们指定适当的名称，以防将来必须调试或检查代码</li>
+<li>在许多情况下，需要跟踪当前结点的前一结点<br>  你无法追溯单链表中的前一结点。因此，你不仅要存储当前结点，还要存储前一个结点。这在双链表中是不同的。</li>
+</ul>
+<h2 id="双链表"><a href="#双链表" class="headerlink" title="双链表"></a>双链表</h2><p>双链表以类似的方式工作，但<code>还有一个引用字段</code>，称为<code>prev</code>字段。有了这个额外的字段，就能够知道当前结点的前一结点。</p>
+<h3 id="操作-1"><a href="#操作-1" class="headerlink" title="操作"></a>操作</h3><p>可以与单链表相同的方式访问数据：</p>
+<ol>
+<li>不能再常量级的时间<code>访问随机位置</code>。</li>
+<li>必须从头部遍历才能得到我们想要的第一个结点</li>
+<li>在最坏的情况下，时间复杂度是<code>O(N)</code>，其中<code>N</code>是链表的长度</li>
+</ol>
+<h3 id="添加操作-双链表"><a href="#添加操作-双链表" class="headerlink" title="添加操作-双链表"></a>添加操作-双链表</h3><h3 id="删除操作-双链表"><a href="#删除操作-双链表" class="headerlink" title="删除操作-双链表"></a>删除操作-双链表</h3><p>从双链表中删除一个现有的结点<code>cur</code>，可以简单地将它的前一结点<code>prev</code>与下一个结点<code>next</code>链接起来。</p>
+<h2 id="小结-链表"><a href="#小结-链表" class="headerlink" title="小结-链表"></a>小结-链表</h2><ul>
+<li>在单链表中，它无法获取给定结点的前一结点，因此在删除给定结点之前必须花费<code>O(N)</code>时间来找出前一结点</li>
+<li>在双链表中，这会更容易，可以使用<code>prev</code>引用字段获取前一结点。因此可以在<code>O(1)</code>时间内删除给定结点。</li>
+</ul>
+<h3 id="合并两个有序链表"><a href="#合并两个有序链表" class="headerlink" title="合并两个有序链表"></a>合并两个有序链表</h3><h3 id="两数相加"><a href="#两数相加" class="headerlink" title="两数相加"></a>两数相加</h3>
       
     </div>
 
@@ -593,7 +650,7 @@
                 
                   <a href="/learnleetcode/archives/">
                 
-                    <span class="site-state-item-count">16</span>
+                    <span class="site-state-item-count">17</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -679,7 +736,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#链表"><span class="nav-number">1.</span> <span class="nav-text">链表</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#160-找出两个链表的交点"><span class="nav-number">1.1.</span> <span class="nav-text">160.找出两个链表的交点</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#链表"><span class="nav-number">1.</span> <span class="nav-text">链表</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#单链表"><span class="nav-number">1.1.</span> <span class="nav-text">单链表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#操作"><span class="nav-number">1.1.1.</span> <span class="nav-text">操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加操作-单链表"><span class="nav-number">1.1.2.</span> <span class="nav-text">添加操作-单链表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除操作-单链表"><span class="nav-number">1.1.3.</span> <span class="nav-text">删除操作-单链表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除第一个结点"><span class="nav-number">1.1.4.</span> <span class="nav-text">删除第一个结点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#双指针技巧"><span class="nav-number">1.2.</span> <span class="nav-text">双指针技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#链表中的双指针"><span class="nav-number">1.2.1.</span> <span class="nav-text">链表中的双指针</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#环形链表"><span class="nav-number">1.2.2.</span> <span class="nav-text">环形链表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#环形链表II"><span class="nav-number">1.2.3.</span> <span class="nav-text">环形链表II</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#找出两个链表的交点"><span class="nav-number">1.2.4.</span> <span class="nav-text">找出两个链表的交点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除链表的倒数第N个节点"><span class="nav-number">1.2.5.</span> <span class="nav-text">删除链表的倒数第N个节点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#经典问题"><span class="nav-number">1.3.</span> <span class="nav-text">经典问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#反转链表"><span class="nav-number">1.3.1.</span> <span class="nav-text">反转链表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#移除链表元素"><span class="nav-number">1.3.2.</span> <span class="nav-text">移除链表元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#奇偶链表"><span class="nav-number">1.3.3.</span> <span class="nav-text">奇偶链表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#小结"><span class="nav-number">1.3.4.</span> <span class="nav-text">小结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#双链表"><span class="nav-number">1.4.</span> <span class="nav-text">双链表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#操作-1"><span class="nav-number">1.4.1.</span> <span class="nav-text">操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加操作-双链表"><span class="nav-number">1.4.2.</span> <span class="nav-text">添加操作-双链表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除操作-双链表"><span class="nav-number">1.4.3.</span> <span class="nav-text">删除操作-双链表</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结-链表"><span class="nav-number">1.5.</span> <span class="nav-text">小结-链表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#合并两个有序链表"><span class="nav-number">1.5.1.</span> <span class="nav-text">合并两个有序链表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#两数相加"><span class="nav-number">1.5.2.</span> <span class="nav-text">两数相加</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
