@@ -10,7 +10,6 @@ npm install
 
 启动服务
 
-```
+```text
 hexo server
 ```
-
