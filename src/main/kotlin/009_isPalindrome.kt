@@ -1,3 +1,5 @@
+import base.ListNode
+
 fun main(args: Array<String>) {
     isPalindrome(123321)
     println("字符串回文")

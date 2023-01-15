@@ -1,3 +1,5 @@
+import base.ListNode
+
 object ReverseList {
   @JvmStatic
   fun main(args: Array<String>) {

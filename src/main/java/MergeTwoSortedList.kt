@@ -1,3 +1,5 @@
+import base.ListNode
+
 /**
  * Merge two sorted linked lists and return it as a new list.
  * The new list should be made by splicing together the nodes of the first two lists.
@@ -11,13 +13,6 @@
  * 最后，当其中一个链表到达了末尾，我们只需把新链表指针指向另一个没有到末尾的链表此时的指针即可。
  */
 class MergeTwoSortedList {
-  class ListNode internal constructor(internal var `val`: Int) {
-    internal var next: ListNode? = null
-
-    init {
-      next = null
-    }
-  }
 
 
   fun mergeTT(l1: ListNode?, l2: ListNode?): ListNode? {
@@ -89,6 +84,7 @@ class MergeTwoSortedList {
   }
 
   companion object {
+
 
     @JvmStatic
     fun main(args: Array<String>) {
